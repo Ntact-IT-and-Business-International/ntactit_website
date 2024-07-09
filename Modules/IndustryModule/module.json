@@ -1,0 +1,11 @@
+{
+    "name": "IndustryModule",
+    "alias": "industrymodule",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\IndustryModule\\App\\Providers\\IndustryModuleServiceProvider"
+    ],
+    "files": []
+}

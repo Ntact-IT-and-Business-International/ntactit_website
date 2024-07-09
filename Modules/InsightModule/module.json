@@ -1,0 +1,11 @@
+{
+    "name": "InsightModule",
+    "alias": "insightmodule",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\InsightModule\\App\\Providers\\InsightModuleServiceProvider"
+    ],
+    "files": []
+}
