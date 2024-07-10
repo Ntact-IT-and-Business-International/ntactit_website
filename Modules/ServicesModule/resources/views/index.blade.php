@@ -1,7 +1,5 @@
-@extends('servicesmodule::layouts.master')
+@extends('template')
 
 @section('content')
-    <h1>Hello World</h1>
 
-    <p>Module: {!! config('servicesmodule.name') !!}</p>
 @endsection

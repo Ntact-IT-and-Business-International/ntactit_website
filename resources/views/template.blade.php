@@ -10,12 +10,11 @@ Author URL: http://w3layouts.com
 <body>
     <!--header-->
     @include('layouts.front.menu')
-    <!--//header-->
 
-    <!-- banner section -->
-    @include('layouts.front.slider')
-    <!-- //banner section -->
-    
+    <!--//header-->
+    <section>
+     @yield('content')
+    </section>
     <!-- footer -->
    @include('layouts.front.footer')
     <!-- //footer -->
@@ -51,11 +50,11 @@ Author URL: http://w3layouts.com
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.3.1.min.js')}}"></script>
     <!-- //common jquery plugin -->
 
     <!-- owl carousel -->
-    <script src="assets/js/owl.carousel.js"></script>
+    <script src="{{ asset('assets/js/owl.carousel.js')}}"></script>
     <!-- script for tesimonials carousel slider -->
     <script>
         $(document).ready(function () {
@@ -94,7 +93,7 @@ Author URL: http://w3layouts.com
     <!-- owl carousel -->
 
     <!-- magnific popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
     <script>
         $(document).ready(function () {
             $('.popup-with-zoom-anim').magnificPopup({
@@ -133,7 +132,7 @@ Author URL: http://w3layouts.com
     <!-- //magnific popup -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
+    <script src="{{ asset('assets/js/theme-change.js')}}"></script>
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -211,7 +210,7 @@ Author URL: http://w3layouts.com
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>

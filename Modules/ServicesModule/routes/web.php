@@ -20,8 +20,13 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/application-development', 'ServicesModuleController@applicationDevelopment')->name('Application Development');
     Route::get('/bulk-sms', 'ServicesModuleController@bulkSMS')->name('Bulk SMS');
     Route::get('/enterprise-it', 'ServicesModuleController@enterpriseIt')->name('Enterprise It');
-    Route::get('/portals', 'ServicesModuleController@portal')->name('portal');
+    Route::get('/cybersecurity', 'ServicesModuleController@portal')->name('cybersecurity');
     Route::get('/artificial-intelligence', 'ServicesModuleController@artificailIntelligence')->name('Artificail Intelligence');
-    Route::get('/data-analysis', 'ServicesModuleController@dataAnaylsis')->name('Data Anaylsis');
+    Route::get('/data-analysis', 'ServicesModuleController@dataAnaylsis')->name('Data Anayltics');
+    Route::get('/ussd', 'ServicesModuleController@ussd')->name('USSD');
+    Route::get('/cctv', 'ServicesModuleController@cctv')->name('CCTV');
+    Route::get('/networking', 'ServicesModuleController@networking')->name('Networking');
+    Route::get('/cybersecurity', 'ServicesModuleController@cybersecurity')->name('CyberSecurity');
+    Route::get('/digitalmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
 
 });

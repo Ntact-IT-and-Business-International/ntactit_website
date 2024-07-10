@@ -3,9 +3,13 @@
         <div class="row sub-columns">
             <div class="col-lg-4 col-sm-6 sub-one-left">
                 <h6>About </h6>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque
-                    laudantium, totam rem aperiam, eaque ipsa quae ab.</p>
+                <p> Ntact-it is a technology company that specialises in finding innovative solutions
+                    that empower businesses and organisations with the necessary tools that allow them 
+                    to quickly realise their goals. Since our inception,we have worked with both private and
+                    government entities in transforming their organisations  and the surrounding
+                    communities at large. Feel free to contact us at any time incase you went to further details about 
+                    any of our services.
+                </p>
                 <div class="columns-2">
                     <ul class="social">
                         <li><a href="#facebook" title="facebook"><span class="fab fa-facebook-f"
@@ -29,13 +33,23 @@
             <div class="col-lg-3 col-sm-6 sub-two-right pl-lg-5 mt-sm-0 mt-5">
                 <h6>Our Services</h6>
                 <ul>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Website Designing</a>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Web Design</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Web Hosting</a>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>CCTV installations</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Digital Photography</a>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Application Development</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Photoshop to HTML</a>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Bulk SMS </a>
+                    </li>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>CyberSecurity</a>
+                    </li>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>IT Consultancy</a>
+                    </li>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>USSD Applications</a>
+                    </li>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Networking</a>
+                    </li>
+                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Entreprise I.T</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +68,7 @@
                 <h6>Help & Support</h6>
                 <ul>
                     <li><a href="#live"><span class="fas fa-angle-right mr-2"></span>Live
-                            Chart</a></li>
+                            Chat</a></li>
                     <li><a href="#faq"><span class="fas fa-angle-right mr-2"></span>Faq</a>
                     </li>
                     <li><a href="#support"><span class="fas fa-angle-right mr-2"></span>Support</a>
@@ -69,21 +83,21 @@
                 <div class="col-md-4 footer-contact d-flex align-items-center">
                     <span class="fas fa-envelope-open" aria-hidden="true"></span>
                     <div>
-                        <a href="mailto:info@example.com">info@example.com</a>
+                        <a href="mailto:info@example.com">info@ntactit.com</a>
                         <p>Drop Us a Line</p>
                     </div>
                 </div>
                 <div class="col-md-4 footer-contact d-flex align-items-center activ">
                     <span class="fas fa-phone-alt" aria-hidden="true"></span>
                     <div>
-                        <a href="tel:+44-000-888-999">+44-000-888-999</a>
+                        <a href="tel:+44-000-888-999">+256 751 114 949</a>
                         <p>Call Us Now</p>
                     </div>
                 </div>
                 <div class="col-md-4 footer-contact d-flex align-items-center">
                     <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
                     <div>
-                        <h5> London, 235 Terry, 10001</h5>
+                        <h5> Kampala, Adam House Plot 11, Portal Avenue</h5>
                         <p>Get Direction</p>
                     </div>
                 </div>

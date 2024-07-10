@@ -14,43 +14,78 @@ class ServicesModuleController extends Controller
      */
     public function webDesign()
     {
-        return view('servicesmodule::index');
+        return view('servicesmodule::webdesign');
     }
     /* Display service application Development view.
     */
     public function applicationDevelopment()
     {
-        return view('servicesmodule::application_development');
+        return view('servicesmodule::applicationdevelopment');
     }
     /* Display service bulk sms view.
     */
     public function bulkSMS()
     {
-        return view('servicesmodule::bulk_sms');
+        return view('servicesmodule::bulksms');
     }
     /* Display service enterprise it view.
     */
     public function enterpriseIt()
     {
-        return view('servicesmodule::enterprise_it');
+        return view('servicesmodule::enterprise');
     }
-    /* Display service portal view.
+    /* Display service cybersecurity view.
     */
-    public function portal()
+    public function cybersecurity()
     {
-        return view('servicesmodule::portal');
+        return view('servicesmodule::cybersecurity');
     }
     /* Display service artificial intellignce view.
     */
     public function artificailIntelligence()
     {
-    return view('servicesmodule::artificial_intellignce');
+    return view('servicesmodule::artificial_intelligence');
     }
     /* Display service dataAnaylsis view.
     */
     public function dataAnaylsis()
     {
-    return view('servicesmodule::data_analysis');
+    return view('servicesmodule::data_analytics');
+    }
+
+    /* Display service cctv_security view.
+    */
+    public function cctv()
+    {
+        return view('servicesmodule::cctv_security');
+    }
+
+    /* Display service networking view.
+    */
+    public function networking()
+    {
+        return view('servicesmodule::networking');
+    }
+
+    /* Display service ussd view.
+    */
+    public function ussd()
+    {
+        return view('servicesmodule::ussd');
+    }
+
+    /* Display service digital marketing view.
+    */
+    public function digitalmarketing()
+    {
+        return view('servicesmodule::digitalmarketing');
+    }
+
+    /* Display it consultancy view.
+    */
+    public function consultancy()
+    {
+        return view('servicesmodule::consultancy');
     }
 
     /**
