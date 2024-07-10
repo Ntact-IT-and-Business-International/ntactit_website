@@ -96,6 +96,25 @@
         vertical-align: middle;
     }
 
+    .package-storage {
+    position: absolute;
+    top: 10px; /* Adjust as necessary */
+    right: 10px; /* Adjust as necessary */
+    background-color: var(--primary-color); /* Use your primary color variable */
+    color: white;
+    border-radius: 50%;
+    width: 60px; /* Adjust as necessary */
+    height: 60px; /* Adjust as necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em; /* Adjust as necessary */
+    font-weight: bold;
+}
+        #navbarDropdown {
+        font-size: 1.2rem; /* Adjust the font size to your preference */
+        }
+
     
     </style>
 

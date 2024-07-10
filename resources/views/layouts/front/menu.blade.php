@@ -4,10 +4,10 @@
                             
                 
                 <h1 class="navbar-brand d-flex align-items-center" href="index.html">
-                    <a class="navbar-brand" href="#index.html">
-                        <img src="assets/images/logo-ntact.png" alt="Your logo" title="Your logo" style="height:75px;" />
+                    <a class="navbar-brand" href="{{('/')}}">
+                        <img src="{{ asset('assets/images/logo12.png')}}" alt="Your logo" title="Your logo" style="height:75px;" />
                     </a> 
-                    <span class="lostyle-1"style="color: white;">TACT-IT</span>
+                   <!-- <span class="lostyle-1"style="color: white;">TACT-IT</span> -->
                 
                 </h1>
             
@@ -23,7 +23,7 @@
                 <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Services
+                            Services <span class="caret"></span>
                             <!-- ▼ Arrow indicator -->
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -38,33 +38,43 @@
                             <a class="dropdown-item" href="/service/consultancy">I.T Consultancy </a>
                             <a class="dropdown-item" href="/service/digitalmarketing">Digital Marketing </a>
                             <a class="dropdown-item" href="/service/ussd">USSD Applications</a>
-                            <a class="dropdown-item" href="/service/cctv">CCTV & Security Camera Installations </a>
+                            <a class="dropdown-item" href="/service/cctv">CCTV Camera Installations </a>
                         </div>
                         </li>
 
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Industries
+                            Industries <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Education <span class="caret-right"></span></a>
                             <div class="collapse" id="educationCollapse">
-                                <a class="dropdown-item sub-item" href="#">School Management System</a>
-                                <a class="dropdown-item sub-item" href="#">E-learning Platforms</a>
-                                <a class="dropdown-item sub-item" href="#">Campus WIFI & Networking</a>
-                                <a class="dropdown-item sub-item" href="#">Classroom Technology</a>
-                                <a class="dropdown-item sub-item" href="#">I.T Support & Maintainence</a>
-                                <a class="dropdown-item sub-item" href="#">Digital Specialised Courses</a>
+                                <a class="dropdown-item sub-item" href="{{ route('School Management System') }}">School Management System</a>
+                                <a class="dropdown-item sub-item" href="{{ route('elearning') }}">E-learning Platforms</a>
+                                <a class="dropdown-item sub-item" href="{{ route('campusnetworking') }}">Campus WIFI & Networking</a>
+                                <a class="dropdown-item sub-item" href="{{ route('classroomtechnology') }}">Classroom Technology</a>
+                                <a class="dropdown-item sub-item" href="{{ route('supportandmaintainence') }}">I.T Support & Maintainence</a>
+                                <a class="dropdown-item sub-item" href="{{ route('digitalspecialisedcourses') }}">Digital Specialised Courses</a>
                             </div>
                             <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#healthCollapse" aria-expanded="false" aria-controls="healthCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#healthCollapse').collapse('toggle');">Health <span class="caret-right"></span></a>
                             <div class="collapse" id="healthCollapse">
-                                <a class="dropdown-item sub-item" href="#">Electronic Medical Records</a>
-                                <a class="dropdown-item sub-item" href="#">Telemedicine Solutions</a>
-                                <a class="dropdown-item sub-item" href="#">Health Analytics</a>
-                                <a class="dropdown-item sub-item" href="#">Cybersecurity for Health</a>
-                                <a class="dropdown-item sub-item" href="#">IoT-enabled Medical Devices</a>
+                                <a class="dropdown-item sub-item" href="{{ route('electronicmedicalrecords') }}">Electronic Medical Records</a>
+                                <a class="dropdown-item sub-item" href="{{ route('telemedicine') }}">Telemedicine Solutions</a>
+                                <a class="dropdown-item sub-item" href="{{ route('healthanalytics') }}">Health Analytics</a>
+                                <a class="dropdown-item sub-item" href="{{ route('healthcybersecurity') }}">Cybersecurity for Health</a>
+                                <a class="dropdown-item sub-item" href="{{ route('iot_enabledmedicaldevices') }}">IoT-enabled Medical Devices</a>
                             </div>
+
                             <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessCollapse" aria-expanded="false" aria-controls="businessCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessCollapse').collapse('toggle');">Business <span class="caret-right"></span></a>
+                            <div class="collapse" id="businessCollapse">
+                                
+                            </div>
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessCollapse" aria-expanded="false" aria-controls="businessCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessCollapse').collapse('toggle');">Finance <span class="caret-right"></span></a>
+                            <div class="collapse" id="businessCollapse">
+                                
+                            </div>
+
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessCollapse" aria-expanded="false" aria-controls="businessCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessCollapse').collapse('toggle');">Real Estate <span class="caret-right"></span></a>
                             <div class="collapse" id="businessCollapse">
                                 
                             </div>
@@ -76,7 +86,7 @@
                             <div class="collapse" id="educationCollapse">
                                 
                             </div>
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Construction <span class="caret-right"></span></a>
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Human Resource <span class="caret-right"></span></a>
                             <div class="collapse" id="educationCollapse">
                                 
                             </div>
@@ -84,16 +94,16 @@
                         </div>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button">
                             Insights
-                            <!-- ▼ Arrow indicator -->
                         </a>
-                        </li>
+                    </li>
+                    
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Company
+                        Company <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Education <span class="caret-right"></span></a>

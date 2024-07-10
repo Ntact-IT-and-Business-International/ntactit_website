@@ -1,33 +1,39 @@
-@extends('layouts.app')
+@extends('template')
 
-@section('title', 'application')
+@section('title', 'application development')
 
 @section('content')
-   <!-- about section -->
-   <section>
-   <div class="w3l-content-photo-5 py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <div class="row align-items-center">
-            <div class="col-lg-6 content-image order-lg-first order-last">
-                <a href="#image"><img src="assets/images/img2.jpg" class="img-responsive" alt="content-photo"></a>
-            </div>
-            <div class="col-lg-6 col-md-10 mx-auto content-right mb-lg-0 mb-5 pl-lg-5 order-lg-last order-first">
-                <h3 class="title-style-2">Application Development</h3>
-                <p class="my-3"> In the era , having a strong mobile presence is crucial for businesses of all sizes. Our mobile app
-                    development services cater to both iOS and Android platforms, allowing you to reach a wider audience
-                    and provide a tailored experience for your customers. From ideation to deployment, our team of skilled
-                    app developers will guide you through the entire process, ensuring your mobile app is feature-rich,
-                    intuitive, and optimized for performance. </p>
-
-                <a href="#small-dialog" class="popup-with-zoom-anim d-flex align-items-center mt-md-5 mt-4">
-                    <a href="about.html" class="btn btn-style mt-md-5 mt-4">Contact Us For More Details</a>
-                </a>
-
-            </div>
-        </div>
-    </div>
-</div>
-<section>
-<!-- //about section -->
+   <!-- Application Development -->
+   <!-- Banner bottom section -->
+   <section class="w3l-aboutblock py-5">
+       <div class="container py-md-5 py-sm-4">
+           <div class="row">
+               <div class="col-lg-6 content-image order-lg-first order-last">
+                   <a href="#image"><img src="{{ asset ('assets/images/blog6.jpg')}}" class="img-responsive" alt="content-photo"></a>
+               </div>
+               <div class="col-lg-6 about-right-faq align-self pl-lg-5">
+                   <h3 class="title-style">Application Development </h3>
+                   <p class="mt-2">Application development services offered by NTACT IT provide businesses and organizations with the expertise and resources to develop custom software applications. These services include designing, coding, testing, and maintaining applications tailored to specific business needs.</p>
+                   <div class="mt-4 pt-md-2">
+                       <div class="about-info-m d-flex">
+                           <div class="icon-style-ab mr-4">
+                               <i class="fas fa-laptop-code"></i>
+                           </div>
+                           <div class="about-detail">
+                               <h4>Features</h4>
+                               <p><b>Custom Software Development:</b> Tailored solutions designed to meet the unique requirements of a business, providing a competitive edge.</p>
+                               <p><b>API Integration:</b> Seamless integration of various APIs to enhance functionality and improve user experience within the application.</p>
+                               <p><b>User-Centric Design:</b> Focused on creating intuitive and engaging user interfaces to ensure a positive user experience.</p>
+                               <p><b>Agile Methodologies:</b> Employing agile development practices to deliver iterative and incremental progress, ensuring flexibility and responsiveness to changes.</p>
+                               <p><b>Maintenance and Support:</b> Ongoing support and maintenance services to ensure the application remains up-to-date and performs optimally.</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- //Banner bottom section -->
+   <!-- //About section -->
 
 @endsection

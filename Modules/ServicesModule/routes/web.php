@@ -28,5 +28,5 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/networking', 'ServicesModuleController@networking')->name('Networking');
     Route::get('/cybersecurity', 'ServicesModuleController@cybersecurity')->name('CyberSecurity');
     Route::get('/digitalmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
-
+    Route::get('/consultancy', 'ServicesModuleController@Consultancy')->name('Consultancy');
 });

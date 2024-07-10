@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('template')
 
 @section('title', 'application')
 
