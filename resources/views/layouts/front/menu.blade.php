@@ -32,7 +32,7 @@
                             <a class="dropdown-item" href="/service/bulk-sms">Bulk SMS</a>
                             <a class="dropdown-item" href="/service/enterprise-it">Enterprise I.T</a>
                             <a class="dropdown-item" href="/service/cybersecurity">CyberSecurity </a>
-                            <a class="dropdown-item" href="/service/artificial_intelligence">Artificial Intelligence </a>
+                            <a class="dropdown-item" href="/service/artificialintelligence">Artificial Intelligence </a>
                             <a class="dropdown-item" href="/service/data_anlytics">Data Analytics </a>
                             <a class="dropdown-item" href="/service/networking">Networking </a>
                             <a class="dropdown-item" href="/service/consultancy">I.T Consultancy </a>

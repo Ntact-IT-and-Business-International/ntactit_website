@@ -21,7 +21,7 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/bulk-sms', 'ServicesModuleController@bulkSMS')->name('Bulk SMS');
     Route::get('/enterprise-it', 'ServicesModuleController@enterpriseIt')->name('Enterprise It');
     Route::get('/cybersecurity', 'ServicesModuleController@portal')->name('cybersecurity');
-    Route::get('/artificial-intelligence', 'ServicesModuleController@artificailIntelligence')->name('Artificail Intelligence');
+    Route::get('/artificialintelligence', 'ServicesModuleController@artificailIntelligence')->name('Artificail Intelligence');
     Route::get('/data-analysis', 'ServicesModuleController@dataAnaylsis')->name('Data Anayltics');
     Route::get('/ussd', 'ServicesModuleController@ussd')->name('USSD');
     Route::get('/cctv', 'ServicesModuleController@cctv')->name('CCTV');
