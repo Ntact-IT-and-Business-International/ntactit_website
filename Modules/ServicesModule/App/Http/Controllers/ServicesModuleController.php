@@ -48,7 +48,7 @@ class ServicesModuleController extends Controller
     }
     /* Display service dataAnaylsis view.
     */
-    public function dataAnaylsis()
+    public function data_analytics()
     {
     return view('servicesmodule::data_analytics');
     }

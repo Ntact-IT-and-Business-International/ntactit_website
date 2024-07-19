@@ -97,6 +97,260 @@ class IndustryModuleController extends Controller
     }
 
     /**
+     * Display a healthanalytics.
+     */
+    public function healthanalytics()
+    {
+        return view('industrymodule::health.healthanalytics');
+    }
+
+        /**
+     * Display fintech solutions.
+     */
+    public function fintechSolutions()
+    {
+        return view('industrymodule::business_finance.fintech_solutions');
+    }
+
+    /**
+     * Display financial analytics.
+     */
+    public function financialAnalytics()
+    {
+        return view('industrymodule::business_finance.financial_analytics');
+    }
+
+    /**
+     * Display blockchain finance.
+     */
+    public function blockchainFinance()
+    {
+        return view('industrymodule::business_finance.blockchain_finance');
+    }
+
+    /**
+     * Display ERP systems.
+     */
+    public function erpSystems()
+    {
+        return view('industrymodule::business_finance.erp_systems');
+    }
+
+    /**
+     * Display automated trading platforms.
+     */
+    public function automatedTrading()
+    {
+        return view('industrymodule::business_finance.automated_trading');
+    }
+
+    /**
+     * Display mobile banking solutions.
+     */
+    public function mobileBanking()
+    {
+        return view('industrymodule::business_finance.mobile_banking');
+    }
+
+
+    /**
+     * Display property management systems.
+     */
+    public function propertyManagement()
+    {
+        return view('industrymodule::real_estate.property_management');
+    }
+
+    /**
+     * Display virtual tours and AR.
+     */
+    public function virtualTours()
+    {
+        return view('industrymodule::real_estate.virtual_tours');
+    }
+
+    /**
+     * Display real estate analytics.
+     */
+    public function realEstateAnalytics()
+    {
+        return view('industrymodule::real_estate.real_estate_analytics');
+    }
+
+    /**
+     * Display CRM solutions.
+     */
+    public function crmSolutions()
+    {
+        return view('industrymodule::real_estate.crm_solutions');
+    }
+
+    /**
+     * Display tenant and owner portals.
+     */
+    public function tenantPortals()
+    {
+        return view('industrymodule::real_estate.tenant_portals');
+    }
+
+    /**
+     * Display IoT for smart buildings.
+     */
+    public function iotRealEstate()
+    {
+        return view('industrymodule::real_estate.iot_real_estate');
+    }
+
+
+        /**
+     * Display precision farming solutions.
+     */
+    public function precisionFarming()
+    {
+        return view('industrymodule::smart_agriculture.precision_farming');
+    }
+
+    /**
+     * Display drone technology.
+     */
+    public function droneTechnology()
+    {
+        return view('industrymodule::smart_agriculture.drone_technology');
+    }
+
+    /**
+     * Display crop monitoring systems.
+     */
+    public function cropMonitoring()
+    {
+        return view('industrymodule::smart_agriculture.crop_monitoring');
+    }
+
+    /**
+     * Display smart irrigation systems.
+     */
+    public function smartIrrigation()
+    {
+        return view('industrymodule::smart_agriculture.smart_irrigation');
+    }
+
+    /**
+     * Display agricultural analytics.
+     */
+    public function agriAnalytics()
+    {
+        return view('industrymodule::smart_agriculture.agri_analytics');
+    }
+
+    /**
+     * Display livestock management solutions.
+     */
+    public function livestockManagement()
+    {
+        return view('industrymodule::smart_agriculture.livestock_management');
+    }
+
+
+
+        /**
+     * Display cybersecurity solutions.
+     */
+    public function cyberSecurity()
+    {
+        return view('industrymodule::security.cyber_security');
+    }
+
+    /**
+     * Display network security.
+     */
+    public function networkSecurity()
+    {
+        return view('industrymodule::security.network_security');
+    }
+
+    /**
+     * Display physical security systems.
+     */
+    public function physicalSecurity()
+    {
+        return view('industrymodule::security.physical_security');
+    }
+
+    /**
+     * Display security consulting.
+     */
+    public function securityConsulting()
+    {
+        return view('industrymodule::security.security_consulting');
+    }
+
+    /**
+     * Display threat detection and response.
+     */
+    public function threatDetection()
+    {
+        return view('industrymodule::security.threat_detection');
+    }
+
+    /**
+     * Display identity and access management.
+     */
+    public function identityManagement()
+    {
+        return view('industrymodule::security.identity_management');
+    }
+
+        /**
+     * Display HR management systems.
+     */
+    public function hrManagement()
+    {
+        return view('industrymodule::human_resource.hr_management');
+    }
+
+    /**
+     * Display payroll solutions.
+     */
+    public function payrollSolutions()
+    {
+        return view('industrymodule::human_resource.payroll_solutions');
+    }
+
+    /**
+     * Display talent acquisition platforms.
+     */
+    public function talentAcquisition()
+    {
+        return view('industrymodule::human_resource.talent_acquisition');
+    }
+
+    /**
+     * Display employee engagement tools.
+     */
+    public function employeeEngagement()
+    {
+        return view('industrymodule::human_resource.employee_engagement');
+    }
+
+    /**
+     * Display performance management.
+     */
+    public function performanceManagement()
+    {
+        return view('industrymodule::human_resource.performance_management');
+    }
+
+    /**
+     * Display training and development.
+     */
+    public function trainingDevelopment()
+    {
+        return view('industrymodule::human_resource.training_development');
+    }
+
+
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()

@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Features</h4>
                                <p><b>Custom Software Development:</b> Tailored solutions designed to meet the unique requirements of a business, providing a competitive edge.</p>
+                               <br>
                                <p><b>API Integration:</b> Seamless integration of various APIs to enhance functionality and improve user experience within the application.</p>
+                               <br>
                                <p><b>User-Centric Design:</b> Focused on creating intuitive and engaging user interfaces to ensure a positive user experience.</p>
+                               <br>
                                <p><b>Agile Methodologies:</b> Employing agile development practices to deliver iterative and incremental progress, ensuring flexibility and responsiveness to changes.</p>
+                               <br>
                                <p><b>Maintenance and Support:</b> Ongoing support and maintenance services to ensure the application remains up-to-date and performs optimally.</p>
                            </div>
                        </div>

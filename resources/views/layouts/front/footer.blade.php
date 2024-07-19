@@ -33,23 +33,25 @@
             <div class="col-lg-3 col-sm-6 sub-two-right pl-lg-5 mt-sm-0 mt-5">
                 <h6>Our Services</h6>
                 <ul>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Web Design</a>
+                    <li><a href="/service/web-design"><span class="fas fa-angle-right mr-2"></span>Web Design</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>CCTV installations</a>
+                    <li><a href="/service/cctv"><span class="fas fa-angle-right mr-2"></span>CCTV installations</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Application Development</a>
+                    <li><a href="/service/application-development"><span class="fas fa-angle-right mr-2"></span>Application Development</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Bulk SMS </a>
+                    <li><a href="/service/bulk-sms"><span class="fas fa-angle-right mr-2"></span>Bulk SMS </a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>CyberSecurity</a>
+                    <li><a href="/service/cybersecurity"><span class="fas fa-angle-right mr-2"></span>CyberSecurity</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>IT Consultancy</a>
+                    <li><a href="/service/consultancy"><span class="fas fa-angle-right mr-2"></span>IT Consultancy</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>USSD Applications</a>
+                    <li><a href="/service/ussd"><span class="fas fa-angle-right mr-2"></span>USSD Applications</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Networking</a>
+                    <li><a href="/service/networking"><span class="fas fa-angle-right mr-2"></span>Networking</a>
                     </li>
-                    <li><a href="services.html"><span class="fas fa-angle-right mr-2"></span>Entreprise I.T</a>
+                    <li><a href="/service/enterprise-it"><span class="fas fa-angle-right mr-2"></span>Entreprise I.T</a>
+                    </li>
+                    <li><a href="/service/data_analytics"><span class="fas fa-angle-right mr-2"></span>Data Analytics</a>
                     </li>
                 </ul>
             </div>

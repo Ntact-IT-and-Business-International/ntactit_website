@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Features</h4>
                                <p><b>Machine Learning:</b> Development and deployment of machine learning models to analyze data, predict outcomes, and automate decision-making processes.</p>
+                               <br>
                                <p><b>Natural Language Processing (NLP):</b> Implementing NLP techniques to enable machines to understand, interpret, and respond to human language.</p>
+                               <br>
                                <p><b>Computer Vision:</b> Utilizing computer vision technology to interpret and process visual data, enhancing capabilities in areas such as image recognition and video analysis.</p>
+                               <br>
                                <p><b>AI Integration:</b> Seamless integration of AI solutions into existing systems and workflows to improve efficiency and effectiveness.</p>
+                               <br>
                                <p><b>Analytics and Reporting:</b> Providing insights through advanced analytics and reporting tools to help businesses make data-driven decisions and measure the impact of AI initiatives.</p>
                            </div>
                        </div>

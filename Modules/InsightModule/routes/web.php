@@ -14,6 +14,7 @@ use Modules\InsightModule\App\Http\Controllers\InsightModuleController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('insightmodule', InsightModuleController::class)->names('insightmodule');
+Route::group(['prefix' => 'insight'], function () {
+    Route::get('/insights', 'InsightModuleController@insights')->name('insight');
+    
 });

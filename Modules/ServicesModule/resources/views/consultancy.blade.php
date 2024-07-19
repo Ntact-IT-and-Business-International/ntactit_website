@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Services Offered</h4>
                                <p><b>IT Strategy Development:</b> Crafting strategic plans aligned with business goals to maximize IT investments and drive growth.</p>
+                               <br>
                                <p><b>Technology Implementation:</b> Implementing cutting-edge technologies tailored to enhance operational efficiency and business performance.</p>
+                               <br>
                                <p><b>System Integration:</b> Integrating diverse IT systems and applications to streamline processes and improve collaboration.</p>
+                               <br>
                                <p><b>Advisory Support:</b> Providing ongoing advisory services to navigate IT challenges, optimize resources, and mitigate risks.</p>
+                               <br>
                                <p><b>Digital Transformation:</b> Guiding organizations through digital transformation initiatives to innovate and stay competitive in the digital age.</p>
                            </div>
                        </div>

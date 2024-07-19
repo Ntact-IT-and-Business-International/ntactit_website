@@ -12,7 +12,7 @@ class InsightModuleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function insights()
     {
         return view('insightmodule::index');
     }

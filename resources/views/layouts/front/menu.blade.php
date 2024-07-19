@@ -5,7 +5,7 @@
                 
                 <h1 class="navbar-brand d-flex align-items-center" href="index.html">
                     <a class="navbar-brand" href="{{('/')}}">
-                        <img src="{{ asset('assets/images/logo12.png')}}" alt="Your logo" title="Your logo" style="height:75px;" />
+                        <img src="{{ asset('assets/images/ntact.png')}}" alt="Ntact it" title="Ntact it" style="height:65px;" />
                     </a> 
                    <!-- <span class="lostyle-1"style="color: white;">TACT-IT</span> -->
                 
@@ -32,8 +32,8 @@
                             <a class="dropdown-item" href="/service/bulk-sms">Bulk SMS</a>
                             <a class="dropdown-item" href="/service/enterprise-it">Enterprise I.T</a>
                             <a class="dropdown-item" href="/service/cybersecurity">CyberSecurity </a>
-                            <a class="dropdown-item" href="/service/artificialintelligence">Artificial Intelligence </a>
-                            <a class="dropdown-item" href="/service/data_anlytics">Data Analytics </a>
+                            <a class="dropdown-item" href="/service/artificialphintelligence">Artificial Intelligence </a>
+                            <a class="dropdown-item" href="/service/data_analytics">Data Analytics </a>
                             <a class="dropdown-item" href="/service/networking">Networking </a>
                             <a class="dropdown-item" href="/service/consultancy">I.T Consultancy </a>
                             <a class="dropdown-item" href="/service/digitalmarketing">Digital Marketing </a>
@@ -64,38 +64,60 @@
                                 <a class="dropdown-item sub-item" href="{{ route('healthcybersecurity') }}">Cybersecurity for Health</a>
                                 <a class="dropdown-item sub-item" href="{{ route('iot_enabledmedicaldevices') }}">IoT-enabled Medical Devices</a>
                             </div>
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessFinanceCollapse" aria-expanded="false" aria-controls="businessFinanceCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessFinanceCollapse').collapse('toggle');">Business & Finance <span class="caret-right"></span></a>
+                            <div class="collapse" id="businessFinanceCollapse">
+                                <a class="dropdown-item sub-item" href="{{ route('fintechSolutions') }}">Fintech Solutions</a>
+                                <a class="dropdown-item sub-item" href="{{ route('financialAnalytics') }}">Financial Analytics</a>
+                                <a class="dropdown-item sub-item" href="{{ route('blockchainFinance') }}">Blockchain for Finance</a>
+                                <a class="dropdown-item sub-item" href="{{ route('erpSystems') }}">ERP Systems</a>
+                                <a class="dropdown-item sub-item" href="{{ route('automatedTrading') }}">Automated Trading Platforms</a>
+                                <a class="dropdown-item sub-item" href="{{ route('mobileBanking') }}">Mobile Banking Solutions</a>
+                            </div>
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#realEstateCollapse" aria-expanded="false" aria-controls="realEstateCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#realEstateCollapse').collapse('toggle');">Real Estate <span class="caret-right"></span></a>
+                            <div class="collapse" id="realEstateCollapse">
+                                <a class="dropdown-item sub-item" href="{{ route('propertyManagement') }}">Property Management Systems</a>
+                                <a class="dropdown-item sub-item" href="{{ route('virtualTours') }}">Virtual Tours & AR</a>
+                                <a class="dropdown-item sub-item" href="{{ route('realEstateAnalytics') }}">Real Estate Analytics</a>
+                                <a class="dropdown-item sub-item" href="{{ route('crmSolutions') }}">CRM Solutions</a>
+                                <a class="dropdown-item sub-item" href="{{ route('tenantPortals') }}">Tenant & Owner Portals</a>
+                                <a class="dropdown-item sub-item" href="{{ route('iotRealEstate') }}">IoT for Smart Buildings</a>
+                            </div>
 
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessCollapse" aria-expanded="false" aria-controls="businessCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessCollapse').collapse('toggle');">Business <span class="caret-right"></span></a>
-                            <div class="collapse" id="businessCollapse">
-                                
-                            </div>
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessCollapse" aria-expanded="false" aria-controls="businessCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessCollapse').collapse('toggle');">Finance <span class="caret-right"></span></a>
-                            <div class="collapse" id="businessCollapse">
-                                
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#smartAgricultureCollapse" aria-expanded="false" aria-controls="smartAgricultureCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#smartAgricultureCollapse').collapse('toggle');">Smart Agriculture <span class="caret-right"></span></a>
+                            <div class="collapse" id="smartAgricultureCollapse">
+                                <a class="dropdown-item sub-item" href="{{ route('precisionFarming') }}">Precision Farming Solutions</a>
+                                <a class="dropdown-item sub-item" href="{{ route('droneTechnology') }}">Drone Technology</a>
+                                <a class="dropdown-item sub-item" href="{{ route('cropMonitoring') }}">Crop Monitoring Systems</a>
+                                <a class="dropdown-item sub-item" href="{{ route('smartIrrigation') }}">Smart Irrigation Systems</a>
+                                <a class="dropdown-item sub-item" href="{{ route('agriAnalytics') }}">Agricultural Analytics</a>
+                                <a class="dropdown-item sub-item" href="{{ route('livestockManagement') }}">Livestock Management Solutions</a>
                             </div>
 
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#businessCollapse" aria-expanded="false" aria-controls="businessCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#businessCollapse').collapse('toggle');">Real Estate <span class="caret-right"></span></a>
-                            <div class="collapse" id="businessCollapse">
-                                
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#securityCollapse" aria-expanded="false" aria-controls="securityCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#securityCollapse').collapse('toggle');">Security <span class="caret-right"></span></a>
+                            <div class="collapse" id="securityCollapse">
+                                <a class="dropdown-item sub-item" href="{{ route('cyberSecurity') }}">Cybersecurity Solutions</a>
+                                <a class="dropdown-item sub-item" href="{{ route('networkSecurity') }}">Network Security</a>
+                                <a class="dropdown-item sub-item" href="{{ route('physicalSecurity') }}">Physical Security Systems</a>
+                                <a class="dropdown-item sub-item" href="{{ route('securityConsulting') }}">Security Consulting</a>
+                                <a class="dropdown-item sub-item" href="{{ route('threatDetection') }}">Threat Detection & Response</a>
+                                <a class="dropdown-item sub-item" href="{{ route('identityManagement') }}">Identity & Access Management</a>
                             </div>
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Smart Agriculture <span class="caret-right"></span></a>
-                            <div class="collapse" id="educationCollapse">
-                                
+
+                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#humanResourceCollapse" aria-expanded="false" aria-controls="humanResourceCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#humanResourceCollapse').collapse('toggle');">Human Resource <span class="caret-right"></span></a>
+                            <div class="collapse" id="humanResourceCollapse">
+                                <a class="dropdown-item sub-item" href="{{ route('hrManagement') }}">HR Management Systems</a>
+                                <a class="dropdown-item sub-item" href="{{ route('payrollSolutions') }}">Payroll Solutions</a>
+                                <a class="dropdown-item sub-item" href="{{ route('talentAcquisition') }}">Talent Acquisition Platforms</a>
+                                <a class="dropdown-item sub-item" href="{{ route('employeeEngagement') }}">Employee Engagement Tools</a>
+                                <a class="dropdown-item sub-item" href="{{ route('performanceManagement') }}">Performance Management</a>
+                                <a class="dropdown-item sub-item" href="{{ route('trainingDevelopment') }}">Training & Development</a>
                             </div>
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Security <span class="caret-right"></span></a>
-                            <div class="collapse" id="educationCollapse">
-                                
-                            </div>
-                            <a class="dropdown-item" href="#" data-toggle="collapse" data-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse" onclick="event.preventDefault(); event.stopPropagation(); $('#educationCollapse').collapse('toggle');">Human Resource <span class="caret-right"></span></a>
-                            <div class="collapse" id="educationCollapse">
-                                
-                            </div>
-                    
+                            
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button">
+                        <a class="nav-link" href="/insight/insights" id="navbarDropdown" role="button">
                             Insights
                         </a>
                     </li>
@@ -144,11 +166,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link" href="/insight/insights" id="navbarDropdown" role="button">
+                            Contacts
+                        </a>
                     </li>
+
               
                     <li class="nav-item">
-                        <a href="about.html" class="btn btn-style mt-md-1 mt-2">Contact</a>
+                        <a href="{{ route('login')}}l" class="btn btn-style mt-md-1 mt-2">Login</a>
                     </li>
                     <!-- search button   commented out
                     <div class="search-right ml-lg-3">

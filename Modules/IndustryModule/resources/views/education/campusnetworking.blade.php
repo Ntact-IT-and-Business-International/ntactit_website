@@ -1,7 +1,5 @@
 @extends('template')
 
-@section('title', 'application')
-
 @section('content')
    <!-- bulk sms-->
    <!-- banner bottom section -->

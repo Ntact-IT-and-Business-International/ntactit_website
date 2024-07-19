@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Services Offered</h4>
                                <p><b>Network Management:</b> Designing, implementing, and managing robust network infrastructures tailored to enterprise needs.</p>
+                               <br>
                                <p><b>Server Administration:</b> Ensuring reliable and secure server operations, including maintenance, upgrades, and performance optimization.</p>
+                              <br>
                                <p><b>Cloud Solutions:</b> Providing scalable and cost-effective cloud services, including migration, management, and optimization of cloud environments.</p>
+                               <br>
                                <p><b>Cybersecurity:</b> Implementing advanced security measures and protocols to protect enterprise systems, data, and networks from cyber threats.</p>
+                               <br>
                                <p><b>IT Consulting:</b> Offering strategic IT advice and consultancy to align technology investments with business objectives and drive digital transformation.</p>
                            </div>
                        </div>

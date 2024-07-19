@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Services Offered</h4>
                                <p><b>Risk Assessment:</b> Identifying and evaluating cyber security risks specific to your organization.</p>
+                               <br>
                                <p><b>Security Audits:</b> Conducting thorough audits to assess the effectiveness of current security measures.</p>
+                               <br>
                                <p><b>Threat Detection:</b> Implementing advanced tools and techniques to detect and respond to cyber threats in real-time.</p>
+                               <br>
                                <p><b>Incident Response:</b> Developing and implementing strategies to mitigate and recover from cyber security incidents.</p>
+                               <br>
                                <p><b>Security Management:</b> Providing ongoing monitoring, updates, and improvements to maintain robust cyber security defenses.</p>
                            </div>
                        </div>

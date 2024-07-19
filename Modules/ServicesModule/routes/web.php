@@ -22,7 +22,7 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/enterprise-it', 'ServicesModuleController@enterpriseIt')->name('Enterprise It');
     Route::get('/cybersecurity', 'ServicesModuleController@portal')->name('cybersecurity');
     Route::get('/artificialintelligence', 'ServicesModuleController@artificailIntelligence')->name('Artificail Intelligence');
-    Route::get('/data-analysis', 'ServicesModuleController@dataAnaylsis')->name('Data Anayltics');
+    Route::get('/data_analytics', 'ServicesModuleController@data_analytics')->name('Data Anayltics');
     Route::get('/ussd', 'ServicesModuleController@ussd')->name('USSD');
     Route::get('/cctv', 'ServicesModuleController@cctv')->name('CCTV');
     Route::get('/networking', 'ServicesModuleController@networking')->name('Networking');

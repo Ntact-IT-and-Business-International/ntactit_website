@@ -15,6 +15,8 @@ Author URL: http://w3layouts.com
     <!-- banner section -->
     @include('layouts.front.slider')
     <!-- //banner section -->
+
+    
     
     <!-- footer -->
    @include('layouts.front.footer')

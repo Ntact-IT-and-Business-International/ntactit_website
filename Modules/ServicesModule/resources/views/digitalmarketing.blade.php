@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Services Offered</h4>
                                <p><b>Search Engine Optimization (SEO):</b> Optimizing websites to improve search engine rankings and increase organic traffic.</p>
+                               <br>
                                <p><b>Pay-Per-Click (PPC) Advertising:</b> Managing PPC campaigns on platforms like Google Ads to drive targeted traffic and conversions.</p>
+                               <br>
                                <p><b>Social Media Marketing:</b> Creating and managing social media campaigns to build brand awareness and engage with audiences.</p>
+                               <br>
                                <p><b>Content Strategy:</b> Developing content plans and strategies to attract, educate, and convert prospects into customers.</p>
+                               <br>
                                <p><b>Analytics and Reporting:</b> Monitoring campaign performance, analyzing data, and providing actionable insights for continuous improvement.</p>
                            </div>
                        </div>

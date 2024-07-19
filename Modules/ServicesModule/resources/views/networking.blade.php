@@ -22,9 +22,13 @@
                            <div class="about-detail">
                                <h4>Services Offered</h4>
                                <p><b>Network Planning:</b> Strategic planning and design of network architectures tailored to organizational needs and growth.</p>
+                               <br>
                                <p><b>Network Configuration:</b> Configuring network devices, protocols, and settings to ensure optimal performance and security.</p>
+                               <br>
                                <p><b>Network Optimization:</b> Continuous monitoring and optimization of network resources and bandwidth to enhance efficiency.</p>
+                               <br>
                                <p><b>Network Security:</b> Implementing robust security measures, including firewalls, encryption, and intrusion detection systems, to protect against cyber threats.</p>
+                               <br>
                                <p><b>Network Management:</b> Providing ongoing management and support to maintain reliable and secure network operations.</p>
                            </div>
                        </div>
