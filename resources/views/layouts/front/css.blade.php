@@ -44,7 +44,7 @@
       margin-top: 0;
       display: none;
       position: absolute;
-      z-index: 1000; /* Ensure dropdown is above other content */
+      z-index: 1030; /* Ensure dropdown is above other content */
     }
 
     .dropdown-submenu:hover .dropdown-menu {
@@ -58,6 +58,7 @@
     /* Adjust dropdown position to fit within navbar */
     .navbar-nav {
       overflow: visible; /* Allow overflow for absolute positioning */
+      transform: none;
     }
 
     /* Ensure dropdowns stay within navbar bounds */

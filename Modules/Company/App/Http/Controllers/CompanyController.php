@@ -1,34 +1,42 @@
 <?php
 
-namespace Modules\ContactModule\App\Http\Controllers;
+namespace Modules\Company\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ContactModuleController extends Controller
+class CompanyController extends Controller
 {
     /**
-     * Display a school management system.
+     * Display a listing of the resource.
      */
-    public function contact()
+    public function about()
     {
-        return view('contactmodule::contact');
+        return view('company::about');
     }
-<<<<<<< HEAD
-    //This function gets contact form for sending messages from users
-    public function contactUsForm(){
-        return view('contactmodule::contact_form');
+    /**
+     * Display the Careers page.
+     */
+    public function careers()
+    {
+        return view('company::careers');
     }
-=======
->>>>>>> 48b921f17b117d5c17fe63818676192bbdbd84e1
+
+    /**
+     * Display the Corporate Social Responsibility (CSR) page.
+     */
+    public function csr()
+    {
+        return view('company::csr');
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('contactmodule::create');
+        return view('company::create');
     }
 
     /**
@@ -44,7 +52,7 @@ class ContactModuleController extends Controller
      */
     public function show($id)
     {
-        return view('contactmodule::show');
+        return view('company::show');
     }
 
     /**
@@ -52,7 +60,7 @@ class ContactModuleController extends Controller
      */
     public function edit($id)
     {
-        return view('contactmodule::edit');
+        return view('company::edit');
     }
 
     /**
