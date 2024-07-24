@@ -16,13 +16,10 @@ class ContactModuleController extends Controller
     {
         return view('contactmodule::contact');
     }
-<<<<<<< HEAD
     //This function gets contact form for sending messages from users
     public function contactUsForm(){
         return view('contactmodule::contact_form');
     }
-=======
->>>>>>> 48b921f17b117d5c17fe63818676192bbdbd84e1
     /**
      * Show the form for creating a new resource.
      */
