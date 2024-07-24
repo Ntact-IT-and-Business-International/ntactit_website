@@ -2,5 +2,6 @@
     "ServicesModule": true,
     "IndustryModule": true,
     "InsightModule": true,
-    "ContactModule": true
+    "ContactModule": true,
+    "Company": true
 }

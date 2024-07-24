@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\ContactModule\App\Http\Controllers\ContactModuleController;
+use Modules\Company\App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,8 @@ use Modules\ContactModule\App\Http\Controllers\ContactModuleController;
 |
 */
 
-Route::group([], function () {
-    Route::get('/contact', 'ContactModuleController@contact')->name('contact');
+Route::group(['prefix' => 'company'], function () {
+    Route::get('/about', 'CompanyController@about')->name('about');
+    Route::get('/careers', 'CompanyController@careers')->name('careers');
+    Route::get('/csr', 'CompanyController@csr')->name('csr');
 });

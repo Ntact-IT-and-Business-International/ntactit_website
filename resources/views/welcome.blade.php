@@ -11,12 +11,10 @@ Author URL: http://w3layouts.com
     <!--header-->
     @include('layouts.front.menu')
     <!--//header-->
-
+    @include('layouts.front.services')
     <!-- banner section -->
     @include('layouts.front.slider')
     <!-- //banner section -->
-
-    
     
     <!-- footer -->
    @include('layouts.front.footer')

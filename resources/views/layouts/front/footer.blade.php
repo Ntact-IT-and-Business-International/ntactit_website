@@ -80,31 +80,7 @@
                 </ul>
             </div>
         </div>
-        <div class="sub-contact mt-5 pt-lg-4">
-            <div class="row">
-                <div class="col-md-4 footer-contact d-flex align-items-center">
-                    <span class="fas fa-envelope-open" aria-hidden="true"></span>
-                    <div>
-                        <a href="mailto:info@example.com">info@ntactit.com</a>
-                        <p>Drop Us a Line</p>
-                    </div>
-                </div>
-                <div class="col-md-4 footer-contact d-flex align-items-center activ">
-                    <span class="fas fa-phone-alt" aria-hidden="true"></span>
-                    <div>
-                        <a href="tel:+44-000-888-999">+256 751 114 949</a>
-                        <p>Call Us Now</p>
-                    </div>
-                </div>
-                <div class="col-md-4 footer-contact d-flex align-items-center">
-                    <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
-                    <div>
-                        <h5> Kampala, Adam House Plot 11, Portal Avenue</h5>
-                        <p>Get Direction</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <!-- copyright -->
     <div class="copyright-footer text-center">
