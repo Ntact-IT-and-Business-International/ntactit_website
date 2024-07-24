@@ -166,7 +166,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact/contact-us" id="navbarDropdown" role="button">
+                        <a wire:navigate class="nav-link" href="/contact/contact-us" id="navbarDropdown" role="button">
                             Contacts
                         </a>
                     </li>

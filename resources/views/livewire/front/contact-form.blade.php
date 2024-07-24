@@ -50,34 +50,54 @@
                 </div>
             </div>
             <div class="contact-w3pvt-form mt-5 pt-lg-4">
-                <form method="post" class="w3layouts-contact-fm" action="https://sendmail.w3layouts.com/submitForm">
+            @if (session('msg'))
+                <div class="mb-4 font-medium text-sm text-green-600 msg-bg-success">
+                    {{ session('msg') }}
+                </div>
+            @endif
+                <form wire:submit.prevent="sendMessage" class="w3layouts-contact-fm">
                     <div class="row main-cont-sec">
                         <div class="col-md-6 left-cont-contact">
                             <div class="form-group mb-3">
                                 <label for="w3lName">Your Name</label>
-                                <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder=""
-                                    required="">
+                                <input class="form-control" type="text" wire:model="contact_name" id="w3lName" placeholder="Full Names">
+                                @error('contact_name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group mb-3">
                                 <label for="w3lSender">Your Email</label>
-                                <input class="form-control" type="email" name="w3lSender" id="w3lSender" placeholder=""
-                                    required="">
+                                <input class="form-control" type="email" wire:model="contact_email" id="3lSender" placeholder="Email">
+                                @error('contact_email') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group mb-3">
                                 <label for="w3lSubject">Subject</label>
-                                <input class="form-control" type="text" name="w3lSubject" id="w3lSubject" required="">
+                                <select class="form-control" type="text" wire:model="subject" id="w3">
+                                    <option>Select Subject</option>
+                                    <option value="web design">Web Design</option>
+                                    <option value="app development">Aplication Development</option>
+                                    <option value="bulk sms">Bulk SMS</option>
+                                    <option value="others">Others</option>
+                                </select>
+                                @error('subject') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="w3lSubject">Phone Number</label>
+                                <input class="form-control" type="text" wire:model="phone_number" id="w3">
+                                @error('phone_number') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="col-md-6 right-cont-contact">
                             <div class="form-group">
                                 <label for="w3lSubject">Write Message</label>
-                                <textarea class="form-control" name="w3lMessage" id="w3lMessage" placeholder=""
-                                    required=""></textarea>
+                                <textarea class="form-control" wire:model="message" id="w3lMessage" placeholder=""></textarea>
+                                @error('message') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>
                     <div class="form-group-2 mt-3 text-right">
-                        <button type="submit" class="btn btn-style">Submit Form</button>
+                        <button type="submit" class="btn btn-style">
+                            <span wire:loading wire:target="sendMessage"><i class="fa fa-spinner fa-spin"></i> </span>
+                            <span wire:loading.remove wire:target="sendMessage">Submit</span>
+                        </button>
                     </div>
                 </form>
             </div>
