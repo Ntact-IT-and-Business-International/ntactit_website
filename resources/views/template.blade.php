@@ -9,7 +9,7 @@ Author URL: http://w3layouts.com
 
 <body>
     <!--header-->
-    @include('layouts.front.menu')
+    @include('layouts.front.menu2')
 
     <!--//header-->
     @include('layouts.front.breadcrumb')

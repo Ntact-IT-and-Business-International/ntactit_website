@@ -18,19 +18,19 @@ Route::group([], function () {
     Route::resource('industrymodule', IndustryModuleController::class)->names('industrymodule');
 
     // Education routes
-    Route::get('/elearning', 'IndustryModuleController@elearning')->name('elearning');
-    Route::get('/campusnetworking', 'IndustryModuleController@campusnetworking')->name('campusnetworking');
-    Route::get('/classroomtechnology', 'IndustryModuleController@classroomtechnology')->name('classroomtechnology');
-    Route::get('/digitalspecialisedcourses', 'IndustryModuleController@digitalspecialisedcourses')->name('digitalspecialisedcourses');
-    Route::get('/schoolmanagementsystem', 'IndustryModuleController@schoolmanagementsystem')->name('School Management System');
-    Route::get('/supportandmaintainence', 'IndustryModuleController@supportandmaintainence')->name('supportandmaintainence');
+    Route::get('/e-learning', 'IndustryModuleController@elearning')->name('elearning');
+    Route::get('/campus-networking', 'IndustryModuleController@campusnetworking')->name('campusnetworking');
+    Route::get('/classroom-technology', 'IndustryModuleController@classroomtechnology')->name('classroomtechnology');
+    Route::get('/digital-specialised-courses', 'IndustryModuleController@digitalspecialisedcourses')->name('digitalspecialisedcourses');
+    Route::get('/school-management-system', 'IndustryModuleController@schoolmanagementsystem')->name('School Management System');
+    Route::get('/support-and-maintainence', 'IndustryModuleController@supportandmaintainence')->name('supportandmaintainence');
 
     // Health routes
-    Route::get('/healthcybersecurity', 'IndustryModuleController@healthcybersecurity')->name('healthcybersecurity');
-    Route::get('/electronicmedicalrecords', 'IndustryModuleController@electronicmedicalrecords')->name('electronicmedicalrecords');
-    Route::get('/iot_enabledmedicaldevices', 'IndustryModuleController@iot_enabledmedicaldevices')->name('iot_enabledmedicaldevices');
-    Route::get('/telemedicine', 'IndustryModuleController@telemedicine')->name('telemedicine');
-    Route::get('/healthanalytics', 'IndustryModuleController@healthanalytics')->name('healthanalytics');
+    Route::get('/health-cybersecurity', 'IndustryModuleController@healthcybersecurity')->name('healthcybersecurity');
+    Route::get('/electronic-medical-records', 'IndustryModuleController@electronicmedicalrecords')->name('electronicmedicalrecords');
+    Route::get('/iot_enabled-medical-devices', 'IndustryModuleController@iot_enabledmedicaldevices')->name('iot_enabledmedicaldevices');
+    Route::get('/tele-medicine', 'IndustryModuleController@telemedicine')->name('telemedicine');
+    Route::get('/health-analytics', 'IndustryModuleController@healthanalytics')->name('healthanalytics');
 
     Route::get('/fintech-solutions', 'IndustryModuleController@fintechSolutions')->name('fintechSolutions');
     Route::get('/financial-analytics', 'IndustryModuleController@financialAnalytics')->name('financialAnalytics');
