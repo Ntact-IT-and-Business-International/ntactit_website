@@ -12,6 +12,7 @@ Author URL: http://w3layouts.com
     @include('layouts.front.menu')
 
     <!--//header-->
+    @include('layouts.front.breadcrumb')
     <section>
      @yield('content')
     </section>
