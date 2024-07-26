@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,23 +21,14 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('Dashboard');
-});
+    Route::get('/dashboard', function () { return view('dashboard'); })->name('Dashboard'); });
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('Home');
+Route::get('/', function () { return view('welcome'); })->name('Home');
 
-Route::get('/about', function () {
-    return view('front.about');
-});
+Route::get('/about', function () { return view('front.about'); });
 
-Route::get('/services', function () {
-    return view('front.services');
-});
+Route::get('/services', function () { return view('front.services'); });
 
-Route::get('/contact', function () {
-    return view('front.contact');
-});
+Route::get('/contact', function () { return view('front.contact'); });
+
+Route::get('/logout', [LogoutController::class, 'logoutUser']);

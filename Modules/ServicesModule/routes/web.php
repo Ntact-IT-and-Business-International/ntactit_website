@@ -21,12 +21,17 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/bulk-sms', 'ServicesModuleController@bulkSMS')->name('Bulk SMS');
     Route::get('/enterprise-it', 'ServicesModuleController@enterpriseIt')->name('Enterprise It');
     Route::get('/cybersecurity', 'ServicesModuleController@portal')->name('cybersecurity');
-    Route::get('/artificialintelligence', 'ServicesModuleController@artificailIntelligence')->name('Artificail Intelligence');
+    Route::get('/artificial-intelligence', 'ServicesModuleController@artificailIntelligence')->name('Artificail Intelligence');
     Route::get('/data_analytics', 'ServicesModuleController@data_analytics')->name('Data Anayltics');
     Route::get('/ussd', 'ServicesModuleController@ussd')->name('USSD');
     Route::get('/cctv', 'ServicesModuleController@cctv')->name('CCTV');
     Route::get('/networking', 'ServicesModuleController@networking')->name('Networking');
     Route::get('/cybersecurity', 'ServicesModuleController@cybersecurity')->name('CyberSecurity');
-    Route::get('/digitalmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
+    Route::get('/digita-lmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
     Route::get('/consultancy', 'ServicesModuleController@Consultancy')->name('Consultancy');
+});
+
+
+Route::group(['prefix' => 'service', 'middleware' => ['auth']], function () {
+    Route::get('/get-services', 'ServicesModuleController@services')->name('Services');
 });

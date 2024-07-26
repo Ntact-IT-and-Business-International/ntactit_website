@@ -135,4 +135,10 @@ class ServicesModuleController extends Controller
     {
         //
     }
+    /**
+     * This function gets admin services
+     */
+    public function services(){
+        return view('servicesmodule::services');
+    }
 }
