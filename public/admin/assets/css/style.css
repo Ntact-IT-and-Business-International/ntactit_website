@@ -1,0 +1,11 @@
+.btn-orange {
+   background-color: orange;
+   padding: 2px;
+   color: #ffffff;
+}
+
+.btn-color1 {
+    background-color: rgba(14, 1, 31, 0.733);
+    padding: 2px;
+    color: #ffffff;
+}

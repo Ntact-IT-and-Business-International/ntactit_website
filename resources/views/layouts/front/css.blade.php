@@ -11,8 +11,9 @@
    
     <!-- Font-Awesome-Icons-CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css')}}">
-    <!-- Template CSS Style link -->
+    <!-- Template CSS Style link --> 
     <link rel="stylesheet" href="{{ asset('assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin\assets\css\style.css')}}">
 
     <style>
         body {

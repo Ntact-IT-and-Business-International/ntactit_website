@@ -14,6 +14,12 @@
                 </a>
             </li>
             <li class="sidenav-item">
+                <a href="/service/get-packages" class="sidenav-link">
+                    <i class="sidenav-icon feather icon-thumbs-up"></i>
+                    <div>Packages</div>
+                </a>
+            </li>
+            <li class="sidenav-item">
                 <a href="#" class="sidenav-link">
                     <i class="sidenav-icon feather icon-thumbs-up"></i>
                     <div>Industries</div>

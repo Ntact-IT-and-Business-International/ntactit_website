@@ -64,3 +64,7 @@
     }
 </script>
 <script src="{{ asset('admin/assets/js/pages/dashboards_index.js')}}"></script>
+<script defer src="{{ asset('modal/css/cdn3.js')}}"></script>
+<link href="{{ asset('modal/css/tailwind.css')}}" rel="stylesheet">
+@livewire('wire-elements-modal')
+@livewireScripts

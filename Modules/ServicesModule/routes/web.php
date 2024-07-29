@@ -29,9 +29,11 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/cybersecurity', 'ServicesModuleController@cybersecurity')->name('CyberSecurity');
     Route::get('/digita-lmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
     Route::get('/consultancy', 'ServicesModuleController@Consultancy')->name('Consultancy');
+    Route::get('/get-quote', 'ServicesModuleController@getQuote')->name('Quotation');
 });
 
 
 Route::group(['prefix' => 'service', 'middleware' => ['auth']], function () {
     Route::get('/get-services', 'ServicesModuleController@services')->name('Services');
+    Route::get('/get-packages', 'ServicesModuleController@package')->name('Packages');
 });

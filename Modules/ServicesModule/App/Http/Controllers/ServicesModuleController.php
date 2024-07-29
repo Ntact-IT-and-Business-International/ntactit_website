@@ -141,4 +141,17 @@ class ServicesModuleController extends Controller
     public function services(){
         return view('servicesmodule::services');
     }
+    /**
+     * This function gets page for quotation details
+     */
+    public function getQuote(){
+        return view('servicesmodule::quotation');
+    }
+
+    /**
+     * This function gets packages
+     */
+    public function package(){
+        return view('servicesmodule::packages');
+    }
 }

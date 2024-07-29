@@ -31,4 +31,5 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/libs/flot/flot.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/assets/libs/select2/select2.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/assets/assets/libs/bootstrap-select/bootstrap-select.css')}}">
+    @livewireStyles
 </head>
