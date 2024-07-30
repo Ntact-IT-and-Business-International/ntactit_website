@@ -16,71 +16,30 @@
                 </div>
                 <div class="row justify-content-center">
                     <!-- Package 1 -->
+                     
+                    @foreach ($packages as $package)
                     <div class="col-lg-4 col-md-6 item">
                         <div class="card package-card position-relative">
                             <div class="card-header p-0 border-0">
-                                <div class="package-storage">20GB</div> <!-- Storage amount in circle -->
+                                <div class="package-storage">{{ $package->quantity }}&nbsp;GB</div> <!-- Storage amount in circle -->
                             </div>
                             <div class="card-body service-details">
-                                <span class="label-style">Basic</span>
-                                <a href="#" class="service-heading">Starter Plan</a>
-                                <p class="package-amount">UGX 200,000/year</p> <!-- Price in UGX -->
-                                <p class="package-description">Ideal for small businesses and startups. Includes up to 5 webpages.</p>
+                                <span class="label-style">{{ $package->category }}</span>
+                                <a href="#" class="service-heading">UGX {{ $package->amount }}</a>
+                                {{--<p class="package-amount">UGX {{ $package->amount }}</p>--}} <!-- Price in UGX -->
+                                <p class="package-description">{{ $package->description }}</p>
                                 <ul class="list-unstyled">
                                     <li><i class="fas fa-hdd mr-2 text-success"></i> Free Domain</li>
                                     <li><i class="fas fa-life-ring mr-2 text-success"></i> 24/7 Support</li>
                                     <li><i class="fas fa-lock mr-2 text-success"></i> SSL Certificate</li>
                                     <li><i class="fas fa-code mr-2 text-success"></i> Up to 5 Webpages</li>
                                 </ul>
-                                <button class="btn btn-orange add-to-cart-btn">Add to Cart</button>
-                                <a wire:navigate href="/service/get-quote" class="btn btn-color1">Get Quote</a>
+                                <button class="btn btn-orange add-to-cart-btn mt-3" wire:click="addToCart({{ $package->id }})">Add to Cart</button>
+                                <a wire:navigate href="{{URL::signedRoute('Quotation',['quotationId' => $package->id])}}" class="btn btn-color1 mt-3">Get Quote</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Package 2 -->
-                    <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                        <div class="card package-card position-relative">
-                            <div class="card-header p-0 border-0">
-                                <div class="package-storage">40GB</div> <!-- Storage amount in circle -->
-                            </div>
-                            <div class="card-body service-details">
-                                <span class="label-style label-style-2">Standard</span>
-                                <a href="#" class="service-heading">Business Plan</a>
-                                <p class="package-amount">UGX 300,000/year</p> <!-- Price in UGX -->
-                                <p class="package-description">Suitable for growing businesses and moderate traffic. Includes up to 10 webpages.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-hdd mr-2 text-success"></i> Free Domain</li>
-                                    <li><i class="fas fa-life-ring mr-2 text-success"></i> 24/7 Support</li>
-                                    <li><i class="fas fa-lock mr-2 text-success"></i> SSL Certificate</li>
-                                    <li><i class="fas fa-code mr-2 text-success"></i> Up to 10 Webpages</li>
-                                </ul>
-                                <button class="btn btn-orange add-to-cart-btn">Add to Cart</button>
-                                <a wire:navigate href="/service/get-quote" class="btn btn-color1">Get Quote</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Package 3 -->
-                    <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                        <div class="card package-card position-relative">
-                            <div class="card-header p-0 border-0">
-                                <div class="package-storage">60GB</div> <!-- Storage amount in circle -->
-                            </div>
-                            <div class="card-body service-details">
-                                <span class="label-style label-style-3">Premium</span>
-                                <a href="#" class="service-heading">Pro Plan</a>
-                                <p class="package-amount">UGX 400,000/year</p> <!-- Price in UGX -->
-                                <p class="package-description">Advanced package for high-traffic websites. Includes up to 20 webpages.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-hdd mr-2 text-success"></i> Free Domain</li>
-                                    <li><i class="fas fa-life-ring mr-2 text-success"></i> 24/7 Support</li>
-                                    <li><i class="fas fa-lock mr-2 text-success"></i> SSL Certificate</li>
-                                    <li><i class="fas fa-code mr-2 text-success"></i> Up to 20 Webpages</li>
-                                </ul>
-                                <button class="btn btn-orange add-to-cart-btn">Add to Cart</button>
-                                <a wire:navigate href="/service/get-quote" class="btn btn-color1">Get Quote</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

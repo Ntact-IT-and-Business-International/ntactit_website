@@ -144,8 +144,8 @@ class ServicesModuleController extends Controller
     /**
      * This function gets page for quotation details
      */
-    public function getQuote(){
-        return view('servicesmodule::quotation');
+    public function getQuote($quotationId){
+        return view('servicesmodule::quotation',compact('quotationId'));
     }
 
     /**

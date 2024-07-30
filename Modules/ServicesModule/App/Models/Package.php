@@ -49,8 +49,8 @@ class Package extends Model
     public static function getPackage($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'category';
-        $sortDirection = $sortDirection ?: 'desc';
+        $sortBy = $sortBy ?: 'created_at';
+        $sortDirection = $sortDirection ?: 'asc';
 
         return self::with('creator','services')->search($search)
             ->orderBy($sortBy, $sortDirection)

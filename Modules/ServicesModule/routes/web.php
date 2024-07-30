@@ -29,7 +29,7 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/cybersecurity', 'ServicesModuleController@cybersecurity')->name('CyberSecurity');
     Route::get('/digita-lmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
     Route::get('/consultancy', 'ServicesModuleController@Consultancy')->name('Consultancy');
-    Route::get('/get-quote', 'ServicesModuleController@getQuote')->name('Quotation');
+    Route::get('/get-quote/{quotationId}', 'ServicesModuleController@getQuote')->name('Quotation');
 });
 
 

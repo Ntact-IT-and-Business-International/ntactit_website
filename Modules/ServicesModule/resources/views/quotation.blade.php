@@ -1,5 +1,5 @@
 @extends('template')
 
 @section('content')
-@livewire('front.quotation')
+@livewire('front.quotation',['quotationId'=>$quotationId])
 @endsection
