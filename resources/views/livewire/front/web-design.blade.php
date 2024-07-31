@@ -25,7 +25,7 @@
                             </div>
                             <div class="card-body service-details">
                                 <span class="label-style">{{ $package->category }}</span>
-                                <a href="#" class="service-heading">UGX {{ $package->amount }}</a>
+                                <a href="#" class="service-heading">UGX {{ number_format($package->amount) }}</a>
                                 {{--<p class="package-amount">UGX {{ $package->amount }}</p>--}} <!-- Price in UGX -->
                                 <p class="package-description">{{ $package->description }}</p>
                                 <ul class="list-unstyled">
@@ -41,6 +41,29 @@
                     </div>
                     @endforeach
                 </div>
+                <!-- Display the cart -->
+                <div class="mt-5">
+                <h3>Your Cart</h3>
+                    @if (session('cart') && count(session('cart')) > 0)
+                        <p>Items in cart: {{ getQuantity() }}</p> <!-- Use the helper function for quantity -->
+                        <ul>
+                            @foreach (session('cart') as $item)
+                                <li>{{ $item['package']->category }} - UGX {{ $item['package']->amount }}</li>
+                            @endforeach
+                        </ul>
+                        <p>Total Amount: UGX {{ getTotalAmount() }}</p> <!-- Use the helper function for total amount -->
+                    @else
+                        <p>Your cart is empty.</p>
+                    @endif
+                </div>
+
+                <button class="btn btn-danger mt-3" wire:click="clearCart">Clear Cart</button> <!-- Button to clear the cart -->
+
+                @if (session('msg'))
+                    <div class="mt-2 font-medium text-sm text-green-600 msg-bg-success">
+                        {{ session('msg') }}
+                    </div>
+                @endif
             </div>
         </div>
     </section>

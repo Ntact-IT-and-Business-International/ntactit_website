@@ -142,19 +142,16 @@
 
               
                     <li class="nav-item">
-                        <a wire:navigate href="{{ route('login')}}" class="btn btn-style mt-md-1 mt-2">Login</a>
+                        <a wire:navigate href="{{ route('login')}}">Login</a>
                     </li>
-                    <!-- search button   commented out
-                    <div class="search-right ml-lg-3">
-                        <form action="#search" method="GET" class="search-box position-relative">
-                            <div class="input-search">
-                                <input type="search" placeholder="Enter Keyword" name="search" required="required"
-                                    autofocus="" class="search-popup">
-                            </div>
-                            <button type="submit" class="btn search-btn"><i class="fa fa-search"
-                                    aria-hidden="true"></i></button>
-                        </form>
-                    </div>   -->
+                    <div class="search-right ml-lg-2">
+                          @livewire('front.cart')
+                          @if (session('msg'))
+                                <div class="mt-2 font-medium text-sm text-green-600 msg-bg-success">
+                                    {{ session('msg') }}
+                                </div>
+                            @endif
+                    </div>
     
                     <!-- //search button -->
                     <!-- <li class="nav-item">

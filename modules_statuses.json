@@ -3,5 +3,6 @@
     "IndustryModule": true,
     "InsightModule": true,
     "ContactModule": true,
-    "Company": true
+    "Company": true,
+    "Cart": true
 }
