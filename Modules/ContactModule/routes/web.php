@@ -14,9 +14,6 @@ use Modules\ContactModule\App\Http\Controllers\ContactModuleController;
 |
 */ 
 
-// Route::group([], function () {
-//     Route::resource('contactmodule', ContactModuleController::class)->names('contactmodule');
-// });
-Route::group(['prefix' => 'contact'], function () {
-    Route::get('/contact-us', 'ContactModuleController@contactUsForm')->name('Contact Us');
+Route::group([], function () {
+    Route::get('/contact', 'ContactModuleController@contact')->name('contact');
 });
