@@ -32,6 +32,12 @@
                 </a>
             </li>
             <li class="sidenav-item">
+                <a href="/cart/customer-order" class="sidenav-link">
+                    <i class="sidenav-icon feather icon-thumbs-up"></i>
+                    <div>Customer Order</div>
+                </a>
+            </li>
+            <li class="sidenav-item">
                 <a href="javascript:" class="sidenav-link sidenav-toggle">
                     <i class="sidenav-icon feather icon-layers"></i>
                     <div>Company</div>

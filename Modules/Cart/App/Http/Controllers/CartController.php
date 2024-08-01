@@ -24,9 +24,9 @@ class CartController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function cartOrder()
     {
-        return view('cart::create');
+        return view('cart::cart_order');
     }
 
     /**

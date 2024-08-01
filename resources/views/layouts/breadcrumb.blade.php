@@ -2,6 +2,6 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
         <li class="breadcrumb-item font-weight-bold"><a href="#">Dashboard</a></li>
-        <li class="breadcrumb-item active">Main</li>
+        <li class="breadcrumb-item active">{{ Request()->route()->getName() }}</li>
     </ol>
 </div>

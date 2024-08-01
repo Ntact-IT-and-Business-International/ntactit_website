@@ -16,17 +16,17 @@
                 <div class="d-flex align-items-center mb-5">
                   <div class="flex-grow-1 ms-3">
                    @foreach (session('cart') as $item)
-                    <h5 class="text-primary">{{ $item['package']->category }} (x{{ $item['quantity'] }})</h5>
-                    <h6 style="color: #9e9e9e;">UGX {{ number_format($item['amount'] * $item['quantity']) }}</h6>
+                    <h5 class="text-primary">{{ @$item['package']->category }} (x{{ @$item['quantity'] }})</h5>
+                    <h6 style="color: #9e9e9e;">UGX {{ number_format(@$item['amount'] * @$item['quantity']) }}</h6>
                     <div class="d-flex align-items-center">
                       <p class="fw-bold mb-0 me-5 pe-3"></p>
                       <div class="def-number-input number-input safari_only">
                             <button data-mdb-button-init onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                class="minus" wire:click="updateQuantity({{ $item['package']->id }}, {{ $item['quantity'] - 1 }})"></button>
-                            <input class="quantity fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="{{ $item['quantity'] }}"
-                                type="number" wire:change="updateQuantity({{ $item['package']->id }}, $event.target.value)">
+                                class="minus" wire:click="updateQuantity({{ @$item['package']->id }}, {{ @$item['quantity'] - 1 }})"></button>
+                            <input class="quantity fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="{{ @$item['quantity'] }}"
+                                type="number" wire:change="updateQuantity({{ @$item['package']->id }}, $event.target.value)">
                             <button data-mdb-button-init onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                class="plus" wire:click="updateQuantity({{ $item['package']->id }}, {{ $item['quantity'] + 1 }})"></button>
+                                class="plus" wire:click="updateQuantity({{ @$item['package']->id }}, {{ @$item['quantity'] + 1 }})"></button>
                         </div>
                     </div>
                     @endforeach

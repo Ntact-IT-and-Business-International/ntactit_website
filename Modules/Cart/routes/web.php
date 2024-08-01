@@ -17,6 +17,7 @@ use Modules\Cart\App\Http\Controllers\CartController;
 // Route::group([], function () {
 //     Route::resource('cart', CartController::class)->names('cart');
 // });
-Route::group(['prefix' => 'cart'], function () {
+Route::group(['prefix' => 'cart'], function () { 
     Route::get('/shopping-cart', 'CartController@index')->name('Shopping Cart');
+    Route::get('/customer-order', 'CartController@cartOrder')->name('Customer Order');
 });
