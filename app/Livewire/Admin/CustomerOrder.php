@@ -14,6 +14,7 @@ class CustomerOrder extends Component
     protected $listeners = ['CustomerOrder' => '$refresh'];
 
     //over ridding sort by from the trait
+    public $search = ''; // Add the search property
     public $sortBy = '';
 
     //using the bootstrap pagination theme

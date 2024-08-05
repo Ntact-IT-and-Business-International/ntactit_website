@@ -142,7 +142,7 @@
 
               
                     <li class="nav-item">
-                        <a wire:navigate href="{{ route('login')}}">Login</a>
+                        <a class="nav-link" wire:navigate href="{{ route('login')}}">Login</a>
                     </li>
                     <div class="search-right ml-lg-2">
                           @livewire('front.cart')
