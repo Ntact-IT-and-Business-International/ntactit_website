@@ -4,5 +4,13 @@
     "InsightModule": true,
     "ContactModule": true,
     "Company": true,
-    "Cart": true
+    "Cart": true,
+    "Department": true,
+    "Item": true,
+    "HumanResource": true,
+    "Reports": true,
+    "Finance": true,
+    "CompanyDocuments": true,
+    "NoticeBoard": true,
+    "BusinessDevelopment": true
 }

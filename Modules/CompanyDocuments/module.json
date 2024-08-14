@@ -1,0 +1,11 @@
+{
+    "name": "CompanyDocuments",
+    "alias": "companydocuments",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CompanyDocuments\\App\\Providers\\CompanyDocumentsServiceProvider"
+    ],
+    "files": []
+}
