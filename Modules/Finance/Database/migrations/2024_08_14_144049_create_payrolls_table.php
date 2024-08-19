@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            
+            $table->foreignId('employee_id');
+            $table->string('amount');
+            $table->string('month');
+            $table->enum('payroll_status',['cleared','pending balance','not paid'])->default('cleared');
+            $table->foreignId('created_by');
             $table->timestamps();
         });
     }

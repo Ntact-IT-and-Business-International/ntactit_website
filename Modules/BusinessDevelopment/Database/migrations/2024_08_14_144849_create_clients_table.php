@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('client_name');
+            $table->string('company');
+            $table->string('email');
+            $table->string('contact');
+            $table->string('invoice_number');
+            $table->string('address');
+            $table->string('customer_number');
+            $table->string('quantity');
+            $table->string('description');
+            $table->string('rate');
+            $table->string('amount');
+            $table->enum('business_status',['pending','successful','did not succeed'])->default('pending');
+            $table->foreignId('registered_by');
             $table->timestamps();
         });
     }

@@ -64,8 +64,9 @@ class Leave extends Model
         self::whereId($LeaveId)->update([
             'employee_id' => $fields['employee_id'],
             'date_in' => $fields['date_in'],
-            'date_out' => $fields['date_out'],
+            'date_out' => $fields['date_out'], 
             'reason' => $fields['reason'],
+            'reason_for_rejection' => $fields['reason_for_rejection'],
             'leave_status' => $fields['leave_status'],
             'created_by' => $fields['created_by'],
         ]);

@@ -8,33 +8,122 @@
                 </a>
             </li>
             <li class="sidenav-item">
-                <a href="/service/get-services" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-thumbs-up"></i>
-                    <div>Services</div>
+                <a href="javascript:" class="sidenav-link sidenav-toggle">
+                    <i class="sidenav-icon feather icon-layers"></i>
+                    <div>Front Pages</div>
                 </a>
+                <ul class="sidenav-menu">
+                    <li class="sidenav-item">
+                        <a href="/service/get-services" class="sidenav-link">
+                            <div>Services</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="/service/get-packages" class="sidenav-link">
+                            <div>Packages</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Industries</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Insights</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Contact Messages</div>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="sidenav-item">
-                <a href="/service/get-packages" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-thumbs-up"></i>
-                    <div>Packages</div>
+                <a href="javascript:" class="sidenav-link sidenav-toggle">
+                    <i class="sidenav-icon feather icon-layers"></i>
+                    <div>Business Development</div>
+                </a>
+                <ul class="sidenav-menu">
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Clients</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a href="javascript:" class="sidenav-link sidenav-toggle">
+                    <i class="sidenav-icon feather icon-layers"></i>
+                    <div>Finance</div>
+                </a>
+                <ul class="sidenav-menu">
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Income</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Requisition</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-data.html" class="sidenav-link">
+                            <div>Expenses</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-social.html" class="sidenav-link">
+                            <div>Payroll</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-social.html" class="sidenav-link">
+                            <div>Finance Documents</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a href="javascript:" class="sidenav-link sidenav-toggle">
+                    <i class="sidenav-icon feather icon-layers"></i>
+                    <div>Human Resource</div>
+                </a>
+                <ul class="sidenav-menu">
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Employee Records</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Attendance</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-data.html" class="sidenav-link">
+                            <div>Leave</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-social.html" class="sidenav-link">
+                            <div>Hr Forms</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a href="#" class="sidenav-link">
+                    <i class="sidenav-icon feather icon-home"></i>
+                    <div>NoticeBoard</div>
                 </a>
             </li>
             <li class="sidenav-item">
                 <a href="#" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-thumbs-up"></i>
-                    <div>Industries</div>
-                </a>
-            </li>
-            <li class="sidenav-item">
-                <a href="#" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-thumbs-up"></i>
-                    <div>Insights</div>
-                </a>
-            </li>
-            <li class="sidenav-item">
-                <a href="/cart/customer-order" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-thumbs-up"></i>
-                    <div>Customer Order</div>
+                    <i class="sidenav-icon feather icon-home"></i>
+                    <div>Reports</div>
                 </a>
             </li>
             <li class="sidenav-item">
@@ -43,8 +132,13 @@
                     <div>Company</div>
                 </a>
                 <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Documents</div>
+                        </a>
+                    </li>
                     <li class="sidenav-item">
-                        <a href="w-simple.html" class="sidenav-link">
+                        <a href="#" class="sidenav-link">
                             <div>About</div>
                         </a>
                     </li>
@@ -61,24 +155,28 @@
                 </ul>
             </li>
             <li class="sidenav-item">
-                <a href="#" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-thumbs-up"></i>
-                    <div>Contact Messages</div>
-                </a>
-            </li>
-            <li class="sidenav-item">
                 <a href="javascript:" class="sidenav-link sidenav-toggle">
                     <i class="sidenav-icon feather icon-grid"></i>
                     <div>Account Settings</div>
                 </a>
                 <ul class="sidenav-menu">
                     <li class="sidenav-item">
-                        <a href="tables_bootstrap.html" class="sidenav-link">
+                        <a href="#" class="sidenav-link">
+                            <div>Departments</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>Items</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
                             <div>Change Password</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="tables_datatables.html" class="sidenav-link">
+                        <a href="#" class="sidenav-link">
                             <div>Users</div>
                         </a>
                     </li>

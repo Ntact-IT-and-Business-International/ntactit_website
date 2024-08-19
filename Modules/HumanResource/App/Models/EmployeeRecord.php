@@ -59,6 +59,7 @@ class EmployeeRecord extends Model
             'account_number' => $fields['account_number'],
             'tin_number' => $fields['tin_number'],
             'nssf' => $fields['nssf'],
+            'employee_status' => $fields['employee_status'],
             'created_by' => $fields['created_by'],
         ]);
     }
@@ -89,6 +90,7 @@ class EmployeeRecord extends Model
             'account_number' => $fields['account_number'],
             'tin_number' => $fields['tin_number'],
             'nssf' => $fields['nssf'],
+            'employee_status' => $fields['employee_status'],
             'created_by' => $fields['created_by'],
         ]);
     }

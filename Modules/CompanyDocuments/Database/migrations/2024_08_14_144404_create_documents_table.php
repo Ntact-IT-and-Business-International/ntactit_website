@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('document_name');
+            $table->string('document');
+            $table->foreignId('created_by');
             $table->timestamps();
         });
     }

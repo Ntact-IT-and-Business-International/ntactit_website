@@ -9,11 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void 
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('invoice_number');
+            $table->string('received_from');
+            $table->string('reason');
+            $table->string('initial_deposit')->nullable();
+            $table->string('actual_amount');
+            $table->enum('income_status',['cleared','pending balance']);
+            $table->foreignId('entered_by');
             $table->timestamps();
         });
     }

@@ -9,11 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void 
     {
         Schema::create('hr_forms', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('name_of_form');
+            $table->string('form');
+            $table->foreignId('created_by');
             $table->timestamps();
         });
     }

@@ -4,11 +4,11 @@ namespace Modules\Department\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Department\Database\factories\DeprtmentFactory;
+use Modules\Department\Database\factories\DepartmentFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\User;
 
-class Deprtment extends Model
+class Department extends Model
 {
     use HasFactory;
 
@@ -22,9 +22,9 @@ class Deprtment extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
     
-    protected static function newFactory(): DeprtmentFactory
+    protected static function newFactory(): DepartmentFactory
     {
-        //return DeprtmentFactory::new();
+        //return DepartmentFactory::new();
     }
     public function scopeSearch($query, $val)
     {

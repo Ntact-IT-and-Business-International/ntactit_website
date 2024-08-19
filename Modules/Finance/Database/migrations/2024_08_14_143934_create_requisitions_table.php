@@ -13,7 +13,18 @@ return new class extends Migration
     {
         Schema::create('requisitions', function (Blueprint $table) {
             $table->id();
-            
+            $table->foreignId('requested_by');
+            $table->foreignId('department_id');
+            $table->foreignId('item_id');
+            $table->string('date');
+            $table->string('work_order');
+            $table->string('quantity');
+            $table->string('description');
+            $table->string('unit_cost');
+            $table->string('amount');
+            $table->string('reason')->nullable();
+            $table->enum('request_status',['pending','approved','rejected','forwarded'])->default('pending');
+            $table->foreignId('updated_by');
             $table->timestamps();
         });
     }
