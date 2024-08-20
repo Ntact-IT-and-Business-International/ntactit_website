@@ -49,7 +49,7 @@ class Requisition extends Model
         });
     }
 
-    public static function createRequestion($fields)
+    public static function createRequisition($fields)
     {
         self::create([
             'requested_by' => $fields['requested_by'],
@@ -62,7 +62,7 @@ class Requisition extends Model
             'unit_cost' => $fields['unit_cost'],
             'amount' => $fields['amount'],
             'request_status' => $fields['request_status'],
-            'updated_by' => $fields['updated_by'],
+            'created_by' => $fields['created_by'],
         ]);
     }
 
@@ -84,11 +84,12 @@ class Requisition extends Model
             'department_id' => $fields['department_id'],
             'item_id' => $fields['item_id'],
             'date' => $fields['date'],
-            'work_order' => $fields['work_order'],
+            'work_order' => $fields['work_order'], 
             'quantity' => $fields['quantity'],
             'description' => $fields['description'],
             'unit_cost' => $fields['unit_cost'],
             'amount' => $fields['amount'],
+            'reason' => $fields['reason'],
             'request_status' => $fields['request_status'],
             'updated_by' => $fields['updated_by'],
         ]);

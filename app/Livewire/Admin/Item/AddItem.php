@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Livewire\Admin;
+namespace App\Livewire\Admin\Item;
 
 use LivewireUI\Modal\ModalComponent;
-use Modules\ServicesModule\App\Models\Package;
-use Modules\ServicesModule\App\Models\Service;
-use Session;
 
-class AddPackage extends ModalComponent
+class AddItem extends ModalComponent
 {
     public $created_by;
     public $service;
@@ -48,17 +45,9 @@ class AddPackage extends ModalComponent
         $this->dispatch('Package', 'refreshComponent');
         $this->closeModal();
     }
+    
     public function render()
     {
-        return view('livewire.admin.add-package',[
-            'services'=>$this->getService()
-        ]);
-    }
-    
-    /**
-     * This function gets the services 
-     */
-    private function getService(){
-        return Service::get();
+        return view('livewire.admin.item.add-item');
     }
 }

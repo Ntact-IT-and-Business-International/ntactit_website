@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('amount');
             $table->string('reason')->nullable();
             $table->enum('request_status',['pending','approved','rejected','forwarded'])->default('pending');
-            $table->foreignId('updated_by');
+            $table->foreignId('updated_by')->nullable();
             $table->timestamps();
         });
     }

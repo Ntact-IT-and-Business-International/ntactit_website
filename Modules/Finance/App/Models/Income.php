@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Finance\Database\factories\IncomeFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\BusinessDevelopment\App\Models\Client;
 use App\Models\User;
 
 class Income extends Model
@@ -15,11 +16,15 @@ class Income extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $guarded = ['id'];
+    protected $guarded = ['id'];  
     
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'entered_by');
+    }
+    public function client(): BelongsTo
+    {
+        return $this->belongsTo(Client::class, 'invoice_id');
     }
     
     protected static function newFactory(): IncomeFactory
@@ -29,18 +34,20 @@ class Income extends Model
     public function scopeSearch($query, $val)
     {
         return $query->where('received_from', 'like', '%'.$val.'%')
-        ->orWhere('invoice_number', 'like', '%'.$val.'%')
         ->orWhere('reason', 'like', '%'.$val.'%')
         ->orWhere('actual_received_from', 'like', '%'.$val.'%')
         ->orWhereHas('name', function ($query) use ($val) {
             $query->where('name', 'like', '%'.$val.'%');
+        })
+        ->orWhereHas('invoice_number', function ($query) use ($val) {
+            $query->where('invoice_number', 'like', '%'.$val.'%');
         });
     }
 
     public static function createIncome($fields)
     {
         self::create([
-            'invoice_number' => $fields['invoice_number'],
+            'invoice_id' => $fields['invoice_id'],
             'received_from' => $fields['received_from'],
             'reason' => $fields['reason'],
             'initial_deposit' => $fields['initial_deposit'],
@@ -56,7 +63,7 @@ class Income extends Model
         $sortBy = $sortBy ?: 'name';
         $sortDirection = $sortDirection ?: 'desc';
 
-        return self::with('creator')->search($search)
+        return self::with('creator','client')->search($search)
             ->orderBy($sortBy, $sortDirection)
             ->paginate($perPage);
     }
@@ -64,7 +71,7 @@ class Income extends Model
     public static function updateIncome($IncomeId, $fields)
     {
         self::whereId($IncomeId)->update([
-            'invoice_number' => $fields['invoice_number'],
+            'invoice_id' => $fields['invoice_id'],
             'received_from' => $fields['received_from'],
             'reason' => $fields['reason'],
             'initial_deposit' => $fields['initial_deposit'],
