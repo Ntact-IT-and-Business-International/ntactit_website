@@ -12,7 +12,7 @@ class BusinessDevelopmentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getClient()
     {
         return view('businessdevelopment::index');
     }

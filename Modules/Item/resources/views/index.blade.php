@@ -1,7 +1,5 @@
-@extends('item::layouts.master')
-
+@extends('admin')
 @section('content')
-    <h1>Hello World</h1>
+   @livewire('admin.Item.item')
 
-    <p>Module: {!! config('item.name') !!}</p>
 @endsection

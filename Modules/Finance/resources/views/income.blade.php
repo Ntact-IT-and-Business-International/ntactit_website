@@ -1,5 +1,5 @@
 @extends('admin')
 @section('content')
-   @livewire('admin.notice-board.notice-board')
+   @livewire('admin.finance.income')
 
 @endsection

@@ -10,9 +10,9 @@ use Illuminate\Http\Response;
 class DepartmentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display departments.
      */
-    public function index()
+    public function getDepartment()
     {
         return view('department::index');
     }

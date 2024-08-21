@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\CompanyDocuments;
+use Modules\CompanyDocuments\App\Services\DocumentService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Document extends Component
 
     public function render()
     {
-        return view('livewire.admin.company-documents.document');
+        return view('livewire.admin.company-documents.document',[
+            'documents' =>DocumentService::getDocument($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

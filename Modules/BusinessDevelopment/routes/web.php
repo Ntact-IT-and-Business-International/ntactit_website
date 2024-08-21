@@ -14,6 +14,7 @@ use Modules\BusinessDevelopment\App\Http\Controllers\BusinessDevelopmentControll
 |
 */
 
-Route::group([], function () {
-    Route::resource('businessdevelopment', BusinessDevelopmentController::class)->names('businessdevelopment');
+Route::group(['prefix' => 'businessdevelopment', 'middleware' => ['auth']], function () {
+    Route::get('/client', 'BusinessDevelopmentController@getClient')->name('Client');
 });
+

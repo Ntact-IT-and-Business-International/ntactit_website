@@ -10,11 +10,40 @@ use Illuminate\Http\Response;
 class FinanceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a expenses.
      */
-    public function index()
+    public function getExpenses()
     {
-        return view('finance::index');
+        return view('finance::expenses');
+    }
+     /**
+     * Display a finance forms.
+     */
+    public function getFinanceForms()
+    {
+        return view('finance::finance_form');
+    }
+     /**
+     * Display a income.
+     */
+    public function getIncome()
+    {
+        return view('finance::income');
+    }
+     /**
+     * Display a payroll.
+     */
+    public function getPayroll()
+    {
+        return view('finance::payroll');
+    }
+
+     /**
+     * Display a requisition.
+     */
+    public function getRequisition()
+    {
+        return view('finance::requisition');
     }
 
     /**

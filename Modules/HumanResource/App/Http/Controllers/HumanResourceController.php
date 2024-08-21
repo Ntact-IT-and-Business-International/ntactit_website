@@ -10,13 +10,33 @@ use Illuminate\Http\Response;
 class HumanResourceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a attendance.
      */
-    public function index()
+    public function getAttendance()
     {
-        return view('humanresource::index');
+        return view('humanresource::attendance');
     }
-
+ /**
+     * Display a Employee Records.
+     */
+    public function getEmployee()
+    {
+        return view('humanresource::employee');
+    }
+     /**
+     * Display a Hr Form.
+     */
+    public function getHrForm()
+    {
+        return view('humanresource::forms');
+    }
+     /**
+     * Display a leave.
+     */
+    public function getleave()
+    {
+        return view('humanresource::leave');
+    }
     /**
      * Show the form for creating a new resource.
      */

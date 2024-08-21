@@ -1,7 +1,5 @@
-@extends('reports::layouts.master')
-
+@extends('admin')
 @section('content')
-    <h1>Hello World</h1>
+   @livewire('admin.reports.report')
 
-    <p>Module: {!! config('reports.name') !!}</p>
 @endsection

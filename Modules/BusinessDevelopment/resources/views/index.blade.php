@@ -1,7 +1,5 @@
-@extends('businessdevelopment::layouts.master')
-
+@extends('admin')
 @section('content')
-    <h1>Hello World</h1>
+   @livewire('admin.client.client')
 
-    <p>Module: {!! config('businessdevelopment.name') !!}</p>
 @endsection

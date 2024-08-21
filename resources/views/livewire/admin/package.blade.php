@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <div class="row align-items-center m-l-0">
                         <div class="col-sm-4">
-                            <div class="is-invalid">
+                            <div class="is-invalid mb-4">
                                 <select class="select2-demo form-control">
                                     <option value="1">One</option>
                                     <option value="2" selected>Two</option>
@@ -53,6 +53,18 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                              Showing {{$packages->firstItem()}} to {{$packages->lastItem()}} out of {{$packages->total()}} items
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4 pull-right text-end">
+                            {{$packages->links()}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

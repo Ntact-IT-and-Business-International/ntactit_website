@@ -3,46 +3,32 @@
 namespace App\Livewire\Admin\Item;
 
 use LivewireUI\Modal\ModalComponent;
+use Modules\Item\App\Services\ItemService;
+use Session;
 
 class AddItem extends ModalComponent
 {
     public $created_by;
-    public $service;
-    public $category;
-    public $quantity;
-    public $amount;
-    public $description;
+    public $item;
      // Validate
      protected $rules = [
-        'service' => 'required',
-        'category' => 'required',
-        'amount' => 'required',
-        'quantity' => 'required',
-        'description' => 'required',
+        'item' => 'required',
         'created_by' => '',
     ];
 
     // Customize validation error messages
     protected $messages = [
-        'service.required' => 'Category is required',
-        'category.required' => 'Type is required',
-        'amount.required' => 'Name of Item is required',
-        'quantity.required' => 'Quantity is required',
-        'description.required' => 'Description is required',
+        'item.required' => 'Item is required',
     ];
-    public function addService(){
+    public function addItem(){
         $this->validate();
         $fields = [
-            'service' => $this->service,
-            'category' => $this->category,
-            'amount' => $this->amount,
-            'quantity' => $this->quantity,
-            'description' => $this->description,
+            'item' => $this->item,
             'created_by' => auth()->user()->id,
         ];
-        Package::createPackage($fields);
+        ItemService::createItem($fields);
         Session::flash('msg', 'Operation Succesful');
-        $this->dispatch('Package', 'refreshComponent');
+        $this->dispatch('Item', 'refreshComponent');
         $this->closeModal();
     }
     

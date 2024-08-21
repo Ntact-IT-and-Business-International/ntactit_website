@@ -14,6 +14,6 @@ use Modules\Department\App\Http\Controllers\DepartmentController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('department', DepartmentController::class)->names('department');
+Route::group(['prefix' => 'department', 'middleware' => ['auth']], function () {
+    Route::get('/department', 'DepartmentController@getDepartment')->name('Department');
 });

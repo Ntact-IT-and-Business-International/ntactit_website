@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Finance;
+use Modules\Finance\App\Services\IncomeService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Income extends Component
 
     public function render()
     {
-        return view('livewire.admin.finance.income');
+        return view('livewire.admin.finance.income',[
+            'incomes' =>IncomeService::getIncome($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

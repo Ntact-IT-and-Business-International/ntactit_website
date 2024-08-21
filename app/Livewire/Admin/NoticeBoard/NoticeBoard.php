@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\NoticeBoard;
+use Modules\NoticeBoard\App\Services\NoticeBoardService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class NoticeBoard extends Component
 
     public function render()
     {
-        return view('livewire.admin.notice-board.notice-board');
+        return view('livewire.admin.notice-board.notice-board',[
+            'notices' =>NoticeBoardService::getNoticeBoard($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

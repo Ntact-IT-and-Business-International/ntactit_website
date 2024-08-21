@@ -24,7 +24,7 @@
                     <div class="col-sm-6">
                         <div class="form-group fill">
                             <label class="floating-label" for="Password">Size Or Quantity</label>
-                            <input type="text" class="form-control" wire:model="quantity" id="Quantity" placeholder="">
+                            <input type="number" class="form-control" wire:model="quantity" id="Quantity" placeholder="">
                         </div>
                     </div>
                     <div class="col-sm-6">

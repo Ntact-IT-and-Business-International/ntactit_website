@@ -14,6 +14,9 @@ use Modules\HumanResource\App\Http\Controllers\HumanResourceController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('humanresource', HumanResourceController::class)->names('humanresource');
+Route::group(['prefix' => 'humanresource', 'middleware' => ['auth']], function () {
+    Route::get('/attendance', 'HumanResourceController@getAttendance')->name('Attendance');
+    Route::get('/employee-record', 'HumanResourceController@getEmployee')->name('Employees');
+    Route::get('/forms', 'HumanResourceController@getHrForm')->name('Hr Forms');
+    Route::get('/leave', 'HumanResourceController@getleave')->name('Leave');
 });

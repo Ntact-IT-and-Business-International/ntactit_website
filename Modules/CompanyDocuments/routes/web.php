@@ -14,6 +14,6 @@ use Modules\CompanyDocuments\App\Http\Controllers\CompanyDocumentsController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('companydocuments', CompanyDocumentsController::class)->names('companydocuments');
+Route::group(['prefix' => 'companydocuments', 'middleware' => ['auth']], function () {
+    Route::get('company-documents', 'CompanyDocumentsController@getDocuments')->name('Company Documents');
 });

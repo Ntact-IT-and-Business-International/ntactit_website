@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\HumanResource;
+use Modules\HumanResource\App\Services\EmployeeRecordService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class EmployeeRecord extends Component
 
     public function render()
     {
-        return view('livewire.admin.human-resource.employee-record');
+        return view('livewire.admin.human-resource.employee-record',[
+            'employees' =>EmployeeRecordService::getEmployeeRecord($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

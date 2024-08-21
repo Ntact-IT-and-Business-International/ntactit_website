@@ -14,6 +14,6 @@ use Modules\Item\App\Http\Controllers\ItemController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('item', ItemController::class)->names('item');
+Route::group(['prefix' => 'item', 'middleware' => ['auth']], function () {
+    Route::get('/item', 'ItemController@getItem')->name('Item');
 });

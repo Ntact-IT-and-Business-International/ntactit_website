@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Finance;
+use Modules\Finance\App\Services\FinanceFormService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class FinanceForms extends Component
 
     public function render()
     {
-        return view('livewire.admin.finance.finance-forms');
+        return view('livewire.admin.finance.finance-forms',[
+            'finances_forms' =>FinanceFormService::getFinanceForm($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

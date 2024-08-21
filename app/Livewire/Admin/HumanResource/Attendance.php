@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\HumanResource;
+use Modules\HumanResource\App\Services\AttendanceService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Attendance extends Component
 
     public function render()
     {
-        return view('livewire.admin.human-resource.attendance');
+        return view('livewire.admin.human-resource.attendance',[
+            'attendances'=>AttendanceService::getAttendance($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

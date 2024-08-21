@@ -15,7 +15,7 @@ class Item extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $guareded = ['id'];
+    protected $guarded = ['id'];
 
     public function creator(): BelongsTo
     {

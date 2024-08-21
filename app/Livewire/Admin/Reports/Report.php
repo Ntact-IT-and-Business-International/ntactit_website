@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Reports;
+use Modules\Reports\App\Services\ReportService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Report extends Component
 
     public function render()
     {
-        return view('livewire.admin.reports.report');
+        return view('livewire.admin.reports.report',[
+            'reports' =>ReportService::getReport($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

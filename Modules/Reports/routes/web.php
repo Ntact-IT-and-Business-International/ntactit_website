@@ -14,6 +14,6 @@ use Modules\Reports\App\Http\Controllers\ReportsController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('reports', ReportsController::class)->names('reports');
+Route::group(['prefix' => 'reports', 'middleware' => ['auth']], function () {
+    Route::get('/report', 'ReportsController@getReport')->name('Reports');
 });

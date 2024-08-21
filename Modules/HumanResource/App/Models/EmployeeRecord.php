@@ -16,7 +16,7 @@ class EmployeeRecord extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $guareded = ['id'];
+    protected $guarded = ['id'];
 
     public function creator(): BelongsTo
     {
@@ -38,8 +38,8 @@ class EmployeeRecord extends Model
     {
         return $query->where('account_number', 'like', '%'.$val.'%')
         ->orWhere('tin_number', 'like', '%'.$val.'%')
-        ->orWhere('nssf_number', 'like', '%'.$val.'%')
-        ->orWhereHas('name', function ($query) use ($val) {
+        ->orWhere('nssf', 'like', '%'.$val.'%')
+        ->orWhereHas('employee', function ($query) use ($val) {
             $query->where('name', 'like', '%'.$val.'%');
         });
     }
@@ -70,7 +70,7 @@ class EmployeeRecord extends Model
         $sortBy = $sortBy ?: 'name';
         $sortDirection = $sortDirection ?: 'desc';
 
-        return self::with('creator','department','employee')->search($search)
+        return self::with('department','employee')->search($search)
             ->orderBy($sortBy, $sortDirection)
             ->paginate($perPage);
     }

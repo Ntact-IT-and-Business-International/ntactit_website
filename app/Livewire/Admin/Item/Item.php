@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Item;
+use Modules\Item\App\Services\ItemService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Item extends Component
 
     public function render()
     {
-        return view('livewire.admin.item.item');
+        return view('livewire.admin.item.item',[
+            'items'=>ItemService::getItem($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

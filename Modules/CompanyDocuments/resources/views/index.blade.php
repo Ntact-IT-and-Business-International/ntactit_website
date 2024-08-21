@@ -1,7 +1,5 @@
-@extends('companydocuments::layouts.master')
-
+@extends('admin')
 @section('content')
-    <h1>Hello World</h1>
+   @livewire('admin.company-documents.document')
 
-    <p>Module: {!! config('companydocuments.name') !!}</p>
 @endsection

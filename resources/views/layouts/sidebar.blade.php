@@ -47,7 +47,7 @@
                 </a>
                 <ul class="sidenav-menu">
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/businessdevelopment/client" class="sidenav-link">
                             <div>Clients</div>
                         </a>
                     </li>
@@ -60,27 +60,27 @@
                 </a>
                 <ul class="sidenav-menu">
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/finance/income" class="sidenav-link">
                             <div>Income</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/finance/requisition" class="sidenav-link">
                             <div>Requisition</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="w-data.html" class="sidenav-link">
+                        <a href="/finance/expenses" class="sidenav-link">
                             <div>Expenses</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="w-social.html" class="sidenav-link">
+                        <a href="/finance/payroll" class="sidenav-link">
                             <div>Payroll</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="w-social.html" class="sidenav-link">
+                        <a href="/finance/finance-forms" class="sidenav-link">
                             <div>Finance Documents</div>
                         </a>
                     </li>
@@ -93,35 +93,35 @@
                 </a>
                 <ul class="sidenav-menu">
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/humanresource/employee-record" class="sidenav-link">
                             <div>Employee Records</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/humanresource/attendance" class="sidenav-link">
                             <div>Attendance</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="w-data.html" class="sidenav-link">
+                        <a href="/humanresource/leave" class="sidenav-link">
                             <div>Leave</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="w-social.html" class="sidenav-link">
+                        <a href="/humanresource/forms" class="sidenav-link">
                             <div>Hr Forms</div>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sidenav-item">
-                <a href="#" class="sidenav-link">
+                <a href="/noticeboard/notice" class="sidenav-link">
                     <i class="sidenav-icon feather icon-home"></i>
                     <div>NoticeBoard</div>
                 </a>
             </li>
             <li class="sidenav-item">
-                <a href="#" class="sidenav-link">
+                <a href="/reports/report" class="sidenav-link">
                     <i class="sidenav-icon feather icon-home"></i>
                     <div>Reports</div>
                 </a>
@@ -133,7 +133,7 @@
                 </a>
                 <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/companydocuments/company-documents" class="sidenav-link">
                             <div>Documents</div>
                         </a>
                     </li>
@@ -161,12 +161,12 @@
                 </a>
                 <ul class="sidenav-menu">
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/department/department" class="sidenav-link">
                             <div>Departments</div>
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/item/item" class="sidenav-link">
                             <div>Items</div>
                         </a>
                     </li>

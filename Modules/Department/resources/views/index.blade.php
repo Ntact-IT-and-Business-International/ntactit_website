@@ -1,7 +1,6 @@
-@extends('department::layouts.master')
-
+@extends('admin')
 @section('content')
-    <h1>Hello World</h1>
 
-    <p>Module: {!! config('department.name') !!}</p>
+   @livewire('admin.department.department')
+
 @endsection

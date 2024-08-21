@@ -21,6 +21,8 @@ class Client extends Component
 
     public function render()
     {
-        return view('livewire.admin.client.client');
+        return view('livewire.admin.client.client',[
+            'clients' =>ClientService::getClient($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

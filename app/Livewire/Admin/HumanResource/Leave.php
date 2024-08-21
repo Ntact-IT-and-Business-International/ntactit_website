@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\HumanResource;
+use Modules\HumanResource\App\Services\LeaveService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Leave extends Component
 
     public function render()
     {
-        return view('livewire.admin.human-resource.leave');
+        return view('livewire.admin.human-resource.leave',[
+            'leaves'=>LeaveService::getLeave($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

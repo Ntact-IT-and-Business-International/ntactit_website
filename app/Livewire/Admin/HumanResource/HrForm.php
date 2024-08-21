@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\HumanResource;
+use Modules\HumanResource\App\Services\HrFormService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class HrForm extends Component
 
     public function render()
     {
-        return view('livewire.admin.human-resource.hr-form');
+        return view('livewire.admin.human-resource.hr-form',[
+            'forms' =>HrFormService::getHrForm($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

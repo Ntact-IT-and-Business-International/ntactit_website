@@ -14,6 +14,6 @@ use Modules\NoticeBoard\App\Http\Controllers\NoticeBoardController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('noticeboard', NoticeBoardController::class)->names('noticeboard');
+Route::group(['prefix' => 'noticeboard', 'middleware' => ['auth']], function () {
+    Route::get('/notice', 'NoticeBoardController@getNotice')->name('Notice Board');
 });

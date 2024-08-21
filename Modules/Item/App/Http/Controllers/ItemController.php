@@ -12,7 +12,7 @@ class ItemController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getItem()
     {
         return view('item::index');
     }

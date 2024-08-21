@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Admin\Finance;
 
-use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 use Modules\Department\App\Models\Department;
 use Modules\Finance\App\Services\RequisitionService;
@@ -55,7 +54,7 @@ class AddRequisition extends ModalComponent
         ];
         RequisitionService::createRequisition($fields);
         Session::flash('msg', 'Operation Succesful');
-        $this->dispatch('Package', 'refreshComponent');
+        $this->dispatch('Requisition', 'refreshComponent');
         $this->closeModal();
     }
     

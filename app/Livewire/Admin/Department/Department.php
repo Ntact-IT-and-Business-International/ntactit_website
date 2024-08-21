@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Livewire\Admin\Department;
+use Modules\Department\App\Services\DepartmentService;
+
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +22,8 @@ class Department extends Component
 
     public function render()
     {
-        return view('livewire.admin.department.department');
+        return view('livewire.admin.department.department',[
+            'departments' =>DepartmentService::getDepartment($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

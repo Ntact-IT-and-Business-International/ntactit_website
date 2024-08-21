@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Finance;
+use Modules\Finance\App\Services\RequisitionService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Requisition extends Component
 
     public function render()
     {
-        return view('livewire.admin.finance.requisition');
+        return view('livewire.admin.finance.requisition',[
+            'requisitions' =>RequisitionService::getRequisition($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Finance;
+use Modules\Finance\App\Services\ExpenseService;
 
 use Livewire\Component;
 use App\Traits\WithSorting;
@@ -20,6 +21,8 @@ class Expenses extends Component
 
     public function render()
     {
-        return view('livewire.admin.finance.expenses');
+        return view('livewire.admin.finance.expenses',[
+            'expenses'=>ExpenseService::getExpense($this->search, $this->sortBy, $this->sortDirection, $this->perPage)
+        ]);
     }
 }

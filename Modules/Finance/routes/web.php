@@ -14,6 +14,10 @@ use Modules\Finance\App\Http\Controllers\FinanceController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('finance', FinanceController::class)->names('finance');
+Route::group(['prefix' => 'finance', 'middleware' => ['auth']], function () {
+    Route::get('/expenses', 'FinanceController@getExpenses')->name('Expenses');
+    Route::get('/finance-forms', 'FinanceController@getFinanceForms')->name('Finance Forms');
+    Route::get('/income', 'FinanceController@getIncome')->name('Income');
+    Route::get('/payroll', 'FinanceController@getPayroll')->name('Payroll');
+    Route::get('/requisition', 'FinanceController@getRequisition')->name('Requisitions');
 });
