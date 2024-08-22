@@ -2,7 +2,8 @@
 
 namespace App\Traits;
 
-trait saveToPhotoFolder
+
+trait saveToAppointmentFolder
 {
     /**
      * Save an image to both storage folder and database with the same name.
@@ -10,10 +11,10 @@ trait saveToPhotoFolder
      * @param  $fileName
      * @return string
      */
-    public static function saveToPhotos($path, $file)
+    public static function saveToAppointments($path, $file)
     {
         $savedFileName = $file->getClientOriginalName();
-        $file->storeAs('public/photo/'.$path, $savedFileName);
+        $file->storeAs('public/Cvs/'.$path, $savedFileName);
 
         return $savedFileName;
     }

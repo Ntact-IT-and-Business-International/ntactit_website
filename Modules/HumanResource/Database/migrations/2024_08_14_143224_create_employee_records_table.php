@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('department_id');
             $table->string('position');
             $table->string('appointment_date');
+            $table->string('phone_number');
             $table->string('curriculum_vitae');
             $table->string('appointment_letter');
             $table->string('contract');
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->string('account_number')->nullable();
             $table->string('tin_number')->nullable();
             $table->string('nssf')->nullable();
+            $table->string('photo');
             $table->enum('employee_status',['permanent','contract','probation'])->default('permanent');
             $table->foreignId('created_by');
             $table->timestamps();

@@ -5,15 +5,24 @@ namespace App\Livewire\Admin\HumanResource;
 use LivewireUI\Modal\ModalComponent;
 use Modules\Department\App\Models\Department;
 use Modules\HumanResource\App\Services\EmployeeRecordService;
+use App\Traits\saveToPhotoFolder;
+use App\Traits\saveToContractFolder;
+use App\Traits\saveToCvFolder;
+use App\Traits\saveToAppointmentFolder;
+use Livewire\WithFileUploads;
+use App\Models\User;
+use Session;
 
 class AddEmployeeRecord extends ModalComponent
 {
+    use saveToPhotoFolder,saveToContractFolder,saveToCvFolder,saveToAppointmentFolder,WithFileUploads;
     public $created_by;
     public $employee_id;
     public $department_id;
     public $position;
     public $curriculum_vitae;
     public $appointment_letter;
+    public $appointment_date;
     public $contract;
     public $job_description;
     public $salary;
@@ -29,33 +38,33 @@ class AddEmployeeRecord extends ModalComponent
     public $photo;
      // Validate
      protected $rules = [
-        'employee_id' => 'required',
+        'employee_id' => '',
         'department_id' => 'required',
         'position' => 'required',
-        'curriculum_vitae' => 'required',
-        'appointment_letter' => 'required',
-        'contract' => 'required',
+        'curriculum_vitae' => 'required|mimes:pdf,doc,docx,xls,xlsx|max:1024',
+        'appointment_letter' => 'required|mimes:pdf,doc,docx,xls,xlsx|max:1024',
+        'contract' => 'required|mimes:pdf,doc,docx,xls,xlsx|max:1024',
         'job_description' => 'required',
         'salary' => 'required',
         'account_number' => 'required',
         'tin_number' => '',
         'nssf' => '',
         'employee_status' => 'required',
+        'appointment_date' => 'required',
         'created_by' => '',
         'phone_number' => 'required|unique:employee_records',
         'email' => 'required',
         'password' => 'required',
-        'password_confirmation' => 'required:same|password',
-        'photo' => 'required',
+        'password_confirmation' => 'required|same:password',
+        'photo' => 'required|mimes:jpeg,png,webp|max:1024',
         'name' => 'required',
     ];
 
     // Customize validation error messages
     protected $messages = [
-        'employee_id.required' => 'Name of Employee is required',
         'department_id.required' => 'Department is required',
         'position.required' => 'Position is required',
-        'appointment_date.required' => 'Appointment Letter is required',
+        'appointment_date.required' => 'Appointment Date is required',
         'curriculum_vitae.required' => 'Curiculum Vitae is required',
         'appointment_letter.required' => 'Appointment Letter is required',
         'contract.required' => 'Contract is required',
@@ -71,21 +80,40 @@ class AddEmployeeRecord extends ModalComponent
         'name.required' => 'Full Names is required',
     ];
     public function addEmployee(){
-        $this->validate();
+         $this->validate();
+        // try {
+        //     $this->validate();
+        // } catch (\Illuminate\Validation\ValidationException $e) {
+        //     dd($e->errors()); // This will show you the validation errors.
+        // }
+        $user = User::createUserAccount($this->name, $this->email, 'employee', $this->password);
+
+        // Retrieve the ID of the newly created user
+        $employeeId = $user->id;
+
+        $photo = $this->saveToPhotos('photo', $this->photo);
+        $cv = $this->saveToCvs('cv', $this->curriculum_vitae);
+        $appointment = $this->saveToAppointments('appointment', $this->appointment_letter);
+        $contract = $this->saveToContracts('contract', $this->contract);
         $fields = [
-            'employee_id' => $this->employee_id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
+            'employee_id' => $employeeId,
             'department_id' => $this->department_id,
             'position' => $this->position,
             'appointment_date' => $this->appointment_date,
-            'curriculum_vitae' => $this->curriculum_vitae,
-            'appointment_letter' => $this->appointment_letter,
-            'contract' => $this->contract,
+            'curriculum_vitae' => $cv,
+            'appointment_letter' => $appointment,
+            'contract' => $contract,
             'job_description' => $this->job_description,
             'salary' => $this->salary,
             'account_number' => $this->account_number,
             'tin_number' => $this->tin_number,
             'nssf' => $this->nssf,
+            'phone_number' =>$this->phone_number,
             'employee_status' => $this->employee_status,
+            'photo'=>$photo,
             'created_by' => auth()->user()->id,
         ];
         EmployeeRecordService::createEmployeeRecord($fields);

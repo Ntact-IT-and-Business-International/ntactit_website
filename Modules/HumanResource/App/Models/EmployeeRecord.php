@@ -58,6 +58,8 @@ class EmployeeRecord extends Model
             'salary' => $fields['salary'],
             'account_number' => $fields['account_number'],
             'tin_number' => $fields['tin_number'],
+            'phone_number' =>$fields['phone_number'],
+            'photo' =>$fields['photo'],
             'nssf' => $fields['nssf'],
             'employee_status' => $fields['employee_status'],
             'created_by' => $fields['created_by'],
@@ -67,7 +69,7 @@ class EmployeeRecord extends Model
     public static function getEmployeeRecord($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'name';
+        $sortBy = $sortBy ?: 'phone_number';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('department','employee')->search($search)

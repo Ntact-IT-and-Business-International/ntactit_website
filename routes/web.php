@@ -27,6 +27,8 @@ Route::get('/', function () { return view('welcome'); })->name('Home');
 
 Route::get('/about', function () { return view('front.about'); });
 
+Route::get('/register', function () { return redirect('/login'); });
+
 Route::get('/services', function () { return view('front.services'); });
 
 Route::get('/contact', function () { return view('front.contact'); });

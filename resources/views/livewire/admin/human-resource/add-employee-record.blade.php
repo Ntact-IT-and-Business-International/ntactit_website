@@ -4,7 +4,7 @@
         <div class="card-body">
             <form wire:submit.prevent="addEmployee">
                 <div class="row">
-                   <div class="col-sm-4">
+                    <div class="col-sm-4">
                         <div class="form-group fill">
                             <label class="floating-label" for="Name"><span class="text-danger">*</span> Full Name</label>
                             <input type="text" class="form-control" wire:model="name" id="name" placeholder="">
@@ -65,10 +65,11 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label class="floating-label" for="CurriculumVitae"><span class="text-danger">*</span> Curriculum Vitae</label>
+                            <label class="floating-label" for="CurriculumVitae"><span class="text-danger">*</span> Curriculum Vitae (File Less Than 1mb)</label>
                             <input type="file" class="form-control" wire:model="curriculum_vitae" id="curriculum_vitae" placeholder="">
                         </div>
                         @error('curriculum_vitae') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div wire:loading wire:target="curriculum vitae" style="color:green;"><strong>Uploading CV, Please Wait...</strong></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -79,17 +80,19 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label class="floating-label" for="AppointmentLetter"><span class="text-danger">*</span> Appointment Letter</label>
+                            <label class="floating-label" for="AppointmentLetter"><span class="text-danger">*</span> Appointment Letter (File Less Than 1mb)</label>
                             <input type="file" class="form-control" wire:model="appointment_letter" id="appointment_letter" placeholder="">
                         </div>
                         @error('appointment_letter') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div wire:loading wire:target="appointment_letter" style="color:green;"><strong>Uploading Appointment, Please Wait...</strong></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label class="floating-label" for="contract"> <span class="text-danger">*</span> Contract</label>
+                            <label class="floating-label" for="contract"> <span class="text-danger">*</span> Contract (File Less Than 1mb)</label>
                             <input type="file" class="form-control" wire:model="contract" id="contract" placeholder="">
                         </div>
                         @error('contract') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div wire:loading wire:target="contract" style="color:green;"><strong>Uploading Contract, Please Wait...</strong></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -106,10 +109,11 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label class="floating-label" for="PassportPhoto"> <span class="text-danger">*</span> Passport Photo</label>
+                            <label class="floating-label" for="PassportPhoto"> <span class="text-danger">*</span> Passport Photo (File Less Than 1mb)</label>
                             <input type="file" class="form-control" wire:model="photo" id="photo" placeholder="">
                         </div>
                         @error('photo') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div wire:loading wire:target="photo" style="color:green;"><strong>Uploading photo, Please Wait...</strong></div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -138,12 +142,12 @@
                         </div>
                         @error('password_confirmation') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <div class="col-sm-12 text center">
-                        <button type="submit" class="btn btn-primary">
-                            <span wire:loading wire:target="addEmployee"><i class="fa fa-spinner fa-spin"></i> Wait...it is submitting Now</span>
-                            <span wire:loading.remove wire:target="addEmployee">Submit</span>
-                        </button>
-                    </div>
+                </div>
+                <div class="col-sm-12 text center">
+                    <button type="submit" class="btn btn-primary">
+                    <span wire:loading wire:target="addEmployee"><i class="fa fa-spinner fa-spin"></i> Wait...it is submitting Now</span>
+                    <span wire:loading.remove wire:target="addEmployee">Submit</span>
+                    </button>
                 </div>
             </form>
         </div>
