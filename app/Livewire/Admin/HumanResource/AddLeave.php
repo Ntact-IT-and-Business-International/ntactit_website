@@ -2,40 +2,37 @@
 
 namespace App\Livewire\Admin\HumanResource;
 
-use Livewire\Component;
+use LivewireUI\Modal\ModalComponent;
 use Modules\HumanResource\App\Services\LeaveService;
 use Session;
 
-class AddLeave extends Component
+class AddLeave extends ModalComponent
 {
-    public $created_by;
     public $employee_id;
     public $date_in;
     public $date_out;
     public $reason;
-    public $leave_status;
      // Validate
      protected $rules = [
-        'employee_id' => 'required',
+        'employee_id' => '',
         'date_in' => 'required',
         'date_out' => 'required',
         'reason' => 'required',
-        'leave_status' => 'required',
-        'created_by' => '',
     ];
 
     // Customize validation error messages
     protected $messages = [
-        'employee_id.required' => 'Department is required',
+        'date_in.required' => 'Date in is required',
+        'date_out.required' => 'Date Out is required',
+        'reason.required' => 'Reason is required',
     ];
     public function addLeave(){
         $this->validate();
         $fields = [
-            'employee_id' => $this->employee_id,
+            'employee_id' =>auth()->user()->id,
             'date_in' => $this->date_in,
             'date_out' => $this->date_out,
             'reason' => $this->reason,
-            'created_by' => auth()->user()->id,
         ];
         LeaveService::createLeave($fields);
         Session::flash('msg', 'Operation Succesful');

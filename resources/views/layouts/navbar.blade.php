@@ -3,7 +3,7 @@
             <!-- Brand demo -->
     <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
         <span class="app-brand-logo demo">
-            <img src="{{ asset('assets/images/ntact.png')}}" alt="Brand Logo" style="height:20px;" class="img-fluid">
+            NTACTIT
         </span>
     </a>
 

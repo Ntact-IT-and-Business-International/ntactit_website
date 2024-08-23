@@ -42,4 +42,11 @@ class LeaveService
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }
     }
+    public static function rejectLeave($LeaveId,$fields){
+        try {
+            return Leave::rejectLeave($LeaveId,$fields);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
 }

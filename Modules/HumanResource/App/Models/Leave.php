@@ -18,7 +18,7 @@ class Leave extends Model
     protected $guarded = ['id'];
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, 'employee_id');
     }
     public function employee(): BelongsTo
     {
@@ -31,7 +31,7 @@ class Leave extends Model
     public function scopeSearch($query, $val)
     {
         return $query->where('created_at', 'like', '%'.$val.'%')
-        ->orWhereHas('name', function ($query) use ($val) {
+        ->orWhereHas('employee', function ($query) use ($val) {
             $query->where('name', 'like', '%'.$val.'%');
         });
     }
@@ -43,18 +43,16 @@ class Leave extends Model
             'date_in' => $fields['date_in'],
             'date_out' => $fields['date_out'],
             'reason' => $fields['reason'],
-            'leave_status' => $fields['leave_status'],
-            'created_by' => $fields['created_by'],
         ]);
     }
 
     public static function getLeave($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'name';
+        $sortBy = $sortBy ?: 'id';
         $sortDirection = $sortDirection ?: 'desc';
 
-        return self::with('creator')->search($search)
+        return self::with('creator','employee')->search($search)
             ->orderBy($sortBy, $sortDirection)
             ->paginate($perPage);
     }
@@ -66,12 +64,16 @@ class Leave extends Model
             'date_in' => $fields['date_in'],
             'date_out' => $fields['date_out'], 
             'reason' => $fields['reason'],
-            'reason_for_rejection' => $fields['reason_for_rejection'],
-            'leave_status' => $fields['leave_status'],
-            'created_by' => $fields['created_by'],
         ]);
     }
-
+    public static function rejectLeave($LeaveId,$fields){
+        self::whereId($LeaveId)->update([
+            'reason_for_rejection' => $fields['reason_for_rejection'],
+            'leave_status' => $fields['leave_status'],
+            'rejected_by' => $fields['rejected_by'],
+        ]);
+    }
+  
     public static function deleteLeave($LeaveId)
     {
         self::whereId($LeaveId)->delete();

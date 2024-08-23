@@ -5,7 +5,9 @@ namespace App\Livewire\Admin\Client;
 use Livewire\Component;
 use App\Traits\WithSorting;
 use Livewire\WithPagination;
+use Illuminate\Support\Str;
 use Modules\BusinessDevelopment\App\Services\ClientService;
+
 
 class Client extends Component
 {

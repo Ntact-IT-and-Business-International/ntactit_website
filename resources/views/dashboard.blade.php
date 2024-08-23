@@ -49,10 +49,11 @@
             <div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-white logo-dark">
                 <!-- Brand demo -->
                 <div class="app-brand demo">
-                    <span class="app-brand-logo demo">
+                    {{--<span class="app-brand-logo demo">
                         <img src="{{ asset('assets/images/ntact.png')}}" style="height:50px;" alt="Brand Logo" class="img-fluid ml-1">
                     </span>
-                    {{--<a href="/dashboard" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Ntactit</a>--}}
+                    --}}
+                    <a href="/dashboard" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Ntactit</a>
                     <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
                         <i class="ion ion-md-menu align-middle"></i>
                     </a>
@@ -70,10 +71,11 @@
 
                     <!-- Brand demo -->
                     <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
-                        <span class="app-brand-logo demo">
+                        {{--<span class="app-brand-logo demo">
                             <img src="{{ asset('admin/assets/img/logo-dark.png')}}" alt="Brand Logo" class="img-fluid">
                         </span>
-                        <span class="app-brand-text demo font-weight-normal ml-2">Empire</span>
+                        --}}
+                        <span class="app-brand-text demo font-weight-normal ml-2">Ntactit</span>
                     </a>
 
                     <!-- Sidenav toggle -->

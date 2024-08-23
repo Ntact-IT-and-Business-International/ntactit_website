@@ -14,6 +14,14 @@ class AttendanceService
         }
     }
 
+    public static function signout($attendanceId,$fields){
+        try {
+            return Attendance::signout($attendanceId,$fields);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
+
     public static function getAttendance($search, $sortBy, $sortDirection, $perPage)
     {
         try {

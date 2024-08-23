@@ -15,7 +15,11 @@ class Client extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'client_name', 'company', 'email', 'contact', 'invoice_number',
+        'address', 'customer_number', 'quantity', 'description', 'rate',
+        'amount', 'business_status', 'registered_by'
+    ];
     
     public function creator(): BelongsTo
     {
@@ -62,9 +66,12 @@ class Client extends Model
         $sortBy = $sortBy ?: 'client_name';
         $sortDirection = $sortDirection ?: 'desc';
 
-        return self::with('creator')->search($search)
-            ->orderBy($sortBy, $sortDirection)
-            ->paginate($perPage);
+        return self::with('creator')
+        ->select('invoice_number', 'client_name', 'company', 'email', 'contact', 'customer_number', 'business_status', 'registered_by')
+        ->search($search)
+        ->distinct()
+        ->orderBy($sortBy, $sortDirection)
+        ->paginate($perPage);
     }
 
     public static function updateClient($ClientId, $fields)

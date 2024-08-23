@@ -69,7 +69,7 @@
                             <input type="file" class="form-control" wire:model="curriculum_vitae" id="curriculum_vitae" placeholder="">
                         </div>
                         @error('curriculum_vitae') <span class="text-danger">{{ $message }}</span> @enderror
-                        <div wire:loading wire:target="curriculum vitae" style="color:green;"><strong>Uploading CV, Please Wait...</strong></div>
+                        <div wire:loading wire:target="curriculum_vitae" style="color:green;"><strong>Uploading CV, Please Wait...</strong></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">

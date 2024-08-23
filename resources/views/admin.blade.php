@@ -13,10 +13,11 @@
     <div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-white logo-dark">
         <!-- Brand demo -->
         <div class="app-brand demo">
-            <span class="app-brand-logo demo">
+            {{--<span class="app-brand-logo demo">
                 <img src="{{ asset('assets/images/ntact.png')}}" style="height:50px;" alt="Brand Logo" class="img-fluid ml-1">
             </span>
-            {{--<a href="/dashboard" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Ntactit</a>--}}
+            --}}
+            <a href="/dashboard" class="app-brand-text demo sidenav-text text-large font-weight-normal ml-2">NTACTIT</a>
             <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
                 <i class="ion ion-md-menu align-middle"></i>
             </a>

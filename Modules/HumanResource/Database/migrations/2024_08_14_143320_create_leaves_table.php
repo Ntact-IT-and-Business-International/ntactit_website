@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('reason');
             $table->string('reason_for_rejection')->nullable();
             $table->enum('leave_status',['pending','approved','rejected'])->default('pending');
-            $table->foreignId('created_by');
+            $table->foreignId('rejected_by')->nullable();
+            $table->foreignId('approved_by')->nullable();
             $table->timestamps();
         });
     }

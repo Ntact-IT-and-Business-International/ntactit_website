@@ -19,7 +19,7 @@ class Attendance extends Model
 
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, 'employee_id');
     }
     
     protected static function newFactory(): AttendanceFactory
@@ -29,7 +29,7 @@ class Attendance extends Model
     public function scopeSearch($query, $val)
     {
         return $query->where('created_at', 'like', '%'.$val.'%')
-        ->orWhereHas('name', function ($query) use ($val) {
+        ->orWhereHas('creator', function ($query) use ($val) {
             $query->where('name', 'like', '%'.$val.'%');
         });
     }
@@ -39,6 +39,11 @@ class Attendance extends Model
         self::create([
             'employee_id' => $fields['employee_id'],
             'time_in' => $fields['time_in'],
+        ]);
+    }
+
+    public static function signout($attendanceId,$fields){
+        self::whereId($attendanceId)->update([
             'time_out' => $fields['time_out'],
             'reason' => $fields['reason'],
         ]);
@@ -47,7 +52,7 @@ class Attendance extends Model
     public static function getAttendance($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'name';
+        $sortBy = $sortBy ?: 'created_at';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator')->search($search)
