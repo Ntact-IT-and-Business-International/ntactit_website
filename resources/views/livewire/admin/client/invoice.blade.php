@@ -1,5 +1,5 @@
 <div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
     <div class="row">
         <div class="col-xl-12">
             <div class="card">
@@ -21,18 +21,18 @@
                             </select>
                         </div>
                         <div class="col-sm-4">
-                            <input type="text" wire:model.debounce.100ms="search" class="form-control form_2" placeholder="Search Here...">
+                           
                         </div>
                         <div class="col-sm-4 text-right">
-                            <button class="btn btn-sm btn-outline-info" onclick="Livewire.dispatch('openModal', { component: 'admin.client.add-client' })"><i class="feather icon-plus"></i> Add Client</button>
+                           <input type="text" wire:model.debounce.100ms="search" class="form-control form_2" placeholder="Search Here...">
                         </div>
                     </div>
                     <div class="table-responsive">
                         <table id="report-table" class="table table-bordered table-striped mb-0">
                             <thead>
                                 <tr>
-                                    <th scope="col" wire:click="sortBy('clients.id')" style="cursor: pointer;">#
-                                        @include('partials._sort-icon',['field'=>'clients.id'])
+                                    <th scope="col" wire:click="sortBy('business_development_documents.id')" style="cursor: pointer;">#
+                                        @include('partials._sort-icon',['field'=>'business_development_documents.id'])
                                     </th>
                                     <th scope="col" wire:click="sortBy('clients.client_name')" style="cursor: pointer;">Name
                                         @include('partials._sort-icon',['field'=>'clients.client_name'])
@@ -40,29 +40,30 @@
                                     <th scope="col" wire:click="sortBy('clients.company')" style="cursor: pointer;">Company
                                         @include('partials._sort-icon',['field'=>'clients.company'])
                                     </th>
-                                    <th scope="col" wire:click="sortBy('clients.invoice_number')" style="cursor: pointer;">Invoice Number
-                                        @include('partials._sort-icon',['field'=>'clients.invoice_number'])
+                                    <th scope="col" wire:click="sortBy('clients.customer_number')" style="cursor: pointer;">Customer No.
+                                        @include('partials._sort-icon',['field'=>'clients.customer_number'])
                                     </th>
-                                    <th scope="col" wire:click="sortBy('clients.business_status')" style="cursor: pointer;">Status
-                                        @include('partials._sort-icon',['field'=>'clients.business_status'])
+                                    <th scope="col" wire:click="sortBy('business_development_documents.invoice_number')" style="cursor: pointer;">Invoice No.
+                                        @include('partials._sort-icon',['field'=>'business_development_documents.invoice_number'])
                                     </th>
-                                    <th scope="col" wire:click="sortBy('clients.id')" style="cursor: pointer;">Product Summary
-                                        @include('partials._sort-icon',['field'=>'clients.id'])
+                                    <th scope="col" wire:click="sortBy('business_development_documents.id')" style="cursor: pointer;">Product Summary
+                                        @include('partials._sort-icon',['field'=>'business_development_documents.id'])
                                     </th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($clients as $i => $client)
+                                @foreach ($invoices as $i => $invoice)
                                     <tr>
                                         <td>{{ $i + 1 }}</td>
-                                        <td>{{ $client->client_name }}</td>
-                                        <td>{{ $client->company }}</td>
-                                        <td>{{ $client->invoice_number }}</td>
-                                        <td>{{ $client->business_status }}</td>
+                                        <td>{{ $invoice->client->client_name }}</td>
+                                        <td>{{ $invoice->client->company }}</td>
+                                        <td>{{ $invoice->client->customer_number }}</td>
+                                        <td>{{ $invoice->invoice_number }}</td>
                                         <td>
                                             @php
-                                               $item_details =Modules\BusinessDevelopment\App\Models\Client::where('invoice_number',$client->invoice_number)->get();
+                                               $item_details =Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument::where('client_id',$invoice->client_id)->where('status','pending')->get();
+                                               $total_amount =Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument::where('client_id',$invoice->client_id)->where('status','pending')->sum('amount');
                                             @endphp
                                             <table class="table table-sm table-bordered mb-0">
                                                 <thead>
@@ -84,13 +85,17 @@
                                                             <td>{{ Str::limit($detail->description, 15, '...') }}</td>
                                                         </tr>
                                                     @endforeach
+                                                    <tr class="font-weight-bold text-right">
+                                                    <td colspan="4">SUBTOTAL</td>
+                                                    <td> UGx: {{ number_format($total_amount) }}</td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                         <td>
                                             <a href="#!" class="btn btn-info btn-sm mb-2"><i class="feather icon-edit"></i>&nbsp;Edit</a>
-                                            <a href="{{URL::signedRoute('Quotation Form',['client_id' => $detail->id])}}" class="btn btn-warning btn-sm mb-2"><i class="feather icon-trash-2"></i>&nbsp;Quotation</a><br>
-                                            <a href="{{URL::signedRoute('Invoice Form',['client_id' => $detail->id])}}" class="btn btn-success btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Invoice</a>
+                                            <a href="{{URL::signedRoute('Print Invoice',['client_id' => $detail->client_id])}}" class="btn btn-warning btn-sm mb-2"><i class="feather icon-trash-2"></i>&nbsp;Print</a><br>
+                                            <a href="/businessdevelopment/change-status/{{$invoice->id}}" class="btn btn-success btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Status</a>
                                             <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete</a>
                                         </td>
                                     </tr>
@@ -101,11 +106,11 @@
                     <div class="col-md-12 mt-2">
                         <div class="row mb-2">
                             <div class="col-md-4">
-                                Showing {{ $clients->firstItem() }} to {{ $clients->lastItem() }} out of {{ $clients->total() }} items
+                                Showing {{ $invoices->firstItem() }} to {{ $invoices->lastItem() }} out of {{ $invoices->total() }} items
                             </div>
                             <div class="col-md-4"></div>
                             <div class="col-md-4 pull-right text-end">
-                                {{ $clients->links() }}
+                                {{ $invoices->links() }}
                             </div>
                         </div>
                     </div>

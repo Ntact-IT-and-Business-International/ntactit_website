@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Client;
 
 use Livewire\Component;
 use Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument;
+use Modules\ServicesModule\App\Models\Service;
 use Session;
 
 class InvoiceForm extends Component
@@ -15,12 +16,14 @@ class InvoiceForm extends Component
     public $items = [];
     public $business_status;
     public $registered_by;
+    public $service_id;
 
     protected $rules = [
         'client_id' => '',
         'registered_by' => '',
         'document_type' => '',
         'invoice_number'=>'',
+        'service_id' =>'required',
         'items.*.quantity' => 'required|integer',
         'items.*.rate' => 'required|numeric',
         'items.*.amount' => 'required|numeric',
@@ -28,6 +31,7 @@ class InvoiceForm extends Component
     ];
 
     protected $messages = [
+        'service_id.required' => 'Service is required',
         'items.*.quantity.required' => 'Quantity is required',
         'items.*.rate.required' => 'Rate is required',
         'items.*.amount.required' => 'Amount is required',
@@ -58,7 +62,7 @@ class InvoiceForm extends Component
         ];
     }
 
-    public function addQuotation()
+    public function addInvoice()
     {
         $this->validate();
 
@@ -70,6 +74,7 @@ class InvoiceForm extends Component
                 'client_id' => $this->client_id,
                 'invoice_number' =>$this->invoice_number,
                 'document_type' => 'invoice',
+                'service_id' =>$this->service_id,
                 'quantity' => $item['quantity'],
                 'description' => $item['description'],
                 'rate' => $item['rate'],
@@ -87,11 +92,16 @@ class InvoiceForm extends Component
         $this->items = [$this->createEmptyItem()]; // Reset items to a single empty item
 
         Session::flash('msg', 'Operation Successful');
-        return redirect()->to('/businessdevelopment/client');
+        return redirect()->to('/businessdevelopment/invoice');
     }
 
     public function render()
     {
-        return view('livewire.admin.client.invoice-form');
+        return view('livewire.admin.client.invoice-form',[
+            'services' =>$this->getService()
+        ]);
+    }
+    private function getService(){
+        return Service::get();
     }
 }

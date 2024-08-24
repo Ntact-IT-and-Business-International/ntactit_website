@@ -3,6 +3,7 @@
 namespace Modules\BusinessDevelopment\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument;
 
 class BusinessDevelopmentController extends Controller
 {
@@ -31,12 +32,37 @@ class BusinessDevelopmentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function getDocument($document_type)
+    public function getQuotationInfo()
     {
+        return view('businessdevelopment::quotation');
+    }
+    //This function prints clients quotation
+    public function printQuotation($client_id){
         if (! request()->hasValidSignature()) {
             abort(401);
         }
-        return view('businessdevelopment::document', compact('document_type'));
+        $quotations =BusinessDevelopmentDocument::with('creator','client')
+        ->where('client_id',$client_id)
+        ->where('status','pending')
+        ->limit(1)
+        ->get();
+        return view('businessdevelopment::print_quotation',compact('client_id','quotations'));
     }
 
+    public function getInvoiceInfo()
+    {
+        return view('businessdevelopment::invoice');
+    }
+    //This function prints clients quotation
+    public function printInvoice($client_id){
+        if (! request()->hasValidSignature()) {
+            abort(401);
+        }
+        $invoices =BusinessDevelopmentDocument::with('creator','client')
+        ->where('client_id',$client_id)
+        ->where('status','pending')
+        ->limit(1)
+        ->get();
+        return view('businessdevelopment::print_invoice',compact('client_id','invoices'));
+    }
 }

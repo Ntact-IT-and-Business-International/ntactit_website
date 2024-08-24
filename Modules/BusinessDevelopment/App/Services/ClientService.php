@@ -2,6 +2,7 @@
 
 namespace Modules\BusinessDevelopment\App\Services;
 use Modules\BusinessDevelopment\App\Models\Client;
+use Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument;
 
 class ClientService
 {
@@ -38,6 +39,20 @@ class ClientService
             Client::deleteClient($ClientId);
 
             return response()->json(['success' => 'operation successful']);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
+    public static function getQuotationClients($search, $sortBy, $sortDirection, $perPage){
+        try {
+            return BusinessDevelopmentDocument::getQuotationClients($search, $sortBy, $sortDirection, $perPage);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
+    public static function getInvoiceClients($search, $sortBy, $sortDirection, $perPage){
+        try {
+            return BusinessDevelopmentDocument::getInvoiceClients($search, $sortBy, $sortDirection, $perPage);
         } catch (\Exception $e) {
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }

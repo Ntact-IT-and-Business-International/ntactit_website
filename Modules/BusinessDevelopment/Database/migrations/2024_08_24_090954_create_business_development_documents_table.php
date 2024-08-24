@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id');
             $table->string('document_type');
+            $table->foreignId('service_id');
             $table->string('invoice_number')->nullable();
             $table->string('quantity');
             $table->string('description');

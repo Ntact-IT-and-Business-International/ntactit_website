@@ -4,10 +4,10 @@ namespace App\Livewire\Admin\Client;
 
 use Livewire\Component;
 
-class Document extends Component
+class PrintInvoice extends Component
 {
     public function render()
     {
-        return view('livewire.admin.client.document');
+        return view('livewire.admin.client.print-invoice');
     }
 }

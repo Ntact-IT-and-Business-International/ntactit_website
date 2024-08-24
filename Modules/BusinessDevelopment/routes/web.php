@@ -17,7 +17,11 @@ use Modules\BusinessDevelopment\App\Http\Controllers\BusinessDevelopmentControll
 Route::group(['prefix' => 'businessdevelopment', 'middleware' => ['auth']], function () {
     Route::get('/client', 'BusinessDevelopmentController@getClient')->name('Client');
     Route::get('/get-quotation-form/{client_id}', 'BusinessDevelopmentController@getQuotation')->name('Quotation Form');
-    Route::get('/get-invoice-form/{client_id}', 'BusinessDevelopmentController@getInvoice')->name('Invoice Form');
-    Route::get('/{document_type}', 'BusinessDevelopmentController@getDocument')->name('Document');
+    Route::get('/get-invoice-form/{client_id}', 'BusinessDevelopmentController@getInvoice')->name('Invoice Form'); 
+    Route::get('/quotation', 'BusinessDevelopmentController@getQuotationInfo')->name('Quotations');
+    Route::get('/print-quotation/{client_id}', 'BusinessDevelopmentController@printQuotation')->name('Print Quotation');
+
+    Route::get('/invoice', 'BusinessDevelopmentController@getInvoiceInfo')->name('Invoice');
+    Route::get('/print-invoice/{client_id}', 'BusinessDevelopmentController@printInvoice')->name('Print Invoice');
 });
 

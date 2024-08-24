@@ -7,22 +7,35 @@
                     @foreach ($items as $index => $item)
                         <div class="col-sm-12">
                             <input type="hidden" wire:model="client_id" class="form-control" value="{{$client_id}}" placeholder="">
+                            
                             <div class="row">
-                                <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="floating-label" for="Service"><span class="text-danger">*</span> Service</label>
+                                    <select class="form-control" wire:model="service_id">
+                                        <option>Select Service</option>
+                                        @foreach ($services as $service)
+                                        <option value="{{$service->id}}">{{$service->name_of_service}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error("service_id") <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                                <div class="col-sm-6">
                                     <div class="form-group fill">
                                         <label class="floating-label" for="quantity"> <span class="text-danger">*</span> Quantity</label>
                                         <input type="text" wire:model="items.{{ $index }}.quantity" class="form-control" placeholder="">
                                     </div>
                                     @error("items.{$index}.quantity") <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <div class="form-group fill">
                                         <label class="floating-label" for="rate"><span class="text-danger">*</span> Rate</label>
                                         <input type="number" class="form-control" wire:model="items.{{ $index }}.rate" placeholder="">
                                     </div>
                                     @error("items.{$index}.rate") <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="floating-label" for="amount"><span class="text-danger">*</span> Amount</label>
                                         <input type="number" class="form-control" wire:model="items.{{ $index }}.amount" placeholder="">
