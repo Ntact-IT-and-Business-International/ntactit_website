@@ -51,6 +51,16 @@
                             <div>Clients</div>
                         </a>
                     </li>
+                    <li class="sidenav-item">
+                        <a href="/businessdevelopment/quotation" class="sidenav-link">
+                            <div>Quotation</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="/businessdevelopment/invoice" class="sidenav-link">
+                            <div>Invoice</div>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="sidenav-item">

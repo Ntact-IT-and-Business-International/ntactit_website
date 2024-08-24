@@ -16,9 +16,7 @@ class Client extends Model
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'client_name', 'company', 'email', 'contact', 'invoice_number',
-        'address', 'customer_number', 'quantity', 'description', 'rate',
-        'amount', 'business_status', 'registered_by'
+        'client_name', 'company', 'email', 'contact','address', 'customer_number', 'business_status', 'registered_by'
     ];
     
     public function creator(): BelongsTo
@@ -36,7 +34,6 @@ class Client extends Model
         ->orWhere('company', 'like', '%'.$val.'%')
         ->orWhere('email', 'like', '%'.$val.'%')
         ->orWhere('contact', 'like', '%'.$val.'%')
-        ->orWhere('invoice_number', 'like', '%'.$val.'%')
         ->orWhere('customer_number', 'like', '%'.$val.'%')
         ->orWhere('created_at', 'like', '%'.$val.'%');
     }
@@ -48,13 +45,8 @@ class Client extends Model
             'company' => $fields['company'],
             'email' => $fields['email'],
             'contact' => $fields['contact'],
-            'invoice_number' => $fields['invoice_number'],
             'address' => $fields['address'],
             'customer_number' => $fields['customer_number'],
-            'quantity' => $fields['quantity'],
-            'description' => $fields['description'],
-            'rate' => $fields['rate'],
-            'amount' => $fields['amount'],
             'business_status' => $fields['business_status'],
             'registered_by' => $fields['registered_by'],
         ]);
@@ -67,9 +59,7 @@ class Client extends Model
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator')
-        ->select('invoice_number', 'client_name', 'company', 'email', 'contact', 'customer_number', 'business_status', 'registered_by')
         ->search($search)
-        ->distinct()
         ->orderBy($sortBy, $sortDirection)
         ->paginate($perPage);
     }

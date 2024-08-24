@@ -3,9 +3,6 @@
 namespace Modules\BusinessDevelopment\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class BusinessDevelopmentController extends Controller
 {
@@ -16,52 +13,30 @@ class BusinessDevelopmentController extends Controller
     {
         return view('businessdevelopment::index');
     }
+    public function getQuotation($client_id)
+    {
+        if (! request()->hasValidSignature()) {
+            abort(401);
+        }
+        return view('businessdevelopment::quotation_form',compact('client_id'));
+    }
 
+    public function getInvoice($client_id)
+    {
+        if (! request()->hasValidSignature()) {
+            abort(401);
+        }
+        return view('businessdevelopment::invoice_form',compact('client_id'));
+    }
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function getDocument($document_type)
     {
-        return view('businessdevelopment::create');
+        if (! request()->hasValidSignature()) {
+            abort(401);
+        }
+        return view('businessdevelopment::document', compact('document_type'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
-    {
-        return view('businessdevelopment::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        return view('businessdevelopment::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id): RedirectResponse
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
