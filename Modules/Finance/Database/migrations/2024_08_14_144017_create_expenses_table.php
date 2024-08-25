@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('quantity');
             $table->string('description');
             $table->string('unit_cost');
-            $table->string('amount');
+            $table->string('amount')->nullable();
             $table->string('expense_status');
             $table->foreignId('created_by');
             $table->timestamps();

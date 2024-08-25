@@ -5,18 +5,19 @@ namespace App\Livewire\Admin\Finance;
 use LivewireUI\Modal\ModalComponent;
 use Modules\Finance\App\Services\PayrollService;
 use App\Models\User;
+use Modules\HumanResource\App\Models\EmployeeRecord;
 use Session;
 
 class AddPayroll extends ModalComponent
 {
     public $created_by;
-    public $employee_id;
+    public $employee_record_id;
     public $month;
     public $amount;
     public $payroll_status;
      // Validate
      protected $rules = [
-        'employee_id' => 'required',
+        'employee_record_id' => 'required',
         'amount' => 'required',
         'month' => 'required',
         'payroll_status' => 'required',
@@ -25,7 +26,7 @@ class AddPayroll extends ModalComponent
 
     // Customize validation error messages
     protected $messages = [
-        'employee_id.required' => 'Name of Employee is required',
+        'employee_record_id.required' => 'Name of Employee is required',
         'amount.required' => 'Amount is required',
         'month.required' => 'Month is required',
         'payroll_status.required' => 'Status is required',
@@ -33,7 +34,7 @@ class AddPayroll extends ModalComponent
     public function addPayroll(){
         $this->validate();
         $fields = [
-            'employee_id' => $this->employee_id,
+            'employee_record_id' => $this->employee_record_id,
             'amount' => $this->amount,
             'month' => $this->month,
             'payroll_status' => $this->payroll_status,
@@ -53,6 +54,6 @@ class AddPayroll extends ModalComponent
     }
 
     private function getEmployee(){
-        return User::whereStatus('employee')->get();
+        return EmployeeRecord::get();
     }
 }

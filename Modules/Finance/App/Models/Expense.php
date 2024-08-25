@@ -41,7 +41,7 @@ class Expense extends Model
     {
         return $query->where('description', 'like', '%'.$val.'%')
         ->orWhere('date_of_expense', 'like', '%'.$val.'%')
-        ->orWhereHas('name', function ($query) use ($val) {
+        ->orWhereHas('creator', function ($query) use ($val) {
             $query->where('name', 'like', '%'.$val.'%');
         })
         ->orWhereHas('item', function ($query) use ($val) {
@@ -68,7 +68,7 @@ class Expense extends Model
     public static function getExpense($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'item';
+        $sortBy = $sortBy ?: 'date_of_expense';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator','department','item')->search($search)
@@ -95,4 +95,8 @@ class Expense extends Model
     {
         self::whereId($ExpenseId)->delete();
     }
+
+    public static function sumAmount(){
+        return self::sum('amount');
+    } 
 }

@@ -3,14 +3,15 @@
 namespace App\Livewire\Admin\Finance;
 
 use LivewireUI\Modal\ModalComponent;
+use Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument;
 use Modules\BusinessDevelopment\App\Models\Client;
 use Modules\Finance\App\Services\IncomeService;
 use Session;
 
 class AddIncome extends ModalComponent
 {
-    public $created_by;
-    public $invoice_id;
+    public $entered_by;
+    public $invoice_number;
     public $received_from;
     public $reason;
     public $initial_deposit;
@@ -18,32 +19,32 @@ class AddIncome extends ModalComponent
     public $income_status;
      // Validate
      protected $rules = [
-        'invoice_id' => 'required',
+        'invoice_number' => '',
         'received_from' => 'required',
         'initial_deposit' => '',
         'reason' => 'required',
         'actual_amount' => 'required',
         'income_status' => '',
-        'created_by' => '',
+        'entered_by' => '',
     ];
 
     // Customize validation error messages
     protected $messages = [
-        'invoice_id.required' => 'Category is required',
-        'received_from.required' => 'Type is required',
-        'reason.required' => 'Quantity is required',
-        'actual_amount.required' => 'Description is required',
+        'received_from.required' => 'Client Name is required',
+        'reason.required' => 'Reason is required',
+        'actual_amount.required' => 'Actual Amount is required',
     ];
     public function addIncome(){
         $this->validate();
+        $invoice_number =BusinessDevelopmentDocument::where('client_id',$this->received_from)->value('invoice_number');
         $fields = [
-            'invoice_id' => $this->invoice_id,
             'received_from' => $this->received_from,
+            'invoice_number' => $invoice_number,
             'reason' => $this->reason,
             'initial_deposit' => $this->initial_deposit,
             'actual_amount' => $this->actual_amount,
             'income_status' => $this->income_status,
-            'created_by' => auth()->user()->id,
+            'entered_by' => auth()->user()->id,
         ];
         IncomeService::createIncome($fields);
         Session::flash('msg', 'Operation Succesful');
@@ -54,10 +55,10 @@ class AddIncome extends ModalComponent
     public function render()
     {
         return view('livewire.admin.finance.add-income',[
-            'invoices'=>$this->getInvoiceNumber()
+            'clients'=>$this->getClient()
         ]);
     }
-    private function getInvoiceNumber(){
-        return Client::get();
+    private function getClient(){
+        return BusinessDevelopmentDocument::with('client')->distinct()->select('client_id')->whereNotNull('invoice_number')->get();
     }
 }

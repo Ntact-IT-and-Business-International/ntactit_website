@@ -8,6 +8,7 @@ use Modules\Finance\Database\factories\IncomeFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\BusinessDevelopment\App\Models\Client;
 use App\Models\User;
+use Modules\BusinessDevelopment\App\Models\BusinessDevelopmentDocument;
 
 class Income extends Model
 {
@@ -24,7 +25,11 @@ class Income extends Model
     }
     public function client(): BelongsTo
     {
-        return $this->belongsTo(Client::class, 'invoice_id');
+        return $this->belongsTo(Client::class, 'received_from');
+    }
+    public function invoice(): BelongsTo
+    {
+        return $this->belongsTo(BusinessDevelopmentDocument::class, 'invoice_number');
     }
     
     protected static function newFactory(): IncomeFactory
@@ -33,13 +38,12 @@ class Income extends Model
     }
     public function scopeSearch($query, $val)
     {
-        return $query->where('received_from', 'like', '%'.$val.'%')
-        ->orWhere('reason', 'like', '%'.$val.'%')
-        ->orWhere('actual_received_from', 'like', '%'.$val.'%')
-        ->orWhereHas('name', function ($query) use ($val) {
-            $query->where('name', 'like', '%'.$val.'%');
+        return $query->where('reason', 'like', '%'.$val.'%')
+        ->orWhere('actual_amount', 'like', '%'.$val.'%')
+        ->orWhereHas('client', function ($query) use ($val) {
+            $query->where('received_from', 'like', '%'.$val.'%');
         })
-        ->orWhereHas('invoice_number', function ($query) use ($val) {
+        ->orWhereHas('invoice', function ($query) use ($val) {
             $query->where('invoice_number', 'like', '%'.$val.'%');
         });
     }
@@ -47,7 +51,7 @@ class Income extends Model
     public static function createIncome($fields)
     {
         self::create([
-            'invoice_id' => $fields['invoice_id'],
+            'invoice_number' => $fields['invoice_number'],
             'received_from' => $fields['received_from'],
             'reason' => $fields['reason'],
             'initial_deposit' => $fields['initial_deposit'],
@@ -60,10 +64,10 @@ class Income extends Model
     public static function getIncome($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'name';
+        $sortBy = $sortBy ?: 'invoice_number';
         $sortDirection = $sortDirection ?: 'desc';
 
-        return self::with('creator','client')->search($search)
+        return self::with('creator','client','invoice')->search($search)
             ->orderBy($sortBy, $sortDirection)
             ->paginate($perPage);
     }
@@ -71,7 +75,7 @@ class Income extends Model
     public static function updateIncome($IncomeId, $fields)
     {
         self::whereId($IncomeId)->update([
-            'invoice_id' => $fields['invoice_id'],
+            'invoice_number' => $fields['invoice_number'],
             'received_from' => $fields['received_from'],
             'reason' => $fields['reason'],
             'initial_deposit' => $fields['initial_deposit'],
@@ -84,5 +88,13 @@ class Income extends Model
     public static function deleteIncome($IncomeId)
     {
         self::whereId($IncomeId)->delete();
+    }
+
+    public static function sumIncomeAmount(){
+        return self::sum('actual_amount');
+    }
+
+    public static function sumIncomeDeposit(){
+        return self::sum('initial_deposit');
     }
 }

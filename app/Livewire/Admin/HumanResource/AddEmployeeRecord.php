@@ -36,6 +36,7 @@ class AddEmployeeRecord extends ModalComponent
     public $password;
     public $password_confirmation;
     public $photo;
+    public $bank_name;
      // Validate
      protected $rules = [
         'employee_id' => '',
@@ -58,6 +59,7 @@ class AddEmployeeRecord extends ModalComponent
         'password_confirmation' => 'required|same:password',
         'photo' => 'required|mimes:jpeg,png,webp|max:1024',
         'name' => 'required',
+        'bank_name' => 'required',
     ];
 
     // Customize validation error messages
@@ -78,6 +80,7 @@ class AddEmployeeRecord extends ModalComponent
         'password_confirmation.required' => 'Please confirm password',
         'photo.required' => 'Photo is required',
         'name.required' => 'Full Names is required',
+        'bank_name.required' => 'Bank Name is required',
     ];
     public function addEmployee(){
          $this->validate();
@@ -114,6 +117,7 @@ class AddEmployeeRecord extends ModalComponent
             'phone_number' =>$this->phone_number,
             'employee_status' => $this->employee_status,
             'photo'=>$photo,
+            'bank_name'=>$this->bank_name,
             'created_by' => auth()->user()->id,
         ];
         EmployeeRecordService::createEmployeeRecord($fields);

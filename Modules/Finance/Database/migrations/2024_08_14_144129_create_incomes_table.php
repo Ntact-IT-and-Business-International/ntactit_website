@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('invoice_id');
+            $table->foreignId('invoice_number');
             $table->string('received_from');
             $table->string('reason');
             $table->string('initial_deposit')->nullable();

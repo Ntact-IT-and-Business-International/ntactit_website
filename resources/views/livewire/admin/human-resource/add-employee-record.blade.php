@@ -71,14 +71,28 @@
                         @error('curriculum_vitae') <span class="text-danger">{{ $message }}</span> @enderror
                         <div wire:loading wire:target="curriculum_vitae" style="color:green;"><strong>Uploading CV, Please Wait...</strong></div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <label class="floating-label" for="AccountNumber"><span class="text-danger">*</span> Account Number</label>
                             <input type="text" class="form-control" wire:model="account_number" id="account_number" placeholder="">
                         </div>
                         @error('account_number') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="floating-label" for="AccountNumber"><span class="text-danger">*</span> Bank Name</label>
+                            <select class="form-control" wire:model="bank_name">
+                                <option>Choose Bank</option>
+                                <option value="Stanbic">Stanbic Bank</option>
+                                <option value="Centenary">Centenary Bank</option>
+                                <option value="Post">Post Bank</option>
+                                <option value="Equity">Equity Bank</option>
+                                <option value="DFCU">DFCU Bank</option>
+                            </select>
+                        </div>
+                        @error('bank_name') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <label class="floating-label" for="AppointmentLetter"><span class="text-danger">*</span> Appointment Letter (File Less Than 1mb)</label>
                             <input type="file" class="form-control" wire:model="appointment_letter" id="appointment_letter" placeholder="">

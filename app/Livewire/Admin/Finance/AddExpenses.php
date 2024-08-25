@@ -20,11 +20,12 @@ class AddExpenses extends ModalComponent
     public $date_of_expense;
     public $unit_cost;
     public $expense_status;
+    public $received_by;
      // Validate
      protected $rules = [
         'item_id' => 'required',
         'department_id' => 'required',
-        'amount' => 'required',
+        'amount' => '',
         'quantity' => 'required',
         'description' => 'required',
         'date_of_expense' => 'required',
@@ -38,7 +39,6 @@ class AddExpenses extends ModalComponent
     protected $messages = [
         'item_id.required' => 'Item is required',
         'department_id.required' => 'Department is required',
-        'amount.required' => 'Amount is required',
         'quantity.required' => 'Quantity is required',
         'description.required' => 'Description is required',
         'date_of_expense.required' => 'Date is required',
@@ -47,6 +47,7 @@ class AddExpenses extends ModalComponent
     ];
     public function addExpenditure(){
         $this->validate();
+        $amount =$this->quantity * $this->unit_cost;
         $fields = [
             'received_by' => $this->received_by,
             'item_id' => $this->item_id,
@@ -55,13 +56,14 @@ class AddExpenses extends ModalComponent
             'quantity' => $this->quantity,
             'description' => $this->description,
             'unit_cost' => $this->unit_cost,
-            'amount' => $this->amount,
-            'expense_status' => 'pending',
+            'amount' => $amount,
+            'expense_status' => $this->expense_status,
             'created_by' => auth()->user()->id,
         ];
         ExpenseService::createExpense($fields);
         Session::flash('msg', 'Operation Succesful');
         $this->dispatch('Expenses', 'refreshComponent');
+        $this->dispatch('ExpensesCards', 'refreshComponent');
         $this->closeModal();
     }
     
