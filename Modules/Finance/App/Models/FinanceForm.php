@@ -29,7 +29,7 @@ class FinanceForm extends Model
     public function scopeSearch($query, $val)
     {
         return $query->where('name_of_form', 'like', '%'.$val.'%')
-        ->orWhereHas('name', function ($query) use ($val) {
+        ->orWhereHas('creator', function ($query) use ($val) {
             $query->where('name', 'like', '%'.$val.'%');
         });
     }
@@ -46,7 +46,7 @@ class FinanceForm extends Model
     public static function getFinanceForm($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'name';
+        $sortBy = $sortBy ?: 'name_of_form';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator')->search($search)
