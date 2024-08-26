@@ -186,7 +186,7 @@
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/accountsetting/users" class="sidenav-link">
                             <div>Users</div>
                         </a>
                     </li>

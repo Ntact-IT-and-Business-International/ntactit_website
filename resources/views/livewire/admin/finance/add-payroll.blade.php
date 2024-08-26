@@ -34,7 +34,7 @@
                         <div class="form-group fill">
                             <label class="floating-label" for="Status"> Payroll  Status</label>
                             <select class="form-control" wire:model="payroll_status">
-                                <option>Choose Status</option> cleared','pending balance','not paid
+                                <option>Choose Status</option>
                                 <option value="cleared">Cleared</option>
                                 <option value="pending balance">Pending Balance</option>
                                 <option value="not paid">Not Paid</option>

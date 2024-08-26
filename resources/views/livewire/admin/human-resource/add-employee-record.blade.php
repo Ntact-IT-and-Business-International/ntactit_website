@@ -7,16 +7,14 @@
                     <div class="col-sm-4">
                         <div class="form-group fill">
                             <label class="floating-label" for="Name"><span class="text-danger">*</span> Full Name</label>
-                            <input type="text" class="form-control" wire:model="name" id="name" placeholder="">
+                            <select class="form-control" wire:model="employee_id" id="employee_id">
+                                <option>Choose Employee</option>
+                                @foreach ($employees as $employee )
+                                <option value="{{$employee->id}}">{{$employee->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        @error('name') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group fill">
-                            <label class="floating-label" for="Email"><span class="text-danger">*</span> Email</label>
-                            <input type="email" class="form-control" wire:model="email" id="email" placeholder="">
-                        </div>
-                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                        @error('employee_id') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group fill">
@@ -36,6 +34,12 @@
                             </select>
                         </div>
                         @error('department_id') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="floating-label" for="NssfNumber">Nssf Number</label>
+                            <input type="text" class="form-control" wire:model="nssf" id="nssf" placeholder="">
+                        </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group fill">
@@ -94,6 +98,14 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
+                            <label class="floating-label" for="salary"><span class="text-danger">*</span> Salary</label>
+                            <input type="number" class="form-control" wire:model="salary" id="salary" placeholder="">
+                        </div>
+                        @error('salary') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
                             <label class="floating-label" for="AppointmentLetter"><span class="text-danger">*</span> Appointment Letter (File Less Than 1mb)</label>
                             <input type="file" class="form-control" wire:model="appointment_letter" id="appointment_letter" placeholder="">
                         </div>
@@ -107,13 +119,6 @@
                         </div>
                         @error('contract') <span class="text-danger">{{ $message }}</span> @enderror
                         <div wire:loading wire:target="contract" style="color:green;"><strong>Uploading Contract, Please Wait...</strong></div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="floating-label" for="salary"><span class="text-danger">*</span> Salary</label>
-                            <input type="number" class="form-control" wire:model="salary" id="salary" placeholder="">
-                        </div>
-                        @error('salary') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -135,26 +140,6 @@
                             <textarea class="form-control" wire:model="job_description" id="job_description" rows="2" placeholder="summarized Job description"></textarea>
                         </div>
                         @error('job_description') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="floating-label" for="NssfNumber">Nssf Number</label>
-                            <input type="text" class="form-control" wire:model="nssf" id="nssf" placeholder="">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="floating-label" for="password"> <span class="text-danger">*</span>Password</label>
-                            <input type="password" class="form-control" wire:model="password" id="password" placeholder="">
-                        </div>
-                        @error('password') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="floating-label" for="ConfirmPassword"><span class="text-danger">*</span> Confirm password</label>
-                            <input type="password" class="form-control" wire:model="password_confirmation" id="password_confirmation" placeholder="">
-                        </div>
-                        @error('password_confirmation') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="col-sm-12 text center">

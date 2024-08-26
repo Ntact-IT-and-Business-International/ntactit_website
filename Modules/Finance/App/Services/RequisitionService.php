@@ -13,7 +13,20 @@ class RequisitionService
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }
     }
-
+    public static function forwardRequisition($RequisitionId, $fields){
+        try {
+            return Requisition::forwardRequisition($RequisitionId, $fields);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
+    public static function rejectRequisition($RequisitionId, $fields){
+        try {
+            return Requisition::rejectRequisition($RequisitionId, $fields);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
     public static function getRequisition($search, $sortBy, $sortDirection, $perPage)
     {
         try {
@@ -38,6 +51,13 @@ class RequisitionService
             Requisition::deleteRequisition($RequisitionId);
 
             return response()->json(['success' => 'operation successful']);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
+    public static function getMoreRequisitionDetails($RequisitionId){
+        try {
+            return Requisition::getMoreRequisitionDetails($RequisitionId);
         } catch (\Exception $e) {
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }

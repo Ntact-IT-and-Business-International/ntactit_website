@@ -17,7 +17,7 @@ class Report extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $guareded = ['id'];
+    protected $guarded = ['id'];
 
     public function creator(): BelongsTo
     {
@@ -35,7 +35,7 @@ class Report extends Model
     }
     public function scopeSearch($query, $val)
     {
-        return $query->where('title', 'like', '%'.$val.'%')
+        return $query->where('report_heading', 'like', '%'.$val.'%')
         ->orWhere('date', 'like', '%'.$val.'%')
         ->orWhereHas('department', function ($query) use ($val) {
             $query->where('department', 'like', '%'.$val.'%');
@@ -47,6 +47,7 @@ class Report extends Model
         self::create([
             'department_id' => $fields['department_id'],
             'employee_id' => $fields['employee_id'],
+            'report_heading' => $fields['report_heading'],
             'date' => $fields['date'],
             'report' => $fields['report'],
         ]);
@@ -55,7 +56,7 @@ class Report extends Model
     public static function getReport($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'department';
+        $sortBy = $sortBy ?: 'report_heading';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator','department')->search($search)
@@ -68,6 +69,7 @@ class Report extends Model
         self::whereId($ReportId)->update([
             'department_id' => $fields['department_id'],
             'employee_id' => $fields['employee_id'],
+            'report_heading' => $fields['report_heading'],
             'date' => $fields['date'],
             'report' => $fields['report'],
         ]);

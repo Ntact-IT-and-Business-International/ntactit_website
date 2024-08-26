@@ -18,6 +18,9 @@ Route::group(['prefix' => 'finance', 'middleware' => ['auth']], function () {
     Route::get('/expenses', 'FinanceController@getExpenses')->name('Expenses');
     Route::get('/finance-forms', 'FinanceController@getFinanceForms')->name('Finance Forms');
     Route::get('/income', 'FinanceController@getIncome')->name('Income');
-    Route::get('/payroll', 'FinanceController@getPayroll')->name('Payroll');
+    Route::get('/payroll', 'FinanceController@getPayroll')->name('Payroll'); 
     Route::get('/requisition', 'FinanceController@getRequisition')->name('Requisitions');
+    Route::get('/view-more/{requisition_id}', 'FinanceController@getViewMore')->name('View More');
+    Route::get('/forward/{requisition_id}', 'FinanceController@forwardRequisition')->name('Forward Requisition');
+    Route::get('/reject/{requisition_id}', 'FinanceController@rejectRequisition')->name('Reject Requisitions');
 });

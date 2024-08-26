@@ -2,6 +2,7 @@
 
 namespace Modules\NoticeBoard\App\Services;
 use Modules\NoticeBoard\App\Models\NoticeBoard;
+use Modules\NoticeBoard\App\Models\NoticeBoardRead;
 
 class NoticeBoardService
 {
@@ -9,6 +10,13 @@ class NoticeBoardService
     {
         try {
             return NoticeBoard::createNoticeBoard($fields);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
+    public static function createNoticeBoardRead($fields){
+        try {
+            return NoticeBoardRead::createNoticeBoardRead($fields);
         } catch (\Exception $e) {
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }

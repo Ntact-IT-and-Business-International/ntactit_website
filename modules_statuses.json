@@ -12,5 +12,6 @@
     "Finance": true,
     "CompanyDocuments": true,
     "NoticeBoard": true,
-    "BusinessDevelopment": true
+    "BusinessDevelopment": true,
+    "AccountSetting": true
 }

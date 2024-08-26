@@ -3,44 +3,50 @@
 namespace App\Livewire\Admin\Reports;
 
 use LivewireUI\Modal\ModalComponent;
+use Modules\Reports\App\Services\ReportService;
+use Illuminate\Support\Facades\Session;
+use Modules\Department\App\Models\Department;
+use App\Traits\saveToReportFolder;
+use Livewire\WithFileUploads;
 
 class AddReport extends ModalComponent
 {
-    public $created_by;
-    public $service;
-    public $category;
-    public $quantity;
-    public $amount;
-    public $description;
+    use saveToReportFolder,WithFileUploads;
+    public $employee_id;
+    public $report_heading;
+    public $department_id;
+    public $date;
+    public $report;
      // Validate
      protected $rules = [
-        'service' => 'required',
-        'category' => 'required',
-        'amount' => 'required',
-        'quantity' => 'required',
-        'description' => 'required',
-        'created_by' => '',
+        'report_heading' => 'required',
+        'department_id' => 'required',
+        'report' => 'required|mimes:pdf,doc,docx,xls,xlsx|max:1024',
+        'date' => 'required',
+        'employee_id' => '',
     ];
 
     // Customize validation error messages
     protected $messages = [
-        'service.required' => 'Category is required',
-        'category.required' => 'Type is required',
-        'amount.required' => 'Name of Item is required',
-        'quantity.required' => 'Quantity is required',
-        'description.required' => 'Description is required',
+        'report_heading.required' => 'Title is required',
+        'department_id.required' => 'Department is required',
+        'report.required' => 'Report is required',
+        'date.required' => 'Date is required',
     ];
-    public function addService(){
+    public function addReport(){
         $this->validate();
+
+        $report = $this->saveToReports('report', $this->report);
+
         $fields = [
-            'service' => $this->service,
-            'category' => $this->category,
-            'amount' => $this->amount,
-            'quantity' => $this->quantity,
-            'description' => $this->description,
-            'created_by' => auth()->user()->id,
+            'report_heading' => $this->report_heading,
+            'department_id' => $this->department_id,
+            'report' => $report,
+            'date' => $this->date,
+            'employee_id' => auth()->user()->id,
         ];
-        Package::createPackage($fields);
+        $test =ReportService::createReport($fields);
+    dd($test);
         Session::flash('msg', 'Operation Succesful');
         $this->dispatch('Package', 'refreshComponent');
         $this->closeModal();
@@ -48,6 +54,11 @@ class AddReport extends ModalComponent
     
     public function render()
     {
-        return view('livewire.admin.reports.add-report');
+        return view('livewire.admin.reports.add-report',[
+            'departments'=>$this->getDepartment()
+        ]);
+    }
+    private function getDepartment(){
+        return Department::get();
     }
 }

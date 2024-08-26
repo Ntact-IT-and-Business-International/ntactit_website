@@ -40,7 +40,6 @@ class Requisition extends Model
     {
         return $query->where('work_order', 'like', '%'.$val.'%')
         ->orWhere('date', 'like', '%'.$val.'%')
-        ->orWhere('nssf_number', 'like', '%'.$val.'%')
         ->orWhereHas('department', function ($query) use ($val) {
             $query->where('department', 'like', '%'.$val.'%');
         })
@@ -62,21 +61,23 @@ class Requisition extends Model
             'unit_cost' => $fields['unit_cost'],
             'amount' => $fields['amount'],
             'request_status' => $fields['request_status'],
-            'created_by' => $fields['created_by'],
         ]);
     }
 
     public static function getRequisition($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'item';
+        $sortBy = $sortBy ?: 'work_order';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator','department','item')->search($search)
             ->orderBy($sortBy, $sortDirection)
             ->paginate($perPage);
     }
-
+    public static function getMoreRequisitionDetails($RequisitionId){
+        return self::with('creator','department','item')->where('id',$RequisitionId)
+        ->get();
+    }
     public static function updateRequisition($RequisitionId, $fields)
     {
         self::whereId($RequisitionId)->update([
@@ -95,17 +96,21 @@ class Requisition extends Model
         ]);
     }
 
-    public static function updateRequisitionStatus($RequisitionId, $fields)
+    public static function rejectRequisition($RequisitionId, $fields)
     {
         self::whereId($RequisitionId)->update([
-            'quantity' => $fields['quantity'],
-            'unit_cost' => $fields['unit_cost'],
-            'amount' => $fields['amount'],
+            'reason' => $fields['reason'],
             'request_status' => $fields['request_status'],
             'updated_by' => $fields['updated_by'],
         ]);
     }
-
+    public static function forwardRequisition($RequisitionId, $fields){
+        self::whereId($RequisitionId)->update([
+            'comment' => $fields['comment'],
+            'request_status' => $fields['request_status'],
+            'forwarded_by' => $fields['forwarded_by'],
+        ]);
+    }
     public static function deleteRequisition($RequisitionId)
     {
         self::whereId($RequisitionId)->delete();

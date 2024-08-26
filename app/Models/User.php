@@ -60,6 +60,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function scopeSearch($query, $val)
+    {
+        return $query->where('name', 'like', '%'.$val.'%')
+        ->orWhere('email', 'like', '%'.$val.'%')
+        ->orWhere('status', 'like', '%'.$val.'%')
+        ->orWhere('created_at', 'like', '%'.$val.'%');
+    }
     public static function createUserAccount($name, $email,$status, $password)
     {
         return self::create([
@@ -68,5 +75,14 @@ class User extends Authenticatable
             'status' => $status,
             'password' => Hash::make($password),
         ]);
+    }
+    public static function getUser($search, $sortBy, $sortDirection, $perPage){
+          // Define a default column and direction in case $sortBy is empty.
+          $sortBy = $sortBy ?: 'name';
+          $sortDirection = $sortDirection ?: 'desc';
+  
+          return self::search($search)
+          ->orderBy($sortBy, $sortDirection)
+          ->paginate($perPage);
     }
 }

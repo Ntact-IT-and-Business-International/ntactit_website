@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\HumanResource;
 
+use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 use Modules\Department\App\Models\Department;
 use Modules\HumanResource\App\Services\EmployeeRecordService;
@@ -10,7 +11,6 @@ use App\Traits\saveToContractFolder;
 use App\Traits\saveToCvFolder;
 use App\Traits\saveToAppointmentFolder;
 use Livewire\WithFileUploads;
-use App\Models\User;
 use Session;
 
 class AddEmployeeRecord extends ModalComponent
@@ -31,15 +31,11 @@ class AddEmployeeRecord extends ModalComponent
     public $nssf; 
     public $employee_status;
     public $phone_number;
-    public $name;
-    public $email;
-    public $password;
-    public $password_confirmation;
     public $photo;
     public $bank_name;
      // Validate
      protected $rules = [
-        'employee_id' => '',
+        'employee_id' => 'required',
         'department_id' => 'required',
         'position' => 'required',
         'curriculum_vitae' => 'required|mimes:pdf,doc,docx,xls,xlsx|max:1024',
@@ -54,11 +50,7 @@ class AddEmployeeRecord extends ModalComponent
         'appointment_date' => 'required',
         'created_by' => '',
         'phone_number' => 'required|unique:employee_records',
-        'email' => 'required',
-        'password' => 'required',
-        'password_confirmation' => 'required|same:password',
         'photo' => 'required|mimes:jpeg,png,webp|max:1024',
-        'name' => 'required',
         'bank_name' => 'required',
     ];
 
@@ -89,20 +81,12 @@ class AddEmployeeRecord extends ModalComponent
         // } catch (\Illuminate\Validation\ValidationException $e) {
         //     dd($e->errors()); // This will show you the validation errors.
         // }
-        $user = User::createUserAccount($this->name, $this->email, 'employee', $this->password);
-
-        // Retrieve the ID of the newly created user
-        $employeeId = $user->id;
-
         $photo = $this->saveToPhotos('photo', $this->photo);
         $cv = $this->saveToCvs('cv', $this->curriculum_vitae);
         $appointment = $this->saveToAppointments('appointment', $this->appointment_letter);
         $contract = $this->saveToContracts('contract', $this->contract);
         $fields = [
-            'name' => $this->name,
-            'email' => $this->email,
-            'password' => $this->password,
-            'employee_id' => $employeeId,
+            'employee_id' => $this->employee_id,
             'department_id' => $this->department_id,
             'position' => $this->position,
             'appointment_date' => $this->appointment_date,
@@ -129,10 +113,14 @@ class AddEmployeeRecord extends ModalComponent
     public function render()
     {
         return view('livewire.admin.human-resource.add-employee-record',[
-            'departments'=>$this->getDepartment()
+            'departments'=>$this->getDepartment(),
+            'employees'=>$this->getEmployee()
         ]);
     }
     private function getDepartment(){
         return Department::get();
+    }
+    private function getEmployee(){
+        return User::where('status','employee')->get();
     }
 }

@@ -28,6 +28,7 @@ class NoticeBoard extends Model
     public function scopeSearch($query, $val)
     {
         return $query->where('title', 'like', '%'.$val.'%')
+        ->orWhere('notice_type', 'like', '%'.$val.'%')
         ->orWhere('body', 'like', '%'.$val.'%')
         ->orWhere('created_at', 'like', '%'.$val.'%');
     }
@@ -35,6 +36,7 @@ class NoticeBoard extends Model
     public static function createNoticeBoard($fields)
     {
         self::create([
+            'notice_type' => $fields['notice_type'],
             'title' => $fields['title'],
             'body' => $fields['body'],
             'posted_by' => $fields['posted_by'],
@@ -55,6 +57,7 @@ class NoticeBoard extends Model
     public static function updateNoticeBoard($NoticeBoardId, $fields)
     {
         self::whereId($NoticeBoardId)->update([
+            'notice_type' => $fields['notice_type'],
             'title' => $fields['title'],
             'body' => $fields['body'],
             'posted_by' => $fields['posted_by'],

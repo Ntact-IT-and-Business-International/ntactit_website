@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('department_id');
             $table->foreignId('employee_id');
+            $table->string('report_heading');
             $table->string('date');
             $table->string('report');
             $table->timestamps();

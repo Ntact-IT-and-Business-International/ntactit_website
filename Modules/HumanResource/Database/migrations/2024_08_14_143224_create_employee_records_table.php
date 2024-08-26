@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('job_description');
             $table->string('salary');
             $table->string('account_number')->nullable();
+            $table->string('bank_name')->nullable();
             $table->string('tin_number')->nullable();
             $table->string('nssf')->nullable();
             $table->string('photo');

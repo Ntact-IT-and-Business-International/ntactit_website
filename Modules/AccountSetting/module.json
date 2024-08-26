@@ -1,0 +1,11 @@
+{
+    "name": "AccountSetting",
+    "alias": "accountsetting",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AccountSetting\\App\\Providers\\AccountSettingServiceProvider"
+    ],
+    "files": []
+}

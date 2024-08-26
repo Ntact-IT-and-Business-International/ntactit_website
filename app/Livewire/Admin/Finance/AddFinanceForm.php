@@ -4,13 +4,13 @@ namespace App\Livewire\Admin\Finance;
 
 use LivewireUI\Modal\ModalComponent;
 use Modules\Finance\App\Services\FinanceFormService;
-use App\Traits\saveToHrFolderFolder;
+use App\Traits\saveToFinanceFolderFolder;
 use Livewire\WithFileUploads;
 use Session;
 
 class AddFinanceForm extends ModalComponent
 {
-    use saveToHrFolderFolder,WithFileUploads;
+    use saveToFinanceFolderFolder,WithFileUploads;
     public $created_by;
     public $name_of_form;
     public $form;
@@ -30,9 +30,12 @@ class AddFinanceForm extends ModalComponent
     ];
     public function addFinanceForm(){
         $this->validate();
+
+        $FinanceForm = $this->saveToFinanceForms('forms',$this->form);
+
         $fields = [
             'name_of_form' => $this->name_of_form,
-            'form' => $this->form,
+            'form' => $FinanceForm,
             'created_by' => auth()->user()->id,
         ];
         FinanceFormService::createFinanceForm($fields);

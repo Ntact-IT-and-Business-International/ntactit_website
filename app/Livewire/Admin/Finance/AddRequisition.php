@@ -6,6 +6,7 @@ use LivewireUI\Modal\ModalComponent;
 use Modules\Department\App\Models\Department;
 use Modules\Finance\App\Services\RequisitionService;
 use Modules\Item\App\Models\Item;
+use Session;
 
 class AddRequisition extends ModalComponent
 {
@@ -17,30 +18,34 @@ class AddRequisition extends ModalComponent
     public $unit_cost;
     public $work_order;
     public $date;
+    public $quantity;
      // Validate
      protected $rules = [
-        'requested_by' => 'required',
+        'requested_by' => '',
         'department_id' => 'required',
-        'amount' => 'required',
+        'amount' => '',
         'item_id' => 'required',
         'description' => 'required',
         'unit_cost' => 'required',
         'work_order' => 'required',
         'date' => 'required',
         'unit_cost' => 'required',
-        'created_by' => '',
+        'quantity' =>'required',
     ];
 
     // Customize validation error messages
     protected $messages = [
-        'requested_by.required' => 'Category is required',
-        'department_id.required' => 'Type is required',
-        'amount.required' => 'Name of Item is required',
+        'department_id.required' => 'Department is required',
+        'work_order.required' => 'Work order is required',
         'item_id.required' => 'Quantity is required',
         'description.required' => 'Description is required',
+        'quantity.required' => 'Quantity is required',
+        'date.required' => 'Description is required',
+        'unit_cost.required' => 'Unit Cost is required',
     ];
     public function addRequisition(){
         $this->validate();
+        $amount = $this->quantity *  $this->unit_cost;
         $fields = [
             'requested_by' => auth()->user()->id,
             'department_id' => $this->department_id,
@@ -49,8 +54,10 @@ class AddRequisition extends ModalComponent
             'work_order' => $this->work_order,
             'item_id' => $this->item_id,
             'description' => $this->description,
+            'request_status'=>'pending',
+            'quantity' => $this->quantity,
             'unit_cost' => $this->unit_cost,
-            'amount' => $this->amount,
+            'amount' => $amount,
         ];
         RequisitionService::createRequisition($fields);
         Session::flash('msg', 'Operation Succesful');

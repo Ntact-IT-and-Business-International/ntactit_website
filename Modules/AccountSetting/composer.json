@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/accountsetting",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\AccountSetting\\": "",
+            "Modules\\AccountSetting\\App\\": "app/",
+            "Modules\\AccountSetting\\Database\\Factories\\": "database/factories/",
+            "Modules\\AccountSetting\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\AccountSetting\\Tests\\": "tests/"
+        }
+    }
+}

@@ -54,7 +54,7 @@
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
                                     <td>{{ $form->name_of_form }}</td>
-                                    <td><a href="{{ asset('storage/FinanceForms/forms/'.$form->form)}}" download style="color:red;"><i class="feather icon-download"></i> Download</a> | <a href="{{ asset('storage/HrForms/forms/'.$form->form)}}" target="_blank" style="color:blue;"><i class="fas fa-hand-point-right"></i> View</a></td>
+                                    <td><a href="{{ asset('storage/FinanceForms/forms/'.$form->form)}}" download style="color:red;"><i class="feather icon-download"></i> Download</a> | <a href="{{ asset('storage/FinanceForms/forms/'.$form->form)}}" target="_blank" style="color:blue;"><i class="fas fa-hand-point-right"></i> View</a></td>
                                     <td>{{ $form->creator->name }}</td>
                                     <td>
                                         <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>

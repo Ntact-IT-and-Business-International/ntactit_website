@@ -1,5 +1,8 @@
 <?php
 
+use Modules\NoticeBoard\App\Models\NoticeBoard;
+use Modules\NoticeBoard\App\Models\NoticeBoardRead;
+
 if (!function_exists('generateInvoiceNumber')) {
     function generateInvoiceNumber($model)
     {
@@ -13,6 +16,22 @@ if (!function_exists('generateInvoiceNumber')) {
         $invoiceNumber = $prefix . $month . $formattedCount;
 
         return $invoiceNumber;
+    }
+} 
+if (!function_exists('getNoticeBoardId')) {
+    function getNoticeBoardId($noticeBoardId)
+    {
+       
+        $NoticeId = NoticeBoard::where('id', $noticeBoardId)->value('id');
+        return $NoticeId;
+    }
+}
+if (!function_exists('countNoticeBoardRead')) {
+    function countNoticeBoardRead($noticeBoardId)
+    {
+       
+        $CountNoticeBoardRead = NoticeBoardRead::where('notice_board_id', $noticeBoardId)->count();
+        return $CountNoticeBoardRead;
     }
 }
 
