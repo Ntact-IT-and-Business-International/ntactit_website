@@ -46,7 +46,7 @@ class NoticeBoard extends Model
     public static function getNoticeBoard($search, $sortBy, $sortDirection, $perPage)
     {
         // Define a default column and direction in case $sortBy is empty.
-        $sortBy = $sortBy ?: 'title';
+        $sortBy = $sortBy ?: 'created_at';
         $sortDirection = $sortDirection ?: 'desc';
 
         return self::with('creator')->search($search)

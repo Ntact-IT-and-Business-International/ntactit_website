@@ -20,7 +20,9 @@
                             <a href="javascript:void(0)" class="d-block text-primary text-big line-height-1">
                                 <i class="ion ion-md-add"></i>
                             </a>
-                            <div class="text-xlarge font-weight-bolder line-height-1 my-2">NEW</div>
+                            <div class="text-xlarge font-weight-bolder line-height-1 my-2">
+                               {{ \Carbon\Carbon::parse($notice->created_at)->gt(\Carbon\Carbon::now()->subDays(2)) ? 'NEW' : 'OLD' }}
+                            </div>
                             <a href="javascript:void(0)" class="d-block text-primary text-big line-height-1">
                                 <i class="ion ion-md-remove"></i>
                             </a>
@@ -54,15 +56,15 @@
                                 </span>
                                 <span class="text-muted ml-3">
                                     
-                                    <form wire:submit.prevent="markNoticeBoardAsRead">
+                                    <form wire:submit.prevent="markNoticeBoardAsRead({{ $notice->id }})">
                                         <div class="form-group">
-                                        <input type="hidden" wire:model="notice_board_id" value="{{getNoticeBoardId($notice->id)}}" class="form-control" id="notice_board_id" placeholder="">
+                                        <input type="hidden" wire:model="notice_board_id" value="{{ $notice->id }}" class="form-control" id="notice_board_id" placeholder="">
                                         </div>
                                         @error('notice_board_id') <span class="text-danger">{{ $message }}</span> @enderror
                                     </div>
                                         <button type="submit" class="btn btn-default">
-                                            <span wire:loading wire:target="markNoticeBoardAsRead"><i class="fa fa-spinner fa-spin"></i></span>
-                                            <span wire:loading.remove wire:target="markNoticeBoardAsRead"> <i class="ion ion-ios-checkmark-circle-outline text-warning text-small align-middle" style="font-size:14px; font-weight:bold;"></i>&nbsp; mark as read</span>
+                                            <span wire:loading wire:target="markNoticeBoardAsRead({{ $notice->id }})"><i class="fa fa-spinner fa-spin"></i> Thank You For Reading ..</span>
+                                            <span wire:loading.remove wire:target="markNoticeBoardAsRead({{ $notice->id }})"> <i class="ion ion-ios-checkmark-circle-outline text-warning text-small align-middle" style="font-size:14px; font-weight:bold;"></i>&nbsp; mark as read</span>
                                         </button>
                                     </form>
                                 </span>
@@ -75,28 +77,13 @@
             </div>
         </div>
         @endforeach
-        <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="javascript:void(0)">«</a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="javascript:void(0)">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">5</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0)">»</a>
-                </li>
-            </ul>
+        <div class="col-md-12 mt-2">
+            <div class="row mb-2">
+                
+                <div class="col-md-4 pull-right text-end">
+                {{$notices->links()}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
