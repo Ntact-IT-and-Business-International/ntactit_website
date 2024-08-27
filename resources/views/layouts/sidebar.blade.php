@@ -2,7 +2,7 @@
 
             <!-- Dashboards -->
             <li class="sidenav-item activ">
-                <a href="/dashboard:" class="sidenav-link">
+                <a href="/dashboard" class="sidenav-link">
                     <i class="sidenav-icon feather icon-home"></i>
                     <div>Dashboard</div>
                 </a>

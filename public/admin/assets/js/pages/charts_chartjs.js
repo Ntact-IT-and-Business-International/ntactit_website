@@ -59,6 +59,40 @@ $(function() {
     }
   });
 
+  var pieChart = new Chart(document.getElementById('chart-pie').getContext("2d"), {
+    type: 'pie',
+    data: {
+      labels: [ 'Red', 'Blue', 'Yellow' ],
+      datasets: [{
+        data: [ 180, 272, 100 ],
+        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
+      }]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+  var pieChart = new Chart(document.getElementById('chart-pie2').getContext("2d"), {
+    type: 'pie',
+    data: {
+      labels: [ 'Red', 'Blue', 'Yellow' ],
+      datasets: [{
+        data: [ 180, 272, 100 ],
+        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
+      }]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
   var radarChart = new Chart(document.getElementById('chart-radar').getContext("2d"), {
     type: 'radar',
     data: {
@@ -102,24 +136,6 @@ $(function() {
         label: 'My dataset'
       }],
       labels: [ 'Red', 'Green', 'Yellow', 'Grey', 'Blue' ]
-    },
-
-    // Demo
-    options: {
-      responsive: false,
-      maintainAspectRatio: false
-    }
-  });
-
-  var pieChart = new Chart(document.getElementById('chart-pie').getContext("2d"), {
-    type: 'pie',
-    data: {
-      labels: [ 'Red', 'Blue', 'Yellow' ],
-      datasets: [{
-        data: [ 180, 272, 100 ],
-        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
-        hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
-      }]
     },
 
     // Demo
