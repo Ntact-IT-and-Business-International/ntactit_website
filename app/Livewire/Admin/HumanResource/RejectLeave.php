@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\HumanResource;
 
 use Livewire\Component;
 use Modules\HumanResource\App\Services\LeaveService;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class RejectLeave extends Component
 {

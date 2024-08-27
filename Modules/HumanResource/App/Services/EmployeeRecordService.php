@@ -43,4 +43,11 @@ class EmployeeRecordService
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }
     }
+    public static function getOneEmployeeRecord($EmployeeId){
+        try {
+            return EmployeeRecord::getOneEmployeeRecord($EmployeeId);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
 }

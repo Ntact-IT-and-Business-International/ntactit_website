@@ -3,9 +3,6 @@
 namespace Modules\HumanResource\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class HumanResourceController extends Controller
 {
@@ -52,5 +49,8 @@ class HumanResourceController extends Controller
             abort(401);
         }
         return view('humanresource::reject_leave', compact('LeaveId'));
+    }
+    public function getEmployeeInformation($employee_record_id){
+        return view('humanresource::employee_details', compact('employee_record_id'));
     }
 }

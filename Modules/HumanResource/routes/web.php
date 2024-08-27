@@ -21,4 +21,5 @@ Route::group(['prefix' => 'humanresource', 'middleware' => ['auth']], function (
     Route::get('/leave', 'HumanResourceController@getleave')->name('Leave'); 
     Route::get('/signout/{attendance_id}', 'HumanResourceController@signout')->name('SignOut');
     Route::get('/reject-leave/{leave_id}', 'HumanResourceController@rejectLeave')->name('Reject Leave');
+    Route::get('/employee-details/{employee_record_id}', 'HumanResourceController@getEmployeeInformation')->name('Employee Details');
 });

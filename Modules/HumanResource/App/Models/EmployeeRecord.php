@@ -103,4 +103,10 @@ class EmployeeRecord extends Model
     {
         self::whereId($EmployeeId)->delete();
     }
+
+    public static function getOneEmployeeRecord($EmployeeId)
+    {
+        return self::with('department','employee')->where('employee_id',$EmployeeId)
+            ->get();
+    }
 }

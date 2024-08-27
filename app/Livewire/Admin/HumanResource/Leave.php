@@ -7,7 +7,7 @@ use Livewire\Component;
 use App\Traits\WithSorting;
 use Livewire\WithPagination;
 use Modules\HumanResource\App\Models\Leave as Leaves;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class Leave extends Component
 {

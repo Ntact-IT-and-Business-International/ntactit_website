@@ -70,7 +70,7 @@ class BusinessDevelopmentDocument extends Model
 
         return self::with('creator','client','service')
         ->distinct()
-        ->select('client_id')
+        ->select('client_id','status')
         ->where('document_type','quotation')
         ->search($search)
         ->orderBy($sortBy, $sortDirection)

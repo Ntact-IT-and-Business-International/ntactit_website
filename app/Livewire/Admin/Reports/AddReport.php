@@ -45,8 +45,7 @@ class AddReport extends ModalComponent
             'date' => $this->date,
             'employee_id' => auth()->user()->id,
         ];
-        $test =ReportService::createReport($fields);
-    dd($test);
+        ReportService::createReport($fields);
         Session::flash('msg', 'Operation Succesful');
         $this->dispatch('Package', 'refreshComponent');
         $this->closeModal();

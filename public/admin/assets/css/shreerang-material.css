@@ -6894,12 +6894,12 @@ a.bg-linux-darker:hover, a.bg-linux-darker:focus {
     background: rgba(255, 255, 255, 0.5648564706) !important; }
 
 .sidenav.bg-white {
-  background-color: #fff !important;
-  color: #212529; }
+  background-color: rgba(96, 108, 114, 0.9) !important;
+  color: #fff; }
   .sidenav.bg-white .sidenav-link,
   .sidenav.bg-white .sidenav-horizontal-prev,
   .sidenav.bg-white .sidenav-horizontal-next {
-    color: #212529; }
+    color: #fff; }
     .sidenav.bg-white .sidenav-link:hover, .sidenav.bg-white .sidenav-link:focus,
     .sidenav.bg-white .sidenav-horizontal-prev:hover,
     .sidenav.bg-white .sidenav-horizontal-prev:focus,
@@ -6964,7 +6964,7 @@ a.bg-linux-darker:hover, a.bg-linux-darker:focus {
     color: #606c72; }
 .sidenav.logo-dark .app-brand {
   height: 70px;
-  background: var(--primary); }
+  background: rgba(96, 108, 114, 0.1) !important; }
   .sidenav.logo-dark .app-brand .sidenav-link,
   .sidenav.logo-dark .app-brand .sidenav-text {
     color: #fff; }

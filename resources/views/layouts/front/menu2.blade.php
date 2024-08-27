@@ -145,7 +145,7 @@
                     </li>
               
                     <li class="nav-item">
-                        <a wire:navigate  class="nav-link"  href="{{ route('login')}}">Login</a>
+                        <a wire:navigate  class="nav-link"  href="{{ route('login')}}">Account</a>
                     </li>
                     
                     <div class="search-right ml-lg-2">

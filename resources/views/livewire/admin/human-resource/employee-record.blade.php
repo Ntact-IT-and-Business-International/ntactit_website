@@ -67,9 +67,9 @@
                                     <td>{{ $employee->position }}</td>
                                     <td>{{ $employee->appointment_date }}</td>
                                     <td>{{ number_format($employee->salary) }}</td>
-                                    <td>{{ $employee->employee_status }}</td>
+                                    <td>{{ $employee->employee_status }}</td> 
                                     <td>
-                                        <a href="#!" class="btn btn-success btn-sm"><i class="feather icon-eye"></i>&nbsp;View </a>
+                                        <a href="/humanresource/employee-details/{{$employee->employee_id}}" class="btn btn-success btn-sm"><i class="feather icon-eye"></i>&nbsp;View </a>
                                         <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
                                         <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                                     </td>
