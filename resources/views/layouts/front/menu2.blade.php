@@ -118,28 +118,31 @@
 
                     <li class="nav-item">
                         <a class="nav-link" wire:navigate href="/insight/insights" id="navbarDropdown" role="button">
-                            Insights
+                            Products
                         </a>
                     </li>
-                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Business <span class="caret"></span>
+                            <!-- ▼ Arrow indicator -->
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" wire:navigate href="/businessdevelopment/partners">Partnerships</a>
+                            <a class="dropdown-item" wire:navigate href="/businessdevelopment/get-dealerships">Dealership</a>
+                        </div>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Company <span class="caret"></span>
                             <!-- ▼ Arrow indicator -->
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" wire:navigate href="/contact">Contact Us</a>
                             <a class="dropdown-item" wire:navigate href="/company/about">About Us</a>
                             <a class="dropdown-item" wire:navigate href="/company/careers">Careers</a>
                             <a class="dropdown-item" wire:navigate href="/company/csr">Corporate Social Responsibility</a>
                         </div>
                     </li>
-
-                    <li class="nav-item">
-                        <a wire:navigate class="nav-link" href="/contact/contact-us" id="navbarDropdown" role="button">
-                            Contacts
-                        </a>
-                    </li> 
-
               
                     <li class="nav-item">
                         <a wire:navigate  class="nav-link"  href="{{ route('login')}}">Login</a>

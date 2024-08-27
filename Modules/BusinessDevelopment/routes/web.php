@@ -14,6 +14,11 @@ use Modules\BusinessDevelopment\App\Http\Controllers\BusinessDevelopmentControll
 |
 */
 
+Route::group(['prefix' => 'businessdevelopment'], function () {
+    Route::get('/partners', 'BusinessDevelopmentController@getPartnership')->name('Partnerships');
+    Route::get('/get-dealerships', 'BusinessDevelopmentController@getDealerships')->name('Dealerships');
+});
+
 Route::group(['prefix' => 'businessdevelopment', 'middleware' => ['auth']], function () {
     Route::get('/client', 'BusinessDevelopmentController@getClient')->name('Client');
     Route::get('/get-quotation-form/{client_id}', 'BusinessDevelopmentController@getQuotation')->name('Quotation Form');

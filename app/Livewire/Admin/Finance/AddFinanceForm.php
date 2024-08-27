@@ -6,7 +6,7 @@ use LivewireUI\Modal\ModalComponent;
 use Modules\Finance\App\Services\FinanceFormService;
 use App\Traits\saveToFinanceFolderFolder;
 use Livewire\WithFileUploads;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class AddFinanceForm extends ModalComponent
 {

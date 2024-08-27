@@ -13,6 +13,7 @@
                                 <option value="announcement">Announcement</option>
                                 <option value="reminder">Reminder</option>
                                 <option value="staff meeting">Staff Meeting</option>
+                                <option value="executive meeting">Executive Meeting</option>
                             </select>
                         </div>
                         @error('notice_type') <span class="text-danger">{{ $message }}</span> @enderror

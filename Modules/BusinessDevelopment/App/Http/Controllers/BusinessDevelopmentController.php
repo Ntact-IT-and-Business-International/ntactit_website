@@ -65,4 +65,10 @@ class BusinessDevelopmentController extends Controller
         ->get();
         return view('businessdevelopment::print_invoice',compact('client_id','invoices'));
     }
+    public function getPartnership(){
+        return view('businessdevelopment::partners');
+    }
+    public function getDealerships(){
+        return view('businessdevelopment::dealers');
+    }
 }
