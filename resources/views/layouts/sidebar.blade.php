@@ -204,6 +204,11 @@
                         </a>
                     </li>
                     <li class="sidenav-item">
+                        <a href="/accountsetting/staff-for-permissions" class="sidenav-link">
+                            <div>Add Permissions</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
                         <a href="/service/get-services" class="sidenav-link">
                             <div>Services</div>
                         </a>

@@ -15,6 +15,8 @@ use Modules\AccountSetting\App\Http\Controllers\AccountSettingController;
 */
 
 
-Route::group(['prefix' => 'accountsetting', 'middleware' => ['auth']], function () {
-Route::get('/users','AccountSettingController@getUsers')->name('Users');
+Route::group(['prefix' => 'accountsetting', 'middleware' => ['auth']], function () { 
+Route::get('/users','AccountSettingController@getUsers')->name('Users'); 
+Route::get('/staff-for-permissions','AccountSettingController@getStaff')->name('Staff');
+Route::get('/assign-or-remove-permission/{employee_id}','AccountSettingController@getStaffAssignedPermissions')->name('Staff Assigned Permissions');
 });
