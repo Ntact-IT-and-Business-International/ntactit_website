@@ -71,4 +71,7 @@ class BusinessDevelopmentController extends Controller
     public function getDealerships(){
         return view('businessdevelopment::dealers');
     }
+    public function getRequestedQuotation(){
+        return view('businessdevelopment::requested_quotation');
+    }
 }

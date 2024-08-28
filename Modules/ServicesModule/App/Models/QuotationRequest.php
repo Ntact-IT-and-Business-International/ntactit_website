@@ -47,7 +47,7 @@ class QuotationRequest extends Model
         $sortBy = $sortBy ?: 'created_at';
         $sortDirection = $sortDirection ?: 'asc';
 
-        return self::with('creator','package')->search($search)
+        return self::with('package')->search($search)
             ->orderBy($sortBy, $sortDirection)
             ->paginate($perPage);
     }

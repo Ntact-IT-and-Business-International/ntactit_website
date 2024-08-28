@@ -20,7 +20,7 @@
 
                         </div>
                         <div class="col-sm-4 text-right">
-                            <button  class="btn btn-sm btn-outline-info mb-3" onclick="Livewire.dispatch('openModal', { component: 'admin.add-package' })"><i class="feather icon-plus"></i> Add Service</button>
+                            <button  class="btn btn-sm btn-outline-info mb-3" onclick="Livewire.dispatch('openModal', { component: 'admin.add-package' })"><i class="feather icon-plus"></i> Add Package</button>
                         </div>
                     </div>
                     <div class="table-responsive">

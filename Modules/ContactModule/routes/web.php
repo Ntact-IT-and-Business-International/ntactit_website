@@ -17,3 +17,7 @@ use Modules\ContactModule\App\Http\Controllers\ContactModuleController;
 Route::group([], function () {
     Route::get('/contact', 'ContactModuleController@contact')->name('contact');
 });
+
+Route::group(['prefix' => 'contact', 'middleware' => ['auth']], function () {
+    Route::get('messages', 'ContactModuleController@getContactMessages')->name('Contact Messages');
+});

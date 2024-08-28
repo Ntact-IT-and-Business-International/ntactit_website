@@ -10,19 +10,19 @@ $(function() {
     data: {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [{
-        label:           'My First dataset',
+        label:           'Income',
         data:            [43, 91, 89, 16, 21, 79, 28],
         borderWidth:     1,
-        backgroundColor: 'rgba(113, 106, 202, 0.3)',
-        borderColor:     '#ff4a00',
+        backgroundColor: 'rgba(255,165,0, 0.3)',
+        borderColor:     '#FFA500',
         borderDash:      [5, 5],
         fill: false
       }, {
-        label:           'My Second dataset',
+        label:           'Expenditure',
         data:            [24, 63, 29, 75, 28, 54, 38],
         borderWidth:     1,
-        backgroundColor: 'rgba(40, 208, 148, 0.3)',
-        borderColor:     '#62d493',
+        backgroundColor: 'rgba(0,0,205, 0.5)',
+        borderColor:     '#0000cd',
       }],
     },
 
@@ -36,19 +36,19 @@ $(function() {
   var barsChart = new Chart(document.getElementById('chart-bars').getContext("2d"), {
     type: 'bar',
     data: {
-      labels: ['Italy', 'UK', 'USA', 'Germany', 'France', 'Japan'],
+      labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'June'],
       datasets: [{
-        label: '2010 customers #',
+        label: '2024 Pending',
         data: [53, 99, 14, 10, 43, 27],
         borderWidth: 1,
-        backgroundColor: 'rgba(255, 73, 97, 0.3)',
-        borderColor: '#FF4961'
+        backgroundColor: 'rgba(255,165,0, 0.9)',
+        borderColor: '#FFA500'
       }, {
-        label: '2014 customers #',
+        label: '2024 Successful',
         data: [55, 74, 20, 90, 67, 97],
         borderWidth: 1,
-        backgroundColor: 'rgba(255, 145, 73, 0.3)',
-        borderColor: '#f4ab55'
+        backgroundColor: 'rgba(0,0,205, 0.9)',
+        borderColor: '#0000cd'
       }]
     },
 
@@ -62,10 +62,10 @@ $(function() {
   var pieChart = new Chart(document.getElementById('chart-pie').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [ 'Red', 'Blue', 'Yellow' ],
+      labels: [ 'Employees', 'Partners', 'Clients' ],
       datasets: [{
         data: [ 180, 272, 100 ],
-        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        backgroundColor: [ '#0000cd', '#ff4a00', '#f4ab55' ],
         hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
       }]
     },
@@ -79,10 +79,10 @@ $(function() {
   var pieChart = new Chart(document.getElementById('chart-pie2').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [ 'Red', 'Blue', 'Yellow' ],
+      labels: [ 'Income', 'Expenditure', 'Cash' ],
       datasets: [{
         data: [ 180, 272, 100 ],
-        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        backgroundColor: [ '#ff4a00','#f4ab55','#0000cd' ],
         hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
       }]
     },

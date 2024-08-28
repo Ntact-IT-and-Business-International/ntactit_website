@@ -97,21 +97,9 @@
                 </ul>
             </li>
             <li class="sidenav-item">
-                <a href="/noticeboard/notice" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-mail"></i>
-                    <div>NoticeBoard</div>
-                </a>
-            </li>
-            <li class="sidenav-item">
-                <a href="/reports/report" class="sidenav-link">
-                    <i class="sidenav-icon feather icon-paperclip"></i>
-                    <div>Reports</div>
-                </a>
-            </li>
-            <li class="sidenav-item">
                 <a href="javascript:" class="sidenav-link sidenav-toggle">
                     <i class="sidenav-icon feather icon-layers"></i>
-                    <div>Company</div>
+                    <div>IT Department</div>
                 </a>
                 <ul class="sidenav-menu">
                 <li class="sidenav-item">
@@ -132,6 +120,59 @@
                     <li class="sidenav-item">
                         <a href="w-social.html" class="sidenav-link">
                             <div>CSR</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a href="javascript:" class="sidenav-link sidenav-toggle">
+                    <i class="sidenav-icon feather icon-layers"></i>
+                    <div>Managing Director</div>
+                </a>
+                <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                        <a href="/companydocuments/company-documents" class="sidenav-link">
+                            <div>Documents</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="#" class="sidenav-link">
+                            <div>About</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-data.html" class="sidenav-link">
+                            <div>Careers</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="w-social.html" class="sidenav-link">
+                            <div>CSR</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a href="/noticeboard/notice" class="sidenav-link">
+                    <i class="sidenav-icon feather icon-mail"></i>
+                    <div>NoticeBoard</div>
+                </a>
+            </li>
+            <li class="sidenav-item">
+                <a href="/reports/report" class="sidenav-link">
+                    <i class="sidenav-icon feather icon-paperclip"></i>
+                    <div>Reports</div>
+                </a>
+            </li>
+            <li class="sidenav-item">
+                <a href="javascript:" class="sidenav-link sidenav-toggle">
+                    <i class="sidenav-icon feather icon-layers"></i>
+                    <div>Documents</div>
+                </a>
+                <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                        <a href="/companydocuments/company-documents" class="sidenav-link">
+                            <div>Documents</div>
                         </a>
                     </li>
                 </ul>
@@ -173,7 +214,7 @@
                         </a>
                     </li>
                     <li class="sidenav-item">
-                        <a href="#" class="sidenav-link">
+                        <a href="/contact/messages" class="sidenav-link">
                             <div>Contact Messages</div>
                         </a>
                     </li>

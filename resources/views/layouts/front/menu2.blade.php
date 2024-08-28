@@ -143,11 +143,6 @@
                             <a class="dropdown-item" wire:navigate href="/company/csr">Corporate Social Responsibility</a>
                         </div>
                     </li>
-              
-                    <li class="nav-item">
-                        <a wire:navigate  class="nav-link"  href="{{ route('login')}}">Account</a>
-                    </li>
-                    
                     <div class="search-right ml-lg-2">
                           @livewire('front.cart')
                           @if (session('msg'))

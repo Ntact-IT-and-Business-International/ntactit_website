@@ -4,7 +4,7 @@ namespace App\Livewire\Front;
 use Modules\ContactModule\Services\ContactService;
 
 use Livewire\Component;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class ContactForm extends Component
 {
@@ -48,7 +48,7 @@ class ContactForm extends Component
             'message' => $this->message,
         ];
         ContactService::createContactMessage($fields);
-        session::flash('msg', 'Message Sent Succesful! Thank you for contacting us');
+        session::flash('msg', 'Message Sent Succesfully! Thank you for contacting us');
         $this->dispatch('ContactMessages', 'refreshComponent');
     }
     public function render()

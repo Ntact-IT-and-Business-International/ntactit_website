@@ -5,7 +5,7 @@ namespace App\Livewire\Admin;
 use LivewireUI\Modal\ModalComponent;
 use Modules\ServicesModule\App\Models\Package;
 use Modules\ServicesModule\App\Models\Service;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class AddPackage extends ModalComponent
 {

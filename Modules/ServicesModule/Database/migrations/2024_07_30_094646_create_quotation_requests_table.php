@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('client_email');
             $table->string('client_contact');
             $table->string('client_message');
-            $table->enum('status',['pending','replied','successful'])->default('pending');
+            $table->enum('status',['pending','replied','successful','sent'])->default('pending');
             $table->timestamps();
         });
     }
