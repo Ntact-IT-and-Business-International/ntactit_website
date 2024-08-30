@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Hash;
+use Modules\HumanResource\App\Models\EmployeeRecord;
 
 class User extends Authenticatable
 {
@@ -84,5 +85,12 @@ class User extends Authenticatable
           return self::search($search)
           ->orderBy($sortBy, $sortDirection)
           ->paginate($perPage);
+    }
+    public function getLoggedInUserLogo(){
+        $user_logo = EmployeeRecord::where('employee_id', '=', $this->id)->value('photo');;
+        if(empty($user_logo)){
+            $user_logo = 'logo-ntact.png';
+        }
+        return $user_logo;
     }
 }

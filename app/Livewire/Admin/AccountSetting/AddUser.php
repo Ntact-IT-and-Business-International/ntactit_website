@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\AccountSetting;
 
 use App\Models\Services\UserService;
 use LivewireUI\Modal\ModalComponent;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class AddUser extends ModalComponent
 {

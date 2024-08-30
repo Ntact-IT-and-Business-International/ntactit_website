@@ -20,5 +20,8 @@ class AccountSettingController extends Controller
 
    public function getStaffAssignedPermissions($employee_id){
     return view('accountsetting::staff_assigned_permissions',compact('employee_id'));
- }
+   }
+   public function getPermissions($employee_id){
+    return view('accountsetting::permissions',compact('employee_id'));
+   }
 }

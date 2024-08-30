@@ -36,49 +36,49 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                        <input type="text" wire:model.debounce.100ms="search" class="form-control form_2 mb-4"  placeholder="Search Here...">
+                        
                         </div>
                         <div class="col-sm-4 text-right">
-                            @foreach($employees as $employee)
-                            <a href="/accountsetting/permissions/{{$employee->employee_id}}"  class="btn btn-sm btn-outline-info mb-2"><i class="feather icon-plus"></i> Add Permission (s)</a>
-                            @endforeach
+                           <input type="text" wire:model.debounce.100ms="search" class="form-control form_2 mb-4"  placeholder="Search Here...">
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="report-table" class="table table- table-striped mb-0">
+                        <table id="report-table" class="table table-hover mb-0">
                             <thead>
                                 <tr>
-                                    <th scope="col" wire:click="sortBy('employee_records.id')" style="cursor: pointer;">#
-                                        @include('partials._sort-icon',['field'=>'employee_records.id'])
+                                    <th scope="col" wire:click="sortBy('permissions.id')" style="cursor: pointer;">#
+                                        @include('partials._sort-icon',['field'=>'permissions.id'])
                                     </th>
-                                    <th scope="col" wire:click="sortBy('employee_records.department_id')" style="cursor: pointer;">Permission
-                                        @include('partials._sort-icon',['field'=>'employee_records.department_id'])
+                                    <th scope="col" wire:click="sortBy('permissions.permission')" style="cursor: pointer;">Permission
+                                        @include('partials._sort-icon',['field'=>'permissions.permission'])
                                     </th>
-                                    <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $i=>$user)
+                                @foreach ($permissions as $i=>$permission)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
-                                    <td>{{ $user->department->department }}</td>
                                     <td>
-                                        <a href="#!" class="btn btn-outline-warning"><i class="feather icon-plus"></i>&nbsp;Remove Permissions </a>
-                                    </td>
+                                    <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-label">{{ $permission->permission}}</span>
+                                </label>
+                                </td>
                                 </tr>
                                 @endforeach
+                                
                             </tbody>
                         </table>
                     </div>
                     <div class="col-md-12 mt-2">
                         <div class="row mb-2">
                             <div class="col-md-4">
-                            Showing {{$users->firstItem()}} to {{$users->lastItem()}} out of {{$users->total()}} items
+                            Showing {{$permissions->firstItem()}} to {{$permissions->lastItem()}} out of {{$permissions->total()}} items
                             </div>
                             <div class="col-md-4">
                             </div>
                             <div class="col-md-4 pull-right text-end">
-                            {{$users->links()}}
+                            {{$permissions->links()}}
                             </div>
                         </div>
                     </div>
