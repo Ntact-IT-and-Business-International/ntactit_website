@@ -18,7 +18,7 @@ class BusinessDevelopmentDocument extends Model
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'client_id', 'document_type', 'invoice_number', 'quantity','description', 'rate', 'amount','status', 'registered_by'
+        'client_id', 'document_type','service_id', 'invoice_number', 'quantity','description', 'rate', 'amount','status', 'registered_by'
     ];
     
     public function creator(): BelongsTo
