@@ -27,7 +27,7 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/cctv', 'ServicesModuleController@cctv')->name('CCTV');
     Route::get('/networking', 'ServicesModuleController@networking')->name('Networking');
     Route::get('/cybersecurity', 'ServicesModuleController@cybersecurity')->name('CyberSecurity');
-    Route::get('/digita-lmarketing', 'ServicesModuleController@digitalmarketing')->name('Digital Marketing');
+    Route::get('/digital-marketing', 'ServicesModuleController@digitalMarketing')->name('Digital Marketing');
     Route::get('/consultancy', 'ServicesModuleController@Consultancy')->name('Consultancy');
     Route::get('/get-quote/{quotationId}', 'ServicesModuleController@getQuote')->name('Quotation');
 });

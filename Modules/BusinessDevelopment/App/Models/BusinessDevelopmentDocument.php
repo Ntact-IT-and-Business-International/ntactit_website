@@ -98,4 +98,5 @@ class BusinessDevelopmentDocument extends Model
         ->orderBy($sortBy, $sortDirection)
         ->paginate($perPage);
     }
+    
 }

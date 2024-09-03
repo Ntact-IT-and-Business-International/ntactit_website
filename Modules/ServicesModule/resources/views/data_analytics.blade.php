@@ -9,11 +9,11 @@
        <div class="container py-md-5 py-sm-4">
            <div class="row">
                <div class="col-lg-6 content-image order-lg-first order-last">
-                   <a href="#image"><img src="{{ asset('assets/images/blog6.jpg') }}" class="img-responsive" alt="content-photo"></a>
+                   <a href="#image"><img src="{{ asset('assets/images/data-analysis.jpg') }}" class="img-responsive" alt="content-photo"></a>
                </div>
                <div class="col-lg-6 about-right-faq align-self pl-lg-5">
                    <h3 class="title-style">Data Analytics</h3>
-                   <p class="mt-2">Data analytics services offered by NTACT IT empower businesses to derive valuable insights from their data. Our services include data collection, analysis, visualization, and interpretation to support informed decision-making and drive business growth.</p>
+                   <p class="mt-2 text-justify">Unlock the power of your data with Ntact IT's data analytics services. Our team of skilled data scientists and business intelligence experts will help you transform raw data into actionable insights that drive informed decision-making and measurable business results. Whether you need to optimize your marketing campaigns, improve operational efficiency, or gain a deeper understanding of your customer behavior, our data analytics solutions will provide you with the tools and insights you need to stay</p>
                    <div class="mt-4 pt-md-2">
                        <div class="about-info-m d-flex">
                            <div class="icon-style-ab mr-4">

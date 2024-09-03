@@ -9,11 +9,11 @@
        <div class="container py-md-5 py-sm-4">
            <div class="row">
                <div class="col-lg-6 content-image order-lg-first order-last">
-                   <a href="#image"><img src="{{ asset('assets/images/blog6.jpg') }}" class="img-responsive" alt="content-photo"></a>
+                   <a href="#image"><img src="{{ asset('assets/images/network.jpeg') }}" class="img-responsive" alt="content-photo"></a>
                </div>
                <div class="col-lg-6 about-right-faq align-self pl-lg-5">
                    <h3 class="title-style">Networking</h3>
-                   <p class="mt-2">Networking services offered by NTACT IT encompass designing, implementing, and managing robust network infrastructures to support seamless communication and data exchange within organizations. Our services include network planning, configuration, optimization, and security to ensure reliable and efficient network operations.</p>
+                   <p class="mt-2 text-justify">Reliable and scalable networking solutions are the backbone of a successful IT infrastructure. Ntact IT's networking services enable you to build a robust, future-proof network that supports your business operations and drives digital transformation. Our expert engineers will design, implement, and manage your network infrastructure, encompassing components like routers, switches, wireless access points, and firewalls. With our proactive monitoring and maintenance, you can rest assured that your network will perform at its best, maximizing uptime and productivity.</p>
                    <div class="mt-4 pt-md-2">
                        <div class="about-info-m d-flex">
                            <div class="icon-style-ab mr-4">

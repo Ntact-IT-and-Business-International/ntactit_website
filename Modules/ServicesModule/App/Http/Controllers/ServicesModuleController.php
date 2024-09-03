@@ -76,7 +76,7 @@ class ServicesModuleController extends Controller
 
     /* Display service digital marketing view.
     */
-    public function digitalmarketing()
+    public function digitalMarketing()
     {
         return view('servicesmodule::digitalmarketing');
     }

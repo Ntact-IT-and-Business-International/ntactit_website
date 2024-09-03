@@ -6,7 +6,7 @@ use LivewireUI\Modal\ModalComponent;
 use Modules\Department\App\Models\Department;
 use Modules\Finance\App\Services\RequisitionService;
 use Modules\Item\App\Models\Item;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class AddRequisition extends ModalComponent
 {

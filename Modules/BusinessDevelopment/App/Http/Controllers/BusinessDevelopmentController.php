@@ -74,4 +74,11 @@ class BusinessDevelopmentController extends Controller
     public function getRequestedQuotation(){
         return view('businessdevelopment::requested_quotation');
     }
+
+    public function forwardQuotation($client_id){
+        return view('businessdevelopment::forward_quotation',compact('client_id'));
+    }
+    public function forwardedQuotation(){
+        return view('businessdevelopment::forwarded_quotation');
+    }
 }

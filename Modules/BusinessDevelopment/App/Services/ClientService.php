@@ -57,4 +57,11 @@ class ClientService
             return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
         }
     }
+    public static function updateClientStatus($client_id){
+        try {
+            return Client::updateClientStatus($client_id);
+        } catch (\Exception $e) {
+            return response()->json(['failed' => 'Operation Failed', 'error' => $e->getMessage()], 500);
+        }
+    }
 }

@@ -86,4 +86,7 @@ class Client extends Model
     {
         self::whereId($ClientId)->delete();
     }
+    public static function updateClientStatus($client_id){
+        return self::whereId($client_id)->update(['business_status' => 'forwarded']);
+    }
 }

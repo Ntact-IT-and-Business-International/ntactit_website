@@ -3,15 +3,16 @@
     <section class="w3l-aboutblock py-5">
         <div class="service-section py-5">
             <div class="container py-md-5 py-4">
-                <div class="row align-items-center mb-5">
-                    <div class="col-md-6 section-heading">
-                        <h5 class="small-title-2">Hosting & Development Packages</h5>
-                        <h3 class="title-style-2">Choose Your Plan</h3>
-                    </div>
-                    <div class="col-md-6 section-heading mt-md-0 mt-2">
+                <div class="row align-items-center mb-2">
+                   <div class="col-md-12 section-heading mt-md-0 mt-2">
+                        <p class="text-justify">Ntact IT's experienced web design team creates visually stunning and highly functional websites tailored to your unique business needs. From initial consultation to launch, we handle every aspect of the web design process, delivering a final product that showcases your brand and captivates your audience. Our design approach focuses on creating a seamless user experience, optimizing for mobile responsiveness, and incorporating the latest web technologies. Whether you're looking to build a new website or refresh your existing online presence, our web design services will elevate your digital footprint and help you stand out in a competitive market.</p>
                         <p>
                             Explore our hosting and development packages tailored to meet your business needs.
                         </p>
+                    </div>
+                    <div class="col-md-6 section-heading">
+                        <h3 class="small-title-2 mt-4 font-weight-bold">Hosting & Development Packages</h3>
+                        <h5 class="title-style-2 mt-1">Choose Your Plan</h5>
                     </div>
                 </div>
                 <div class="row justify-content-center">

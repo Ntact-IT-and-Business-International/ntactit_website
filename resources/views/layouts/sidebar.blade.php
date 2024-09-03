@@ -24,6 +24,11 @@
                         </a>
                     </li>
                     <li class="sidenav-item">
+                        <a href="/businessdevelopment/forwarded-quotation" class="sidenav-link">
+                            <div>Forwarded Quotation</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item">
                         <a href="/businessdevelopment/quotation" class="sidenav-link">
                             <div>Quotation</div>
                         </a>

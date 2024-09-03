@@ -7,14 +7,18 @@
    <!-- Banner bottom section -->
    <section class="w3l-aboutblock py-5">
        <div class="container py-md-5 py-sm-4">
+        <div class="row mb-5">
+        <h3 class="title-style">IT Consultancy</h3>
+            <p class="mt-2 text-justify">
+                    As your trusted IT partner, Ntact IT offers strategic IT consultancy services to help you navigate the evolving technology landscape and align your IT infrastructure with your business goals. Our seasoned consultants will provide expert guidance on everything from technology roadmapping and infrastructure optimization to cloud migration and digital transformation. With a deep understanding of the latest industry trends and best practices, we'll work closely with you to develop customized solutions that drive operational efficiency, enhance productivity, and give you a competitive edge.
+            </p>
+        </div>
            <div class="row">
                <div class="col-lg-6 content-image order-lg-first order-last">
-                   <a href="#image"><img src="{{ asset('assets/images/blog6.jpg') }}" class="img-responsive" alt="content-photo"></a>
+                   <a href="#image"><img src="{{ asset('assets/images/consulting.jpg') }}" class="img-responsive" alt="content-photo"></a>
                </div>
                <div class="col-lg-6 about-right-faq align-self pl-lg-5">
-                   <h3 class="title-style">IT Consultancy</h3>
-                   <p class="mt-2">IT consultancy services offered by NTACT IT provide businesses and organizations with strategic advice and expertise in leveraging information technology to achieve their objectives. These services include IT strategy development, technology implementation, system integration, and ongoing advisory support.</p>
-                   <div class="mt-4 pt-md-2">
+                   <div class="mt-0 pt-md-0">
                        <div class="about-info-m d-flex">
                            <div class="icon-style-ab mr-4">
                                <i class="fas fa-laptop-code"></i>

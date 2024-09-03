@@ -77,6 +77,7 @@
                                             <a href="{{URL::signedRoute('Quotation Form',['client_id' => $client->id])}}" class="btn btn-warning btn-sm mb-2"><i class="feather icon-trash-2"></i>&nbsp;Quotation</a><br>
                                             <a href="{{URL::signedRoute('Invoice Form',['client_id' => $client->id])}}" class="btn btn-success btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Invoice</a>
                                             <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete</a>
+                                            <a href="/businessdevelopment/forward-quotation/{{$client->id}}" class="btn btn-default btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Forward</a>
                                         </td>
                                     </tr>
                                 @endforeach

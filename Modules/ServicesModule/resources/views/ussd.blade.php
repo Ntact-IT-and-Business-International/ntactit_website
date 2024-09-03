@@ -5,88 +5,38 @@
 @section('content')
    <!-- bulk sms-->
    <!-- banner bottom section -->
-   <section>
-<!-- Hosting Packages Section -->
-<div class="service-section py-5">
-    <div class="container py-md-5 py-4">
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6 section-heading">
-                <h5 class="small-title-2">Hosting Packages</h5>
-                <h3 class="title-style-2">Choose Your Plan</h3>
-            </div>
-            <div class="col-md-6 section-heading mt-md-0 mt-2">
-                <p>
-                    Explore our hosting packages tailored to meet your business needs.
-                </p>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <!-- Package 1 -->
-            <div class="col-lg-4 col-md-6 item">
-                <div class="card package-card">
-                    <div class="card-header p-0 position-relative border-0">
-                        <div class="package-storage">20GB</div> <!-- Storage amount in circle -->
-                    </div>
-                    <div class="card-body service-details">
-                        <span class="label-style">Basic</span>
-                        <a href="#" class="service-heading">Starter Plan</a>
-                        <p class="package-amount">UGX 120,000/year</p> <!-- Price in UGX -->
-                        <p class="package-description">Ideal for small businesses and startups with basic needs.</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-hdd mr-2 text-success"></i> Free Domain</li>
-                            <li><i class="fas fa-life-ring mr-2 text-success"></i> 24/7 Support</li>
-                            <li><i class="fas fa-lock mr-2 text-success"></i> SSL Certificate</li>
-                        </ul>
-                        <button class="btn btn-success add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Package 2 -->
-            <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                <div class="card package-card">
-                    <div class="card-header p-0 position-relative border-0">
-                        <div class="package-storage">40GB</div> <!-- Storage amount in circle -->
-                    </div>
-                    <div class="card-body service-details">
-                        <span class="label-style label-style-2">Standard</span>
-                        <a href="#" class="service-heading">Business Plan</a>
-                        <p class="package-amount">UGX 180,000/year</p> <!-- Price in UGX -->
-                        <p class="package-description">Suitable for growing businesses with moderate traffic.</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-hdd mr-2 text-success"></i> Free Domain</li>
-                            <li><i class="fas fa-life-ring mr-2 text-success"></i> 24/7 Support</li>
-                            <li><i class="fas fa-lock mr-2 text-success"></i> SSL Certificate</li>
-                        </ul>
-                        <button class="btn btn-success add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Package 3 -->
-            <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                <div class="card package-card">
-                    <div class="card-header p-0 position-relative border-0">
-                        <div class="package-storage">60GB</div> <!-- Storage amount in circle -->
-                    </div>
-                    <div class="card-body service-details">
-                        <span class="label-style label-style-3">Premium</span>
-                        <a href="#" class="service-heading">Pro Plan</a>
-                        <p class="package-amount">UGX 250,000/year</p> <!-- Price in UGX -->
-                        <p class="package-description">Advanced package for high-traffic websites.</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-hdd mr-2 text-success"></i> Free Domain</li>
-                            <li><i class="fas fa-life-ring mr-2 text-success"></i> 24/7 Support</li>
-                            <li><i class="fas fa-lock mr-2 text-success"></i> SSL Certificate</li>
-                        </ul>
-                        <button class="btn btn-success add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</section>
+   <section class="w3l-aboutblock py-5">
+       <div class="container py-md-5 py-sm-4">
+           <div class="row">
+               <div class="col-lg-6 content-image order-lg-first order-last">
+                   <a href="#image"><img src="{{ asset('assets/images/ussd.png') }}" class="img-responsive" alt="content-photo"></a>
+               </div>
+               <div class="col-lg-6 about-right-faq align-self pl-lg-5">
+                   <h3 class="title-style">USSD</h3>
+                   <p class="mt-2 text-justify">Reliable and scalable networking solutions are the backbone of a successful IT infrastructure. Ntact IT's networking services enable you to build a robust, future-proof network that supports your business operations and drives digital transformation. Our expert engineers will design, implement, and manage your network infrastructure, encompassing components like routers, switches, wireless access points, and firewalls. With our proactive monitoring and maintenance, you can rest assured that your network will perform at its best, maximizing uptime and productivity.</p>
+                   <div class="mt-4 pt-md-2">
+                       <div class="about-info-m d-flex">
+                           <div class="icon-style-ab mr-4">
+                               <i class="fas fa-network-wired"></i>
+                           </div>
+                           <div class="about-detail">
+                               <h4>Services Offered</h4>
+                               <p><b>Network Planning:</b> Strategic planning and design of network architectures tailored to organizational needs and growth.</p>
+                               <br>
+                               <p><b>Network Configuration:</b> Configuring network devices, protocols, and settings to ensure optimal performance and security.</p>
+                               <br>
+                               <p><b>Network Optimization:</b> Continuous monitoring and optimization of network resources and bandwidth to enhance efficiency.</p>
+                               <br>
+                               <p><b>Network Security:</b> Implementing robust security measures, including firewalls, encryption, and intrusion detection systems, to protect against cyber threats.</p>
+                               <br>
+                               <p><b>Network Management:</b> Providing ongoing management and support to maintain reliable and secure network operations.</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 <!-- //banner bottom section -->
 <!-- //about section -->
 

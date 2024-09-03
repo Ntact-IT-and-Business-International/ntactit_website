@@ -4,11 +4,13 @@
        <div class="container py-md-5 py-sm-4">
            <div class="row">
                <div class="col-lg-6 content-image order-lg-first order-last">
-                   <a href="#image"><img src="{{ asset ('assets/images/blog6.jpg')}}" class="img-responsive" alt="content-photo"></a>
+                   <a href="#image"><img src="{{ asset ('assets/images/web-app.png')}}" class="img-responsive" alt="content-photo"></a>
                </div>
                <div class="col-lg-6 about-right-faq align-self pl-lg-5">
                    <h3 class="title-style">Application Development </h3>
-                   <p class="mt-2">Application development services offered by NTACT IT provide businesses and organizations with the expertise and resources to develop custom software applications. These services include designing, coding, testing, and maintaining applications tailored to specific business needs.</p>
+                   <p class="mt-2 text-justify">
+                       Ntact IT's application development services empower your business with innovative, custom-built software solutions. Our team of skilled developers and project managers work closely with you to understand your unique requirements, translate them into a robust technical architecture, and deliver a tailored application that streamlines your operations and drives business growth. Whether you need a mobile app, a web-based platform, or a complex enterprise-level system, we have the expertise to bring your vision to life.
+                   </p>
                    <div class="mt-4 pt-md-2">
                        <div class="about-info-m d-flex">
                            <div class="icon-style-ab mr-4">

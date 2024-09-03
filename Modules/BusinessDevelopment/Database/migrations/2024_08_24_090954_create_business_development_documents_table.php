@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('rate');
             $table->string('amount');
-            $table->enum('status',['pending','successful','did not succeed'])->default('pending');
+            $table->enum('status',['pending','successful','did not succeed','forwarded'])->default('pending');
             $table->foreignId('registered_by');
             $table->timestamps();
         });

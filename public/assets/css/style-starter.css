@@ -11933,8 +11933,8 @@ a.navbar-brand:hover {
 .navbar-expand-lg .navbar-nav .nav-link {
   padding: 6px 7px;
   font-size: 16px;
-  color: #fff;
-  font-weight: 600;
+  color: #000000;
+  font-weight: 370;
   border-bottom: 1px solid transparent;
 }
 
@@ -12196,7 +12196,7 @@ button.search-btn:hover {
   .navbar-expand-lg .navbar-nav .nav-link {
     display: inline-block;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
 
@@ -13896,7 +13896,7 @@ div#owl-demo2 .owl-dots {
 
 /* inner-banner */
 .inner-banner {
-  background: url(../images/inner-banner.jpg) no-repeat top;
+  background: url(../images/bg.jpg) no-repeat top;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;

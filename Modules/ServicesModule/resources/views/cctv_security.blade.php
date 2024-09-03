@@ -5,15 +5,17 @@
 @section('content')
    <!-- CCTV Installation Service -->
    <!-- Banner bottom section -->
-   <section class="w3l-aboutblock py-5">
+   <section class="w3l-aboutblock py-2">
        <div class="container py-md-5 py-sm-4">
+        <div class="row mb-4">
+            <h3 class="title-style">CCTV Installation Service</h3>
+            <p class="mt-2 text-justify">Safeguard your business and premises with Ntact IT's comprehensive CCTV camera solutions. Our team of certified technicians will work with you to assess your security needs and design a customized surveillance system that provides complete coverage and peace of mind. We offer a wide range of high-quality CCTV cameras, from discreet dome cameras to feature-rich PTZ (pan-tilt-zoom) models, all backed by industry-leading warranties. With our expert installation services, you can rest assured that your CCTV system will be set up correctly and integrated seamlessly into your existing IT infrastructure.</p>
+        </div>
            <div class="row">
                <div class="col-lg-6 content-image order-lg-first order-last">
-                   <a href="#image"><img src="{{ asset('assets/images/blog6.jpg') }}" class="img-responsive" alt="content-photo"></a>
+                   <a href="#image"><img src="{{ asset('assets/images/camera.jpg') }}" class="img-responsive" alt="content-photo"></a>
                </div>
                <div class="col-lg-6 about-right-faq align-self pl-lg-5">
-                   <h3 class="title-style">CCTV Installation Service</h3>
-                   <p class="mt-2">CCTV installation services offered by NTACT IT provide businesses and organizations with advanced surveillance solutions to enhance security and monitor activities. These services include the installation, configuration, and maintenance of CCTV systems tailored to specific security needs.</p>
                    <div class="mt-4 pt-md-2">
                        <div class="about-info-m d-flex">
                            <div class="icon-style-ab mr-4">

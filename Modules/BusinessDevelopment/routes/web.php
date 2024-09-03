@@ -29,5 +29,7 @@ Route::group(['prefix' => 'businessdevelopment', 'middleware' => ['auth']], func
     Route::get('/invoice', 'BusinessDevelopmentController@getInvoiceInfo')->name('Invoice');
     Route::get('/print-invoice/{client_id}', 'BusinessDevelopmentController@printInvoice')->name('Print Invoice');
     Route::get('/requested-quotation', 'BusinessDevelopmentController@getRequestedQuotation')->name('Requested Quotation');
+    Route::get('/forward-quotation/{client_id}', 'BusinessDevelopmentController@forwardQuotation')->name('Forward Quotation');
+    Route::get('/forwarded-quotation', 'BusinessDevelopmentController@forwardedQuotation')->name('Forwarded Quotation');
 });
 
