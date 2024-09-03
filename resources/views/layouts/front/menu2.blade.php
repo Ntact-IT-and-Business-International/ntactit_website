@@ -225,6 +225,7 @@
                             <a class="dropdown-item"  href="/contact">Contact Us</a>
                             <a class="dropdown-item"  href="/company/about">About Us</a>
                             <a class="dropdown-item"  href="/company/careers">Careers</a>
+                            <a class="dropdown-item"  href="/company/events-and-news">Events & News</a>
                             <a class="dropdown-item"  href="/company/csr">Corporate Social Responsibility</a>
                         </div>
                     </li>
