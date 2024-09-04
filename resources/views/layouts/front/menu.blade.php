@@ -84,7 +84,7 @@
 }
 
 </style>
-<header id="site-header" class="fixed-top"  style="background-color:#ffffff; color:#000000;">
+<header id="site-header" class="fixed-top"  styl="background-color:#ffffff; color:#000000;">
     <div class="container">
         <nav class="navbar navbar-expand-lg stroke">
             <h1 class="navbar-brand d-flex align-items-center"  href="/">
@@ -102,7 +102,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  style="color:black;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Services <span class="caret"></span>
                             <!-- ▼ Arrow indicator -->
                         </a>
@@ -122,7 +122,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Industries <span class="caret"></span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" style="width:170%" aria-labelledby="navbarDropdown">
                             <div class="dropdown-item-wrapper">
                                 <a class="dropdown-item" href="#">Education <span class="caret-right"></span></a>
                                 <div class="dropdown-submenu">
@@ -190,6 +190,28 @@
                             </div>
                             <div class="dropdown-item-wrapper">
                                 <a class="dropdown-item" href="#">Human Resource <span class="caret-right"></span></a>
+                                <div class="dropdown-submenu">
+                                    <a class="dropdown-item sub-item"  href="{{ route('hrManagement') }}">HR Management Systems</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('payrollSolutions') }}">Payroll Solutions</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('talentAcquisition') }}">Talent Acquisition Platforms</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('employeeEngagement') }}">Employee Engagement Tools</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('performanceManagement') }}">Performance Management</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('trainingDevelopment') }}">Training & Development</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item-wrapper">
+                                <a class="dropdown-item" href="#">Weather<span class="caret-right"></span></a>
+                                <div class="dropdown-submenu">
+                                    <a class="dropdown-item sub-item"  href="{{ route('hrManagement') }}">HR Management Systems</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('payrollSolutions') }}">Payroll Solutions</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('talentAcquisition') }}">Talent Acquisition Platforms</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('employeeEngagement') }}">Employee Engagement Tools</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('performanceManagement') }}">Performance Management</a>
+                                    <a class="dropdown-item sub-item"  href="{{ route('trainingDevelopment') }}">Training & Development</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item-wrapper">
+                                <a class="dropdown-item" href="#">Climate Changes<span class="caret-right"></span></a>
                                 <div class="dropdown-submenu">
                                     <a class="dropdown-item sub-item"  href="{{ route('hrManagement') }}">HR Management Systems</a>
                                     <a class="dropdown-item sub-item"  href="{{ route('payrollSolutions') }}">Payroll Solutions</a>

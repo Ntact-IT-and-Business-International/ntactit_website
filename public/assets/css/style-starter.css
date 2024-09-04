@@ -25,7 +25,7 @@ Author URL: http://w3layouts.com
   --gray: #6c757d;
   --gray-dark: #343a40;
   --primary: #0e011fbb;
-  --secondary: #e71d36;
+  --secondary: #ffc107;
   --success: #0e011fbb;
   --info: #17a2b8;
   --warning: #ffc107;
@@ -11933,7 +11933,7 @@ a.navbar-brand:hover {
 .navbar-expand-lg .navbar-nav .nav-link {
   padding: 6px 7px;
   font-size: 16px;
-  color: #000000;
+  color: #fff;
   font-weight: 370;
   border-bottom: 1px solid transparent;
 }
@@ -12329,7 +12329,7 @@ button.search-btn:hover {
 
 .btn-style:hover,
 .btn-style-secondary {
-  background: var(--secondary-color);
+  background: #ffc107;
   color: #fff;
   transition: 0.3s ease-out;
 }

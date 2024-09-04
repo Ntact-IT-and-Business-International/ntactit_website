@@ -93,14 +93,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group-2 mt-3 text-right">
+                    {{--<div class="form-group-2 mt-3 text-right">
                         <button type="submit" class="btn btn-style">
                             <span wire:loading wire:target="sendMessage"><i class="fa fa-spinner fa-spin"></i> </span>
                             <span wire:loading.remove wire:target="sendMessage">Submit</span>
+                        </button>--}}
+                        <button class="g-recaptcha" 
+                            data-sitekey="6LfwiDYqAAAAAOm9_jpgdbWk5FYXOBD_4duQt9Fw" 
+                            data-callback='onSubmit' 
+                            data-action='submit'>Submit
                         </button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+    function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+    }
+    </script>
 </div>

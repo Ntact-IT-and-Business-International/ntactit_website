@@ -14,7 +14,7 @@
                     <h4>Inspiring Technology </h4>
                     <p class="mt-3">We execute your ideas from start to finish, we help you to quickly realise your
                         business goals through our cutting edge inovative solutions  </p>
-                    <a href="about.html" class="btn btn-style mt-md-5 mt-4">Read More</a>
+                    <a href="/company/about" class="btn btn-style mt-md-5 mt-4">Find Out More</a>
                 </div>
             </div>
         </div>
